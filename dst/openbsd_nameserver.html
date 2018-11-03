@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="romanzolotarev.com/bin/ssg3">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>Cryogenix</title>
+<style>body {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 10px;
+  background-color: #000000;
+  color: #9ba4b2;
+  background: url(data:image/gif;base64,R0lGODlhBgAGAJEAAP///xYWFgAAAAAAACwAAAAABgAGAAACCpQdhyqpfoKcoQAAOw==);
+}
+
+a {
+  color: #204fd5;
+ font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+  color: #334f83;
+}
+a:hover {
+    text-decoration: underline;
+  color: #204fd5;
+}
+
+body,
+input,
+button {
+  font-size: 20px;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+hr,
+h1,
+h2 {
+  margin-top: 60px;
+}
+
+hr {
+  border: 0;
+}
+
+li {
+  padding: 5px 0;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+pre {
+  font-size: 15px;
+  overflow-x: auto;
+}
+
+pre,
+blockquote {
+  margin-bottom: 40px;
+}
+
+p img,
+table {
+  width: 100%;
+}
+
+p {
+  clear: both;
+}
+
+.avatar {
+  width: 60px;
+  heigth: 60px;
+  border-radius: 60px;
+}
+
+.left {
+  float: left;
+  margin: 8px 24px 24px 0;
+}
+
+.quote {
+  text-indent: -16px;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.button,
+.email {
+  -webkit-appearance: none;
+  color: #000000;
+  padding: 15px;
+}
+
+.email {
+  background-color: #ffffff;
+  border: solid 1px #888888;
+}
+
+.button {
+  background-color: #ffc469;
+  border: solid 1px #ffc469;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+h1 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+pre {
+  overflow-x: auto;
+  color: white;
+}
+
+pre>code {
+	background-color: #3c4047;
+box-sizing: border-box;
+display: block;
+    white-space: pre;
+  overflow-x: auto;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+	    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+	padding-top: 2px;
+    padding-right: 4px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+} 
+ul {
+ background-color: black;
+}
+p {
+ background-color: black;
+ padding: 5px;
+}</style>
+</head>
+<body>
+<a href="https://cryogenix.net"><img border=3 width=300 src="cryo.jpg" alt="Cryogenix"/></a>
+<p>Navigation: <a href="/">/</a>  <a href="https://twitter.com/0x16h">Twitter</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<h4 id="OpenBSD%20as%20an%20authoritative%20DNS%20nameserver">OpenBSD as an authoritative DNS nameserver</h4>
+
+<p>OpenBSD ships with the <a href="https://nlnetlabs.nl/projects/nsd/about/">NLnet Labs Name Server Daemon</a> - <a href="http://man.openbsd.org/nsd">nsd(8)</a>, a fast and secure (DNSSEC-enabled) implementation of an authoritative DNS nameserver.</p>
+
+<p>First we should generate a <a href="https://en.wikipedia.org/wiki/TSIG">TSIG</a> (Transaction SIGnature) key. If using hmac-md5:</p>
+
+<pre><code>dd if=/dev/urandom of=/dev/stdout count=1 bs=32 | openssl base64
+</code></pre>
+
+<p>Or for sha256 (preferred):</p>
+
+<pre><code>dd if=/dev/urandom of=/dev/stdout count=1 bs=64 | openssl base64
+</code></pre>
+
+<p>Keep the resulting base64-encoded key for later.  For demonstration purposes I will be using the following sha256 key:</p>
+
+<pre><code>0i96GKeAPxwGZ2ALxrvM882oL107NuCnXLjv4PRpzCS31oySYILYzbs02Aes0OqCgy5+rA96YGep2xFWmzsKHg==
+</code></pre>
+
+<p>Open <strong>/var/nsd/etc/nsd.conf</strong> and create a simple configuration for our example domain:</p>
+
+<pre><code>server:
+        hide-version: yes
+        verbosity: 1
+        database: &quot;&quot; # disable database
+
+remote-control:
+        control-enable: yes
+        control-interface: /var/run/nsd.sock
+        server-key-file: &quot;/var/nsd/etc/nsd_server.key&quot;
+        server-cert-file: &quot;/var/nsd/etc/nsd_server.pem&quot;
+        control-key-file: /var/nsd/etc/nsd_control.key&quot;
+        control-cert-file: &quot;/var/nsd/etc/nsd_control.pem&quot;
+
+key:
+   name: &quot;sec_key&quot;
+   algorithm: hmac-sha256 # or hmac-md5
+   secret: &quot;0i96GKeAPxwGZ2ALxrvM882oL107NuCnXLjv4PRpzCS31oySYILYzbs02Aes0OqCgy5+rA96YGep2xFWmzsKHg==&quot;
+
+zone:
+        name: &quot;foresthall.org.uk&quot;
+        zonefile: &quot;master/foresthall.org.uk&quot;
+</code></pre>
+
+<p>The default base location (OpenBSD users rarely deviate from good defaults!) for zonefiles is <strong>/var/nsd/zones</strong> so we create the file <strong>/var/nsd/zones/master/foresthall.org.uk</strong>:</p>
+
+<pre><code>$ORIGIN foresthall.org.uk.    ; default zone domain
+$TTL 86400                    ; default time to live
+
+@ IN SOA ns1.cryogenix.net. foresthall.org.uk. (
+           2018010203  ; serial number
+           28800       ; Refresh
+           7200        ; Retry
+           864000      ; Expire
+           86400       ; Min TTL
+           )
+
+        NS      ns1.cryogenix.net.
+@        MX    10 mail.foresthall.org.uk.
+www     IN      A       82.35.249.157
+mail    IN      A       82.35.249.157
+@       IN      A       82.35.249.157
+</code></pre>
+
+<p>See <a href="https://tools.ietf.org/rfc/rfc1034.txt">RFC 1034</a> and <a href="https://tools.ietf.org/rfc/rfc1035.txt">RFC 1035</a> if you are unfamiliar with the zone file format.</p>
+
+<p>Next generate the SSL keys for nsd(8):</p>
+
+<pre><code>$ doas nsd-control-setup
+setup in directory /var/nsd/etc
+generating nsd_server.key
+Generating RSA private key, 3072 bit long modulus
+.++
+...............++
+e is 65537 (0x10001)
+generating nsd_control.key
+Generating RSA private key, 3072 bit long modulus
+.........................++
+..++
+e is 65537 (0x10001)
+create nsd_server.pem (self signed certificate)
+create nsd_control.pem (signed client certificate)
+Signature ok
+subject=/CN=nsd-control
+Getting CA Private Key
+Setup success. Certificates created. Enable in nsd.conf file to use
+</code></pre>
+
+<p>Check your configuration file contains no errors - this is good practice on a live production server before reloading the config:</p>
+
+<pre><code>$ doas nsd-checkconf /var/nsd/etc/nsd.conf
+</code></pre>
+
+<p>Run nsd(8) in the foreground to check everything is working:</p>
+
+<pre><code>    $ doas nsd -d -V 5
+    [2018-10-31 15:51:02.541] nsd[12021]: notice: nsd starting (NSD 4.1.25)
+    [2018-10-31 15:51:02.542] nsd[12021]: info: creating unix socket /var/run/nsd.sock
+    [2018-10-31 15:51:02.633] nsd[76579]: info: zone foresthall.org.uk read with success
+    [2018-10-31 15:51:02.711] nsd[76579]: notice: nsd started (NSD 4.1.25), pid 12021
+</code></pre>
+
+<p>Now use dig(1) to check that it is serving lookup requests for our new domain:</p>
+
+<pre><code>voyager$ dig @ns1.cryogenix.net ANY foresthall.org.uk
+;; Truncated, retrying in TCP mode.
+
+; &lt;&lt;&gt;&gt; DiG 9.4.2-P2 &lt;&lt;&gt;&gt; @ns1.cryogenix.net ANY foresthall.org.uk
+; (1 server found)
+;; global options:  printcmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 48761
+;; flags: qr aa rd; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; QUESTION SECTION:
+;foresthall.org.uk.             IN      ANY
+
+;; ANSWER SECTION:
+foresthall.org.uk.      86400   IN      SOA     ns1.cryogenix.net. foresthall.org.uk. 2018010203 28800 7200 864000 86400
+foresthall.org.uk.      86400   IN      NS      ns1.cryogenix.net.
+foresthall.org.uk.      86400   IN      MX      10 mail.foresthall.org.uk.
+foresthall.org.uk.      86400   IN      A       82.35.249.157
+
+;; ADDITIONAL SECTION:
+mail.foresthall.org.uk. 86400   IN      A       82.35.249.157
+
+;; Query time: 44 msec
+;; SERVER: 82.35.249.157#53(82.35.249.157)
+;; WHEN: Wed Oct 31 15:52:25 2018
+;; MSG SIZE  rcvd: 155
+</code></pre>
+
+<p>ctrl-C to kill the nsd foreground process then enable and start it as a daemon:</p>
+
+<pre><code>rcctl enable nsd
+rcctl start nsd
+</code></pre>
+
+<p>That&#39;s it! But we haven&#39;t enabled DNSSEC for our zone...</p>
+
+<h4 id="Signing%20our%20zone%20with%20DNSSEC">Signing our zone with DNSSEC</h4>
+
+<p>For this we will need ldns-keygen from <a href="https://www.nlnetlabs.nl/projects/ldns/about/">LDNS</a>:</p>
+
+<pre><code>$ doas pkg_add ldns-utils
+</code></pre>
+
+<p>Now we generate keys - a zone-signing key (ZSK) and a key-signing key (KSK):</p>
+
+<pre><code>$ cd /var/nsd/zones
+$ export ZSK=`/usr/local/bin/ldns-keygen -a RSASHA512 -b 2048 foresthall.org.uk`
+$ export KSK=`/usr/local/bin/ldns-keygen -k RSASHA512 -b 4096 foresthall.org.uk`
+</code></pre>
+
+<p>DS records were automagically generated, but we will create our own later so delete them:</p>
+
+<pre><code>$ rm *.ds
+</code></pre>
+
+<p>Create a signed zone for foresthall.org.uk - this will create master/foresthall.org.uk.signed:</p>
+
+<pre><code>$ ldns-signzone -n -s $(head -n 1000 /dev/urandom | sha256 | cut -b 1-16) master/foresthall.org.uk $ZSK $KSK
+</code></pre>
+
+<p>Change foresthall.org.uk&#39;s zonefile in <strong>/var/nsd/etc/nsd.conf</strong> to the new signed file:</p>
+
+<pre><code>zonefile: foresthall.org.uk.signed
+</code></pre>
+
+<p>Reload our nsd configuration</p>
+
+<pre><code>$ nsd-control reconfig
+$ nsd-control reload foresthall.org.uk
+</code></pre>
+
+<p>Now if we lookup our zone with dig, this time specifying DNSKEY, we should get different results that with the DNSSEC sigs:</p>
+
+<pre><code>dig DNSKEY @ns2.cryogenix.net foresthall.org.uk. +multiline +norec
+</code></pre>
+
+<p>Generate DS records for our zone and save the result to your clipboard or somewhere:</p>
+
+<pre><code>$ ldns-key2ds -n -f -2 master/foresthall.org.uk.signed
+foresthall.org.uk.      86400   IN      DS      28892 7 2 fa1b31305013e427a8dac5318fbf6ffcdbfda94309ddf12ebdca101a5e07167d
+foresthall.org.uk.      86400   IN      DS      28316 10 2 1e38d492215cd05a28b8ea64eaf42c82648064b7c563b7ea27eddd9a7e8d69d3
+</code></pre>
+
+<p>These records must be added at TLD level - as we&#39;re using a .org.uk domain, we are covered by nominet&#39;s dns*.nic.uk.  Your domain registrar may have a form in their control panel for you to add these DS records, else you may have to contact their customer services. Once the keys have been added, you can check them using dig:</p>
+
+<pre><code>$ dig DS foresthall.org.uk. +trace +short | egrep &#39;^DS&#39;
+DS 28316 10 2 1E38D492215CD05A28B8EA64EAF42C82648064B7C563B7EA27EDDD9A 7E8D69D3 from server dns1.nic.uk in 29 ms.
+DS 28892 7 2 FA1B31305013E427A8DAC5318FBF6FFCDBFDA94309DDF12EBDCA101A 5E07167D from server dns1.nic.uk in 29 ms.
+</code></pre>
+
+<p>The easiest way to verify everything is working is to check the domain on <a href="https://en.internet.nl/">internet.nl</a>.</p>
+
+<p>Unfortunately, this setup requires maintenance - the DNSSEC signatures will expire in four weeks (thanks <a href="https://twitter.com/Habbie">@Habbie</a>!), so some hackery with shell scripts and cron jobs is probably the best solution until something more robust is included in OpenBSD.  One such example is <a href="https://github.com/wekers/Sign-DNSSEC">sign-DNSSEC</a>.</p>
+
+<p>TODO: Setup a slave</p>
+<p>Navigation: <a href="/">/</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
+</body>
+</html>

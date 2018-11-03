@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="romanzolotarev.com/bin/ssg3">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>Cryogenix</title>
+<style>body {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 10px;
+  background-color: #000000;
+  color: #9ba4b2;
+  background: url(data:image/gif;base64,R0lGODlhBgAGAJEAAP///xYWFgAAAAAAACwAAAAABgAGAAACCpQdhyqpfoKcoQAAOw==);
+}
+
+a {
+  color: #204fd5;
+ font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+  color: #334f83;
+}
+a:hover {
+    text-decoration: underline;
+  color: #204fd5;
+}
+
+body,
+input,
+button {
+  font-size: 20px;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+hr,
+h1,
+h2 {
+  margin-top: 60px;
+}
+
+hr {
+  border: 0;
+}
+
+li {
+  padding: 5px 0;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+pre {
+  font-size: 15px;
+  overflow-x: auto;
+}
+
+pre,
+blockquote {
+  margin-bottom: 40px;
+}
+
+p img,
+table {
+  width: 100%;
+}
+
+p {
+  clear: both;
+}
+
+.avatar {
+  width: 60px;
+  heigth: 60px;
+  border-radius: 60px;
+}
+
+.left {
+  float: left;
+  margin: 8px 24px 24px 0;
+}
+
+.quote {
+  text-indent: -16px;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.button,
+.email {
+  -webkit-appearance: none;
+  color: #000000;
+  padding: 15px;
+}
+
+.email {
+  background-color: #ffffff;
+  border: solid 1px #888888;
+}
+
+.button {
+  background-color: #ffc469;
+  border: solid 1px #ffc469;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+h1 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+pre {
+  overflow-x: auto;
+  color: white;
+}
+
+pre>code {
+	background-color: #3c4047;
+box-sizing: border-box;
+display: block;
+    white-space: pre;
+  overflow-x: auto;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+	    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+	padding-top: 2px;
+    padding-right: 4px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+} 
+ul {
+ background-color: black;
+}
+p {
+ background-color: black;
+ padding: 5px;
+}</style>
+</head>
+<body>
+<a href="https://cryogenix.net"><img border=3 width=300 src="cryo.jpg" alt="Cryogenix"/></a>
+<p>Navigation: <a href="/">/</a>  <a href="https://twitter.com/0x16h">Twitter</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<h3 id="OpenVMS%20and%20SIMH%20-%20Part%201">OpenVMS and SIMH - Part 1</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/OpenVMS">OpenVMS</a>  is an operating system originally developed by  <a href="http://en.wikipedia.org/wiki/Digital_Equipment_Corporation">DEC</a>  (Digital Equipment Corporation), a company acquired by  <a href="http://en.wikipedia.org/wiki/Compaq">Compaq</a>  which was then acquired by  <a href="http://en.wikipedia.org/wiki/Hewlett-Packard">HP</a>  for the  <a href="http://en.wikipedia.org/wiki/VAX">VAX</a>  platform.  </p>
+
+<p>Although development started in the mid-1970s into the 1980s, OpenVMS is still very much alive with up-to version 7.3 available for VAX, and continued development in 8.x for  <a href="http://en.wikipedia.org/wiki/DEC_Alpha">DEC Alpha</a>  and now Intel  <a href="http://en.wikipedia.org/wiki/Itanium">Itanium</a>  architectures. Even Oracle, who acquired DEC&#39;s  <a href="http://en.wikipedia.org/wiki/Oracle_Rdb">Rdb</a>  RDBMS have  <a href="http://www.oracle.com/technology/products/rdb/htdocs/rdb7/rdb_statement_of_direction.html">stated</a>  that they will continue to support and develop Rdb, creating a lesser gap between it and Oracle Database systems.  </p>
+
+<p><a href="http://en.wikipedia.org/wiki/SIMH">SIMH</a>  is a set of emulators for various systems and is developed by Bob Supnik, who is a former engineer for DEC. One of the systems it is able to emulate is the VAX. This is what we&#39;re interested in. An excellent feature of SIMH (among many) is that it supports networking (albeit experimental support; I&#39;ve had no problems so far).  </p>
+
+<p>If you are unable to install OpenVMS, consider looking at  <del><a href="http://deathrow.vistech.net/">http://deathrow.vistech.net</a>  (Beave&#39;s former OpenVMS cluster)</del> <a href="http://www.polarhome.com/">PolarHome</a> where you can get a taste of OpenVMS without installation.  </p>
+
+<p>So, we&#39;re going to install OpenVMS within SIMH&#39;s VAX emulator. There are a few prerequisites, some of which may be difficult to meet:</p>
+
+<ul>
+<li>  <a href="http://simh.trailing-edge.com/">SIMH w/ Networking</a>  (  <a href="http://simh.trailing-edge.com/sources/simhv38-0-exe-ether.zip">win32</a>  /  <a href="http://macappstore.org/simh/">macOS</a>)</li>
+<li>  <a href="http://www.winpcap.org/">WinPcap</a>  (for win32 SIMH networking)</li>
+<li>  A  <a href="http://en.wikipedia.org/wiki/DECUS">HP User Society (Formerly DECUS)</a>  membership (hint:  <a href="https://www.connect-community.de/Membership/application">Connect Deutschland</a>  has no fee for basic membership. Site is in German)</li>
+<li> <a href="https://www.hpe.com/h41268/live/index_e.aspx?qid=24548">HPE OpenVMS Hobbyist Registration</a>  (For your license PAKs)</li>
+<li>  <a href="http://mirrors.pdp-11.ru/_vax__/_VMS/_distrib/7.X/">OpenVMS 7.3 VAX Media</a></li>
+</ul>
+
+<p>DECUS membership is required to be able to register licenses for your hobbyist system. Some chapters may issue your membership number straight away online, others will send you a membership card in the post.</p>
+
+<p>When HPE exit the OpenVMS game and VSI fully take over, there is no guarantee that the hobbyist program will be continued, though I heard from Hari at HPE that they are interested in fostering the program for their own VMS version.</p>
+
+<p><strong>!!! Mac OS X Note !!!</strong>  </p>
+
+<p>The binaries linked to in the prerequisites may fail on your system.<br/>
+On Mac OS X 10.5.5 (Intel) they caused problems for me, so you should  install Apple Xcode and compile from source. Follow <a href="https://web.archive.org/web/20090312034321/http://64.223.189.234/node/922">this guide</a> if using GCC 4.x.  </p>
+
+<p><strong>!!!</strong>  </p>
+
+<p><strong>Getting Ready</strong>  </p>
+
+<p>I&#39;ll assume that you have already received the OpenVMS VAX and additional license paks via E-mail. The licenses aren&#39;t required to install OpenVMS - but without them you will have a very limited installation.  </p>
+
+<p>Start off by creating a directory somewhere, be this <em>~/OpenVMS</em>, <em>C:\OpenVMS</em>, <em>/Users/int16h/OpenVMS</em> or wherever you please. Copy the VAX emulator from SIMH to this directory, as well as <strong>ka655.bin</strong>. If you have an ISO image of the installation media, copy those there too (I will be using an ISO for this tutorial).  </p>
+
+<p><strong>Configuring SIMH::VAX</strong>  </p>
+
+<p>SIMH needs to know how much RAM and other virtual hardware you will be attaching. Although you could do this from the SIMH prompt, it&#39;s not very practical so we will create a config file named <strong>openvms.ini</strong>. Below is a commented config which will suit our needs, but you will need to customize it for your own use.</p>
+
+<pre><code>; Load CPU microcode
+load -r ka655.bin
+;
+; Set memory allocation to 64M
+set cpu 64m
+;
+; We will have 2 DEC RA92 disk drives, about 1.5G capacity.
+set rq0 ra92
+set rq1 ra92
+;
+; rq3 will be a CD-ROM drive
+set rq3 cdrom
+;
+; Attach the devices to files, these will be our virtual disks
+attach rq0 d0.dsk
+attach rq1 d1.dsk
+;
+; Attach the CD-ROM drive to our installation media ISO (use &#39;dd&#39; ;)
+attach -r rq3 OpenVMS73.iso
+;
+; We don&#39;t need rl and ts devices, so we can disable them.
+;
+set rl disable
+set ts disable
+;
+; Attach Ethernet to a network interface. This will work in &#39;bridged&#39;
+; mode. Make sure to define a fake MAC address if using Windows.
+; Unlike Linux, *BSD etc Windows does not have a nice, logical alias
+; for network interfaces.
+;
+; Windows Example:
+;set xq mac=08-00-2B-AA-BB-CC
+;attach xq \Device\NPF_{9622ACD6-7383-4C42-B8F3-FBFA22573B71}
+;
+; Linux/*BSD/UNIX Example:
+;attach xq eth0
+;
+; Mac OS X:
+;attach xq en0
+;
+; Uncomment the following if you&#39;d prefer to telnet into SIMH
+; from another machine rather than use the local console, 6969=port.
+;
+;set telnet 6969
+;
+;
+; Boot the system:
+;
+boot cpu
+</code></pre>
+
+<p>Save this file, and make sure you&#39;re in the directory you created in a terminal.  </p>
+
+<p><strong>Installing OpenVMS</strong>  </p>
+
+<pre><code>Run: **./vax openvms.ini**
+
+sh-3.2# ./vax openvms.ini 
+VAX simulator V3.8-0
+RQ: unit is read only
+Eth: opened en0
+
+KA655-B V5.3, VMB 2.7
+Performing normal system tests.
+40..39..38..37..36..35..34..33..32..31..30..29..28..27..26..25..
+24..23..22..21..20..19..18..17..16..15..14..13..12..11..10..09..
+08..07..06..05..04..03..
+Tests completed.
+
+&gt;&gt;&gt;
+</code></pre>
+
+<p>Good. The system has booted and is now awaiting further instructions. Those of you familiar with Sun SPARC hardware may recognise an initial firmware prompt like this. From here, we will boot our virtual CD-ROM with <strong>boot dua3</strong>.</p>
+
+<pre><code>&gt;&gt;&gt;boot dua3
+(BOOT/R5:0 DUA3
+  2..
+-DUA3
+  1..0..
+
+%SYSBOOT-I-SYSBOOT Mapping the SYSDUMP.DMP on the System Disk
+%SYSBOOT-W-SYSBOOT Can not map SYSDUMP.DMP on the System Disk
+%SYSBOOT-W-SYSBOOT Can not map PAGEFILE.SYS on the System Disk
+   OpenVMS (TM) VAX Version X7G7 Major version id = 1 Minor version id = 0
+%WBM-I-WBMINFO Write Bitmap has successfully completed initialization.
+PLEASE ENTER DATE AND TIME (DD-MMM-YYYY  HH:MM)  09-JAN-2009 20:11
+
+OpenVMS installation will now probe your system for available devices. Once it has finished enumerating your devices, it will prompt you to enter &quot;**YES**&quot;.
+
+Configuring devices . . .
+Now configuring HSC, RF, and MSCP-served devices . . .
+
+Please check the names of the devices which have been configured,
+to make sure that ALL remote devices which you intend to use have
+been configured.
+
+If any device does not show up, please take action now to make it
+available.
+
+Available device  DUA0:                            device type RA92
+Available device  DUA1:                            device type RA92
+Available device  DUA2:                            device type RD54
+Available device  DUA3:                            device type RRD40
+Available device  DYA0:                            device type RX02
+Available device  DYA1:                            device type RX02
+Available device  MUA0:                            device type TK50
+Available device  MUA1:                            device type TK50
+Available device  MUA2:                            device type TK50
+Available device  MUA3:                            device type TK50
+
+Enter &quot;YES&quot; when all needed devices are available:  YES
+%BACKUP-I-IDENT, Stand-alone BACKUP T7.2; the date is  9-JAN-2009 20:15:24.42
+</code></pre>
+
+<p>You will now be dropped at what looks like a shell-prompt. OpenVMS and OpenVMS components are generally installed by extracting backup archives. This of course comes from the days when tape drives were more common. Let&#39;s extract the backup saveset to our first drive with &quot;<strong>backup dua3:vms073.b/save_set dua0:</strong>&quot;:</p>
+
+<pre><code>$ backup dua3:vms073.b/save_set dua0:
+
+%BACKUP-I-PROCDONE, operation completed.  Processing finished at  9-JAN-2009 20:20:00.82
+If you do not want to perform another standalone BACKUP operation,
+use the console to halt the system.
+
+If you do want to perform another standalone BACKUP operation, 
+ensure the standalone application volume is online and ready.
+Enter &quot;YES&quot; to continue: 
+</code></pre>
+
+<p>This will take a short time, and you won&#39;t be informed until it is complete. We are finished with this for now, so you may press CTRL-E to halt our system and drop you at the SIMH prompt. Now we boot the system again with &quot;<strong>boot cpu</strong>&quot;:</p>
+
+<pre><code>Simulation stopped, PC: 839ABD46 (BEQL 839ABDB4)
+sim&gt; boot cpu
+
+KA655-B V5.3, VMB 2.7
+Performing normal system tests.
+40..39..38..37..36..35..34..33..32..31..30..29..28..27..26..25..
+24..23..22..21..20..19..18..17..16..15..14..13..12..11..10..09..
+08..07..06..05..04..03..
+Tests completed.
+</code></pre>
+
+<p>Great. Now this time, instead of booting <strong>dua3</strong>, we will boot our first virtual hard disk where we just installed the backup to - <strong>dua0</strong>:</p>
+
+<pre><code>&gt;&gt;&gt;set boot dua0
+&gt;&gt;&gt;boot
+(BOOT/R5:0 DUA0
+
+  2..
+-DUA0
+  1..0..
+
+%SYSBOOT-I-SYSBOOT Mapping the SYSDUMP.DMP on the System Disk
+%SYSBOOT-W-SYSBOOT Can not map SYSDUMP.DMP on the System Disk
+%SYSBOOT-I-SYSBOOT Mapping PAGEFILE.SYS on the System Disk
+%SYSBOOT-I-SYSBOOT SAVEDUMP parameter not set to protect the PAGEFILE.SYS
+   OpenVMS (TM) VAX Version BI73-7G7 Major version id = 1 Minor version id = 0
+%WBM-I-WBMINFO Write Bitmap has successfully completed initialization.
+
+           OpenVMS VAX V7.3 Installation Procedure
+
+                 Model: VAXserver 3900 Series
+                 System device: RA92 - _DUA0:
+                   Free Blocks: 2854566
+                      CPU type: 10-01
+
+* Please enter the date and time (DD-MMM-YYYY HH:MM) 09-JAN-2009 20:36
+</code></pre>
+
+<p>As you can see, we are now entering the real OpenVMS installation and it reports that we are using a VAXServer 3900, the system disk is a DEC RA92 and we have 2854566 blocks free. Enter the current date+time, then hit enter.  </p>
+
+<p>You&#39;ll see quite a few messages scrolling up the screen, one which may seem quite alarming is:</p>
+
+<pre><code>%%%%%%%%%%%  OPCOM   9-JAN-2009 20:36:08.92  %%%%%%%%%%%
+Message from user SYSTEM
+%LICENSE-E-NOAUTH, DEC VAX-VMS use is not authorized on this node
+-LICENSE-F-NOLICENSE, no license is active for this software product
+-LICENSE-I-SYSMGR, please see your system manager
+</code></pre>
+
+<p>During the install, we will enter our license for DEC VAX-VMS; So just ignore this for now. Let&#39;s continue:</p>
+
+<p>If this system disk is to be used in an OpenVMS Cluster with multiple system disks, then each system disk must have a unique volume label. Any nodes having system disks with duplicate volume labels will fail to boot into the cluster.</p>
+
+<pre><code>   You can indicate a volume 
+   label of 1 to 12 characters in length.
+   If you want to use the default name of
+   OVMSVAXSYS, press RETURN in response to
+   the next question.
+
+* Enter the volume label for this system disk [OVMSVAXSYS]: 
+</code></pre>
+
+<p>For this tutorial, I won&#39;t cover setting up a cluster so just leave the default.</p>
+
+<pre><code>* Enter name of drive holding the OpenVMS distribution media: DUA3
+* Is the OpenVMS media ready to be mounted? [N] Y
+%MOUNT-I-MOUNTED, VAXVMS073 mounted on _DUA3:
+
+   Select optional software you want to install.  You can install one
+   or more of the following OpenVMS or DECwindows components:
+
+    o OpenVMS library                              -  52200 blocks
+    o OpenVMS optional                             -  19000 blocks
+    o OpenVMS Help Message                         -  10400 blocks
+    o OpenVMS Management Station                   -  20000 blocks
+    o DECwindows base support                      -   4400 blocks
+    o DECwindows workstation support               -  23800 blocks
+          -  75 dots per inch video fonts          -    (included)
+          - 100 dots per inch video fonts          -   6200 blocks
+    o DECnet-Plus networking                       -  80000 blocks
+    o DECnet Phase IV networking                   -    800 blocks
+
+        Space remaining on system disk:  2854377 blocks
+</code></pre>
+
+<p>You can go ahead and install everything if you have space, I imagine you will want to see everything OpenVMS has to offer at some point - so it&#39;s best to install these sets now rather than later.</p>
+
+<pre><code>* Do you want to install the OpenVMS library files? (Y/N) Y
+
+    Space remaining on system disk:  2802177 blocks
+
+* Do you want to install the OpenVMS optional files? (Y/N) Y
+
+    Space remaining on system disk:  2783177 blocks
+
+~~
+
+* Do you want to install the MSGHLP database? (Y/N) Y
+
+~~ 
+
+* Where do you want to install the MSGHLP database?
+    [SYS$COMMON:[SYSHLP]] [ENTER]
+
+~~
+
+* Do you want to install the optional OpenVMS Management Station files? (Y/N) Y
+
+~~
+
+* Do you want the DECwindows base support? (Y/N) Y
+
+~~
+
+* Do you want to install DECwindows workstation support? (Y/N) Y
+
+~~
+
+* Do you want 100 dots per inch video fonts installed? (Y/N) Y
+
+~~
+
+* Do you want to install DECnet-Plus? (Y/N) Y
+
+~~
+
+    The following options will be provided:
+
+        OpenVMS library
+        OpenVMS optional
+        OpenVMS Help Message
+        OpenVMS Management Station Software -- PC files
+        DECwindows base support
+        DECwindows workstation support with:
+            -  75 dots per inch video fonts
+            - 100 dots per inch video fonts
+        DECnet-Plus
+
+    Space remaining on system disk:  2638377 blocks
+
+* Is this correct? (Y/N) Y
+</code></pre>
+
+<p>Phew! Now, at last - the backup save sets will be extracted/restored. This will take some time, enough for a cigarette at least. When it completes, you&#39;ll be presented with some useful information regarding OpenVMS Clusters:</p>
+
+<pre><code>In an OpenVMS Cluster, you can run multiple systems sharing all files
+   except PAGEFILE.SYS, SWAPFILE.SYS, SYSDUMP.DMP, and VAXVMSSYS.PAR.
+
+   Cluster configuration cannot be done at this time because no network
+   is present.  In order to configure a cluster you must FIRST do one
+   or both of the following:
+
+   o Install DECnet-Plus (or DECnet Phase IV), or
+   o Execute SYS$STARTUP:LAN$STARTUP.COM by removing the
+      comment delimiter (&quot;!&quot;) from the line
+
+          $! @SYS$STARTUP:LAN$STARTUP
+
+     in SYS$MANAGER:SYSTARTUP_VMS.COM.
+
+   Then configure the cluster by executing the following command:
+
+             @ @SYS$MANAGER:CLUSTER_CONFIG
+
+   See the OpenVMS System Manager&#39;s Manual: Essentials for more information.
+</code></pre>
+
+<p>For future reference, you should keep a copy of such messages for future configuration of components.</p>
+
+<pre><code>    * Do you want DECwindows Motif as the default windowing system? (Y/N) Y
+
+   Now we will ask you for new passwords for the following accounts:
+
+        SYSTEM, SYSTEST, FIELD
+
+   Passwords must be a minimum of 8 characters in length.  All passwords
+   will be checked and verified.  Any passwords that can be guessed easily
+   will not be accepted.
+</code></pre>
+
+<p>Now, this is the equivalent of setting your root password on a UNIX-like Operating System. Make sure to set a decent password for SYSTEM and different passwords for SYSTESY and FIELD. You could make them all the same if you&#39;re not planning on allowing anyone else to access your new OpenVMS system.</p>
+
+<pre><code>* Enter password for SYSTEM: 
+* Re-enter for verification: 
+%UAF-I-MDFYMSG, user record(s) updated
+%VMS-I-PWD_OKAY, account password for SYSTEM verified
+</code></pre>
+
+<p>You&#39;ll see similar messages for the remaining accounts.</p>
+
+<pre><code>Creating RIGHTS database file, SYS$SYSTEM:RIGHTSLIST.DAT
+Ignore any &quot;-SYSTEM-F-DUPIDENT, duplicate identifier&quot; errors.
+
+%UAF-I-RDBCREMSG, rights database created
+%UAF-I-RDBADDMSGU, identifier DEFAULT value [000200,000200] added to rights database
+%UAF-I-RDBADDMSGU, identifier FIELD value [000001,000010] added to rights database
+%UAF-I-RDBADDMSGU, identifier SYSTEM value [000001,000004] added to rights database
+%UAF-I-RDBADDMSGU, identifier SYSTEST value [000001,000007] added to rights database
+%UAF-E-RDBADDERRU, unable to add SYSTEST_CLIG value [000001,000007] to rights database
+-SYSTEM-F-DUPIDENT, duplicate identifier
+%UAF-I-NOMODS, no modifications made to system authorization file
+%UAF-I-RDBDONEMSG, rights database modified
+
+Creating MODPARAMS.DAT database file, SYS$SYSTEM:MODPARAMS.DAT
+</code></pre>
+
+<p>These UAF messages confirm that the rights database has been created, and the system users have been added. We will use the UAF (User Authorization File) tool later to add a normal user.  </p>
+
+<p>Next you&#39;ll be prompted for the SCSNODE name and SCSSYSTEMID for your VMS node, as this is your first installation and not part of a cluster - enter what you like (within reason, the SCSSYSTEMID should be between 1025 and 65535).</p>
+
+<pre><code>* Please enter the SCSNODE name: CGXVAX
+
+* Please enter the SCSSYSTEMID:  1025
+</code></pre>
+
+<p>Now you should have your OpenVMS licenses/PAKs (Product Authorization Keys) ready.</p>
+
+<p>Continuing with OpenVMS VAX V7.3 Installation Procedure.</p>
+
+<pre><code>    Configuring all devices on the system ...
+
+    If you have Product Authorization Keys (PAKs) to register, you can
+    register them now.
+
+* Do you want to register any Product Authorization Keys? (Y/N): Y
+
+    VMS License Management Utility Options:
+
+        1. REGISTER a Product Authorization Key
+~~
+
+Enter one of the above choices [1]: 1
+Do you have your Product Authorization Key? [YES]: YES
+
+Find your PAK for &quot;VAX-VMS&quot;. This PAK will be entered manually by extracting the information from each field and entering them when prompted... For future PAKs, you may copy-paste the command straight from your e-mail.
+
+
+Here is a list of the license information just entered:
+
+                     Issuer:  OPENVMS_HOBBYIST
+              Authorization:  DECUS-XXX-#########-#######
+               Product Name:  VAX-VMS
+                   Producer:  DEC
+                      Units:  0
+               Release Date:  
+                    Version:  
+           Termination Date:  ##-XXX-####
+               Availability:  
+                   Activity:  A
+                    Options:  NO_SHARE
+                      Token:  
+                Hardware ID:  
+                   Checksum:  #-XXXX-XXXX-XXXX-XXXX
+
+Is that correct? [YES]:YES
+Registering VAX-VMS license in SYS$COMMON:[SYSEXE]LMF$LICENSE.LDB...
+
+Do you want to LOAD this license on this system? [YES]:
+%LICENSE-I-LOADED, DEC VAX-VMS was successfully loaded with 0 units
+
+You may enter some other PAKs now, or wait until later. I will install others later. Enter &#39;99 [enter]&#39; to exit the license management utility.
+
+********************************************************************************
+
+    After the system has rebooted you should register any additional
+    Product Authorization Keys (PAKs) you have, or receive in the
+    future, by executing the following procedure:
+
+        $ @SYS$UPDATE:VMSLICENSE
+
+    See the OpenVMS License Management Utility Manual for any additional
+    information you need.
+
+********************************************************************************
+</code></pre>
+
+<p>Another piece of useful information to remember for later. Now, you&#39;ll be prompted to set your time zone. Follow the prompts until you&#39;re asked to provide information about DECnet-Plus, then respond as follows:</p>
+
+<pre><code>* Enter name of drive holding the DECnet-Plus kit: DUA3
+* Is DUA3: ready to be mounted? [N] y
+
+The following product has been selected:
+    DEC VAXVMS DECNET_OSI V7.3             Layered Product
+
+~~
+
+This product requires one of two PAKs: DVNETEND or DVNETRTG.
+
+Do you want the defaults for all options? [YES] YES
+</code></pre>
+
+<p>This set isn&#39;t required, but as we had had chosen to install everything earlier - we may as well. Installation will run for a few minutes, then OpenVMS Installation will run AUTOGEN to update the system. This will take a couple of minutes, then the system will be rebooted - dropping you back at the SIMH prompt. Start the system back up:</p>
+
+<pre><code>sim&gt; boot cpu
+
+KA655-B V5.3, VMB 2.7
+Performing normal system tests.
+40..39..38..37..36..35..34..33..32..31..30..29..28..27..26..25..
+24..23..22..21..20..19..18..17..16..15..14..13..12..11..10..09..
+08..07..06..05..04..03..
+Tests completed.
+
+&gt;&gt;&gt;boot
+(BOOT/R5:0 DUA0
+
+Soon you will see:
+
+*****************************************************************
+
+OpenVMS VAX V7.3
+
+You have SUCCESSFULLY installed the OpenVMS VAX Operating System.
+
+The system is now executing the STARTUP procedure.  Please
+wait for the completion of STARTUP before logging in to the
+system.
+
+*****************************************************************
+
+%STDRV-I-STARTUP, OpenVMS startup begun at  9-JAN-2009 21:56:36.10
+
+~~~
+
+%SET-I-INTSET, login interactive limit = 64, current interactive value = 0
+  SYSTEM       job terminated at  9-JAN-2009 21:57:04.05
+
+  Accounting information:
+  Buffered I/O count:            1621         Peak working set size:    1624
+  Direct I/O count:               613         Peak page file size:      5504
+  Page faults:                   5578         Mounted volumes:             0
+  Charged CPU time:           0 00:00:24.99   Elapsed time:     0 00:00:31.61
+</code></pre>
+
+<p>Congratulations! You have installed OpenVMS 7.3 \o/. Now after all those pages of instructions and console-pastes, we&#39;ll proceed to configure OpenVMS a little bit.  </p>
+
+<p><strong>Configuring OpenVMS</strong>  </p>
+
+<p>So, you are now presented with some information about your new system. Where do you go from here? Press <strong>enter</strong> and you&#39;ll see a welcome-banner followed by a prompt for you to login. Enter &#39;<strong>SYSTEM</strong>&#39; as the username, and the password you set during installation.</p>
+
+<pre><code>Username: SYSTEM
+Password: 
+ Welcome to OpenVMS (TM) VAX Operating System, Version V7.3
+$ 
+</code></pre>
+
+<p>At this point, I can see all you UNIX-like OS users gagging to explore the system and run commands such as &#39;uptime&#39; and &#39;uname -a&#39; to show off to all your friends. Well, I&#39;m extremely sorry to disappoint you (and perhaps wasted your time so far!) but OpenVMS is not UNIX or in fact similar to any derivatives in any way. You can throw any hopes of POSIX compatibility out the window, too (well, there <em>is</em> a POSIX compatibility interface/set for OpenVMS but we won&#39;t go into that ;).  </p>
+
+<p>To satisfy the needs of your e-penis, you may run &quot;<strong>sh sys</strong>&quot; or in its full form: &quot;<strong>show system</strong>&quot;. The &quot;show&quot; command is used to spit out a variety of information, many embedded devices such as routers have similar functions.</p>
+
+<pre><code>$ sh sys
+OpenVMS V7.3  on node CGXVAX   9-JAN-2009 22:17:25.96  Uptime  0 00:21:04
+  Pid    Process Name    State  Pri      I/O       CPU       Page flts  Pages
+00000201 SWAPPER         HIB     16        0   0 00:00:00.21         0      0   
+00000205 CONFIGURE       HIB      8        5   0 00:00:00.06       112    175   
+00000206 LANACP          HIB     12       33   0 00:00:00.25       366    788   
+00000208 IPCACP          HIB     10        6   0 00:00:00.03        99    177   
+00000209 ERRFMT          HIB      8       44   0 00:00:00.14       153    234   
+0000020B OPCOM           HIB      8       48   0 00:00:00.19       304    150   
+0000020C AUDIT_SERVER    HIB     10      133   0 00:00:00.53       569    815   
+0000020D JOB_CONTROL     HIB     10       30   0 00:00:00.12       191    342   
+0000020E SECURITY_SERVER HIB     10       35   0 00:00:00.43       766   1349   
+00000211 SYSTEM          CUR      7       97   0 00:00:00.62       869    498   
+</code></pre>
+
+<p>This isn&#39;t too different from what you&#39;d see in a screen-dump of the &#39;top&#39; command on UNIX-like systems.  </p>
+
+<p>Now, let&#39;s get back on track. OpenVMS uses <a href="http://en.wikipedia.org/wiki/DIGITAL_Command_Language">DCL (DIGITAL Command Language)</a>, a scripting language developed by DIGITAL for their Operating Systems. You may think of it as the OpenVMS equivalent of BASH in that it&#39;s used as a &quot;shell&quot;/CLI as well as a normal scripting language.  </p>
+
+<p>So far, we have used DUA3 (our virtual CD-ROM drive) and DUA0 (Our first hard disk), now we will initialise DUA1, our second virtual hard disk. It is good practice to keep system files on one disk, and data on others. This is especially useful for when/if you need to reinstall the Operating System, you can keep your users&#39; data. Let&#39;s initialise the disk now and mount it:</p>
+
+<pre><code>$ initialize dua1: DATA
+$ mount/system dua1 data
+%MOUNT-I-MOUNTED, DATA mounted on _CGXVAX$DUA1:
+</code></pre>
+
+<p><strong>n.B. Remember to have around another 1.5G of space free for this else bad things will happen. On initialisation of the new volume, the file d1.dsk grew to 719M</strong>  </p>
+
+<p>This is what you don&#39;t want to happen, else you&#39;ll need to boot the system again:</p>
+
+<pre><code>$ initialize dua1: DATA
+RQ I/O error: No space left on device
+I/O error, PC: 83430D36 (ASHL #1,R3,R0)
+sim&gt; 
+</code></pre>
+
+<p>Now that we have a new disk initialised and mounted, we will edit the site-specific startup file &quot;<strong>sys$manager:systartup_vms.com</strong>&quot; and add the mount command above so we don&#39;t have to manually mount the volume at each startup. We will need to let OpenVMS know that we are using a VT100-compatible terminal so we can use the full-screen VMS editor &quot;edit&quot; properly:</p>
+
+<pre><code>$ set term/vt100
+$ edit sys$manager:systartup_vms.com
+</code></pre>
+
+<p>There&#39;s no right or wrong place to put this command really, but I like to mount volumes just before DECnet is setup+started. A general rule is to mount any additional volumes first, before running any startup processes which may rely on the volume being available:</p>
+
+<pre><code>$! To start a batch queue, remove the comment delimiter ($!) from the
+$! following command line.
+$!
+$!$ START /QUEUE SYS$BATCH
+$!
+$ mount/system dua1: data
+$!
+$! In order to use asynchronous DECnet Phase IV on OpenVMS VAX systems only,
+$! remove the comment delimiter ($!) from the next two lines.
+
+Press CTRL-Z to save and quit &#39;EDIT&#39;.
+
+409 lines written to file SYS$COMMON:[SYSMGR]SYSTARTUP_VMS.COM;2
+$ 
+</code></pre>
+
+<p>You may be wondering why &quot;;2&quot; is appended to the filename. OpenVMS stores multiple revisions of files as they are updated/edited. Some other operating systems and/or filesystems work in this manner including Novell Netware. You shouldn&#39;t have any problems with this, until you try and delete a file - OpenVMS will ask you to specify which revision you&#39;d like to delete ;).  </p>
+
+<p><strong>Adding Users</strong>  </p>
+
+<p>As in UNIX-like systems, OpenVMS has user and group IDs, however, unlike UNIX - they are not entities you can reference separately. The UID and GID-like values are an exclusive singleton, which is called a UIC (User Identification Code), the format of a UIC is [###,###] - where the first part is the group, and the second is the user. By default, users added to the UAF are disabled. We will now add our first user, whose &#39;home&#39; directory is on our new disk, will have full system privileges and won&#39;t be disabled:</p>
+
+<pre><code>$ set def sys$system
+$ r authorize
+UAF&gt; add int16h/password=t3mp123/owner=&quot;int16h&quot;/dev=dua1/dir=[int16h]/uic=[200,201]/flag=nodisuser/priv=all
+%UAF-I-ADDMSG, user record successfully added
+~~
+</code></pre>
+
+<p><strong>set def</strong> - This is short for &quot;set default&quot;, which is the equivalent of the &quot;cd&quot; command on UNIX-like operating systems. Navigating around an OpenVMS system may take some getting used to, just think of it as the step after moving from DOS to UNIX. In this case:</p>
+
+<blockquote>
+<p>sys$system</p>
+</blockquote>
+
+<p>is an alias for </p>
+
+<blockquote>
+<p><strong>CGXVAX$DUA0:[SYS0.SYSCOMMON.][SYSEXE]</strong></p>
+</blockquote>
+
+<p><strong>r authorize</strong> - &quot;r&quot; is the shortened command for run. We need to be in the sys$system logical directory to run &#39;authorize&#39; as this is where SYSUAF.DAT is stored.  </p>
+
+<p>So, basically we are adding the user &#39;int16h&#39;, with initial password of &#39;t3mp123&#39; (this will be changed at first-login), owner is the user&#39;s real-name, dev is the device where the user&#39;s initial/home directory will reside, dir is the name of the directory on &#39;dev&#39;, uic is the user&#39;s UIC (groupid,uid - default group is 200), we have added the nodisuser flag to ensure the account isn&#39;t disabled, and finally we have given the uses all privileges on the system.  </p>
+
+<p>After you run the &#39;add&#39; line at the UAF prompt, your screen will fill with security notices. You should get used to them while connected to the system console, anything important you update on the system will trigger such alerts.  </p>
+
+<p>Now, at the UAF prompt, type &#39;exit&#39;. UAF will inform you that the User Authorisation file and rights database have been modified:</p>
+
+<pre><code>UAF&gt; exit
+%UAF-I-DONEMSG, system authorization file modified
+%UAF-I-RDBDONEMSG, rights database modified
+</code></pre>
+
+<p>Great! Now you have a &#39;normal&#39; user you can login as, and gain full privs if you need them! Well, not quite. We need to manually create the user&#39;s directory and set the correct permissions:</p>
+
+<pre><code>$ create/dir dua1:[int16h]
+$ set directory/owner=int16h dua1:[int16h]
+</code></pre>
+
+<p>Here you can see that we use the <strong>create</strong> command to create our new directory, then <strong>set</strong> to set the owner of the directory. DCL is quite flexible and efficient, most of the time you can turn a few commands into one longer command.</p>
+
+<pre><code>$ create/dir dua1:[int16h]/owner=[int16h]
+</code></pre>
+
+<p>As you can see, DCL commands are quite logical and natural - it&#39;s just getting used to them which can be a problem when you usually spend your time in a UNIX shell.  </p>
+
+<p>Now that we have added our user, and created a home-directory for it - you can logout and try to login with those credentials. Use &quot;lo&quot; (or &quot;logout&quot;) to log out of the system.</p>
+
+<pre><code>$ logout
+  SYSTEM       logged out at  9-JAN-2009 23:43:01.47
+
+ Welcome to OpenVMS (TM) VAX Operating System, Version V7.3    
+
+Username: int16h
+Password: 
+ Welcome to OpenVMS (TM) VAX Operating System, Version V7.3
+
+Your password has expired; you must set a new password to log in
+
+New password: 
+Verification: 
+</code></pre>
+
+<p>As we are still using the system console, you will be notified of a &quot;System UAF record modification&quot; security event because we changed the password of a user.  </p>
+
+<p>Now that we&#39;re logged in, we want to enable our full system privileges. This is done by running &quot;<strong>set proc/priv=all</strong>&quot;. This is like running &quot;su&quot; on a UNIX-like system, except that we will still be the same user - just with &quot;superuser&quot; powers.</p>
+
+<pre><code>$ set proc/priv=all
+</code></pre>
+
+<p><a href="http://www.wherry.com/">Phil Wherry</a> was a great help with the following, as before reading his tips - I had never installed OpenVMS and additional components from scratch, only used existing systems. We are going to be installing the OpenVMS TCP/IP stack+programs, this will require us to modify resource allocations within the system. We need to edit <strong>modparams.dat</strong> in <strong>sys$system</strong>:</p>
+
+<pre><code>$ set def sys$system
+$ edit modparams.dat
+</code></pre>
+
+<p>The following lines should be added to the end of the file, save+exit by pressing CTRL-Z:</p>
+
+<pre><code>ADD_GBLPAGES=10000
+ADD_GBLSECTIONS=100
+ADD_NPAGEDYN=800000
+ADD_NPAGEVIR=800000
+MIN_SPTREQ=6000
+</code></pre>
+
+<p>Now, these changes to the system won&#39;t take affect straight away. You may remember earlier on that the OpenVMS Installation ran &quot;AUTOGEN&quot; to update the system. We will now run it manually:</p>
+
+<pre><code>$ set def sys$update
+$ @autogen getdata reboot nofeedback
+
+%AUTOGEN-I-BEGIN, GETDATA phase is beginning.
+%AUTOGEN-I-NEWFILE, A new version of SYS$SYSTEM:PARAMS.DAT has been created.
+        You may wish to purge this file.
+%AUTOGEN-I-END, GETDATA phase has successfully completed.
+%AUTOGEN-I-BEGIN, GENPARAMS phase is beginning.
+%AUTOGEN-I-NEWFILE, A new version of SYS$MANAGER:VMSIMAGES.DAT has been created.
+        You may wish to purge this file.
+
+~~
+</code></pre>
+
+<p>After many more messages, the system will shutdown and you will be back at the SIMH prompt. &quot;<strong>boot cpu</strong>&quot; then &quot;<strong>boot dua0</strong>&quot; again. To bring up the system again. Finally, login with your user-account and &quot;<strong>set proc/priv=all</strong>&quot;. We will then set some additional system parameters and shutdown the system again. As Phil said, these two processes could be done with only 1 reboot - but it&#39;s more clear this way and will help remind you that a reboot /is/ required after such alterations to the system.</p>
+
+<pre><code>$ set proc/priv=all
+$ r sys$system:sysgen
+SYSGEN&gt;  SET INTSTKPAGES 20
+SYSGEN&gt;  WRITE CURRENT
+SYSGEN&gt;  EXIT
+$ @sys$system:shutdown
+</code></pre>
+
+<p>Bring up the system again, and login.  </p>
+
+<p><strong>Installing the OpenVMS TCP/IP Stack+Programs</strong>  </p>
+
+<p>Multiuser operating systems these days are mostly useless without a TCP/IP stack, and a way for remote users to login. Now we will install the PAK for TCP/IP and install it.</p>
+
+<pre><code>$ set proc/priv=all
+$ mount/over=id dua3:
+MOUNT-I-WRITELOCK, volume is write locked
+%MOUNT-I-MOUNTED, VAXVMS073 mounted on _CGXVAX$DUA3:
+$ set def dua3:[tcpip_vax051.kit]
+</code></pre>
+
+<p>Traditionally, CD-ROMs are mounted by specifying the device and volume-ID. Providing the &quot;/over=id&quot; parameter instructs mount to mount the volume, ignoring the name of the volume. If you now execute &quot;DIR&quot; (&quot;DIRECTORY&quot;), you can see the contents of ua3:[tcpip_vax051.kit]:</p>
+
+<pre><code>$ dir
+Directory DUA3:[TCPIP_VAX051.KIT]
+
+DEC-VAXVMS-TCPIP-V0501-15-1.PCSI;1      
+
+Total of 1 file.
+</code></pre>
+
+<p>As you can see, there is 1 file in this directory and it has a .PCSI extension. This is handled by the POLYCENTER Software Installation Utility. OpenVMS applications generally come in 1 of 3 kit formats:</p>
+
+<ul>
+<li>  <strong>PCSI</strong> - These are installed with the &quot;product install&quot; command</li>
+<li>  <strong>VMSINSTAL</strong> - These are 1 or more files with a sequential extension beginning with .A</li>
+<li>  <strong>Self-Extracting</strong> - The extension can vary, usually something like SFX<em>AXPEXE, SFX</em>I64EXE or SFX_VAXEXE</li>
+</ul>
+
+<p>Anyway, to get back to our installation - we first need to install the <strong>UCX</strong> PAK. Refer to your OpenVMS Hobbyist e-mail with your licenses and paste it in:</p>
+
+<pre><code>$ $ LICENSE REGISTER UCX -
+_$ /ISSUER=OPENVMS_HOBBYIST -
+_$ /AUTHORIZATION=DECUS-XXX-#########-####### -
+_$ /PRODUCER=DEC -
+_$ /UNITS=0 -
+_$ /TERMINATION_DATE=##-XXX-####  -
+_$ /ACTIVITY=CONSTANT=100 -
+_$ /CHECKSUM=#-XXXX-XXXX-XXXX-XXXX
+
+$ license load UCX
+%LICENSE-I-LOADED, DEC UCX was successfully loaded with 0 units
+</code></pre>
+
+<p>Proceed to install the kit by issuing: &quot;**product install ***&quot; this will scan the current directory for all packages to install - as there is only one, we don&#39;t need to select which we want and don&#39;t want:</p>
+
+<pre><code>$ product install *
+
+The following product has been selected:
+    DEC VAXVMS TCPIP V5.1-15               Layered Product
+
+Do you want to continue? [YES] YES
+
+When prompted, go for the default options.
+
+The following product will be installed to destination:
+    DEC VAXVMS TCPIP V5.1-15               DISK$OVMSVAXSYS:[VMS$COMMON.]
+
+Portion done: 0% ~
+%PCSI-I-PRCOUTPUT, output from subprocess follows ...
+% - HELP has been updated. You may purge SYS$COMMON:[SYSHLP]HELPLIB.HLB 
+% 
+%PCSI-I-PRCOUTPUT, output from subprocess follows ...
+% TCPIP-W-PCSI_INSTALL 
+% - Execute SYS$MANAGER:TCPIP$CONFIG.COM to proceed with configuration of
+%   Compaq TCP/IP Services.
+% 
+Portion done: 100%
+
+The following product has been installed:
+    DEC VAXVMS TCPIP V5.1-15               Layered Product
+
+DEC VAXVMS TCPIP V5.1-15: Compaq TCP/IP Services for OpenVMS.
+</code></pre>
+
+<p>Excellent. We now have TCP/IP Services installed as well as a PAK loaded so we can actually use it (remember how I mentioned limitations if you didn&#39;t have licenses earlier?).  </p>
+
+<p>As recommended by the installation, we will run </p>
+
+<pre><code>SYS$MANGER:TCPIP$CONFIG.COM
+</code></pre>
+
+<p>to configure TCP/IP on our system.</p>
+
+<pre><code>$ @sys$manager:tcpip$config
+
+TCP/IP Network Configuration Procedure
+
+This procedure helps you define the parameters required
+to run Compaq TCP/IP Services for OpenVMS on this system. 
+
+*CLS*
+
+Compaq TCP/IP Services for OpenVMS Configuration Menu
+
+    Configuration options:
+
+         1  -  Core environment
+         2  -  Client components   
+         3  -  Server components   
+         4  -  Optional components
+
+         5  -  Shutdown Compaq TCP/IP Services for OpenVMS
+         6  -  Startup Compaq TCP/IP Services for OpenVMS
+         7  -  Run tests
+
+         A  -  Configure options 1 - 4
+        [E] -  Exit configuration procedure
+
+Enter configuration option: 
+</code></pre>
+
+<p>We start by configuring the core environment. I won&#39;t paste all menus here, just the prompts to save space.</p>
+
+<pre><code>Enter configuration option: 1
+
+    DOMAIN Configuration
+
+    Enter Internet domain: cgx.org.uk
+
+Enter configuration option: 2
+
+    QE0 is the Ethernet device XQA0:
+
+    QE0 has not been configured
+
+    Compaq TCP/IP Services for OpenVMS Interface QE0 Configuration Menu
+
+    Configuration options:
+
+         1  -  Configure interface manually       
+         2  -  Let DHCP configure interface       
+
+        [E] -  Exit menu (Do not configure interface QE0)
+
+Enter configuration option: 1
+Enter fully qualified host name: cgxvax.cgx.org.uk
+Enter Internet address for cgxvax: 10.0.0.200
+Enter Internet network mask for cgxvax [255.0.0.0]: [enter]
+Enter broadcast mask for cgxvax [10.255.255.255]: [enter]
+* Is the above correct [YES]: YES
+</code></pre>
+
+<p>We have now set the domain for our system, as well as manually configured the ethernet interface manually. You can configure this as you please of course.  </p>
+
+<p>Next we&#39;ll configure basic routing. At the moment, we wouldn&#39;t really want to use our system as a router, though the Compaq TCP/IP services does support a variety of protocols.</p>
+
+<pre><code>* Do you want to configure dynamic ROUTED or GATED routing [NO]: NO
+
+    A default route has not been configured.
+* Do you want to configure a default route [YES]: YES
+Enter your Default Gateway host name or address: 10.0.0.1
+
+    10.0.0.1 is not in the local host database.
+    If you want to enter the default gateway in the local host
+    database, enter its host name. Otherwise, enter .
+
+Enter the Default Gateway host name []: [ENTER]
+
+Next, to resolve hostnames we will need to specify a nameserver.
+
+Enter configuration option: 4
+Enter your BIND server name: 10.0.0.1
+Enter remote BIND server name []: [enter]
+Enter next BIND server name: [enter]
+
+Enter configuration option: E
+
+Now that the core configuration is complete, we can enable telnet:
+
+Enter configuration option: 2
+Enter configuration option: 6
+TELNET Configuration
+
+Service is not defined in the TCPIP$SERVICE database.
+Service is not enabled.
+Service is stopped.
+
+    TELNET configuration options:
+
+         1 - Enable service on this node
+
+        [E] - Exit TELNET configuration
+
+Enter configuration option: 1
+Creating TELNET Service entry
+</code></pre>
+
+<p>You should enable FTP from the client menu also, then exit to the main menu. Once at the main menu, chose option #6 to startup TCP/IP services.</p>
+
+<pre><code>6 - Startup Compaq TCP/IP Services for OpenVMS
+
+Begin Startup...
+
+%TCPIP-I-INFO, TCP/IP Services startup beginning at 10-JAN-2009 01:30:04.47
+%TCPIP-I-INFO, creating UCX compatibility file SYS$COMMON:[SYSEXE]UCX$SERVICE.DAT
+%TCPIP-I-NORMAL, timezone information verified
+</code></pre>
+
+<p>More messages will follow, you will then be prompted to &quot;Press Resturn to continue&quot;. Finally exit, and press &#39;Y&#39; when prompted to start your services (if not already started). You should now be able to connect to your system using telnet and FTP (though, not from the host system! This is a flaw in winpcap/libpcap not in OpenVMS or SIMH).  </p>
+
+<p>Finally, add </p>
+
+<blockquote>
+<p><code>$ @sys$startup:tcpip$startup</code></p>
+</blockquote>
+
+<p>to the &#39;<strong>sys$manager:systartup_vms.com</strong>&#39; file to enable TCP/IP services to run at boot-time.  </p>
+
+<p>Stay tuned for part 2, where we will learn more about OpenVMS, DCL and installing more software including 3rd-party products from <a href="http://www.process.com/">Process Software</a> as well as useful tools you&#39;re familiar with such as <a href="http://www.gnu.org/software/wget/">wget</a>.  </p>
+
+<p><strong>References and Links</strong></p>
+
+<ul>
+<li>  <a href="http://en.wikipedia.org/">http://en.wikipedia.org</a></li>
+<li>  <a href="http://simh.trailing-edge.com/">http://simh.trailing-edge.com</a></li>
+<li>  <a href="http://www.openvmshobbyist.com/">http://www.openvmshobbyist.com</a></li>
+<li>  <a href="http://connect-community.de/">http://connect-community.de</a></li>
+<li>  <a href="http://www.wherry.com/">http://www.wherry.com</a></li>
+<li>  <a href="https://web.archive.org/web/20090312034321/http://64.223.189.234/">http://64.223.189.234</a>  (HoffmanLabs)</li>
+</ul>
+<p>Navigation: <a href="/">/</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+### Code
+* [NCSA Mosaic 2.7](NCSA_Mosaic_OpenBSD.html) (03 Nov 2018)
+
+### Articles
+* [OpenBSD as an authoritative DNS nameserver /w DNSSEC](openbsd_nameserver.html) (31 Oct 2018)
+* [AlphaServer ES40 Emulation](AlphaServer_ES40_Emulation.html) (02 Feb 2009)
+* [OpenVMS and SIMH pt2 - UNZIP, WGET, Compaq C and WASD](OpenVMS_and_SIMH_pt2.html) (12 Jan 2009)
+* [OpenVMS and SIMH pt1 - 7.3 and TCP/IP installation](OpenVMS_and_SIMH_pt1.html) (10 Jan 2009) 
+* Security, Privacy and Anonymity on the Internet (9 Dec 2007)
+* A Step-by-Step Guide: Installing Dinah on Linux (21 Nov 2007)
+* World of Warcraft: The Burning Crusade (31 Aug 2007)
+* x86 Assembly Language for Beginners (4 June 2007)
+* Oracle 10g XE on Linux with PHP and Java - Part 1 (9 Mar 2006)
+* Oracle 10g XE on Linux with PHP and Java - Part 2 (10 Mar 2006)
+* AmigaOS on x86 (Amithlon) (21 April 2005)
+* [Beginners Guide to x86_32 Shellcoding on FreeBSD](shellcoding_on_freebsd.html) (c. 2004)
+* Simple Reversing with OllyDBG (11 May 2004)
+* Manually Unpacking UPX (2 May 2004)
+
+### System Inventory
+* Sun SPARC Enterprise T5120 running OpenBSD 6.4/sparc64
+* Sun SPARC Enterprise T5120 running Solaris 11.3 / SRU 35.6
+* DIGITAL AlphaStation 250 running OpenVMS 7.3/AXP
+* HP Integrity rx2620 running OpenVMS 8.4-2/I64
+* Fujitsu Primergy Xeon running OpenBSD 6.4/amd64
+* Lenovo V520s SFF running OpenBSD 6.4/amd64
+
+### OpenBSD resources
+* [OpenBSD manual pages](https://man.openbsd.org/)
+* [Roman Zolotarev's OpenBSD articles](https://www.romanzolotarev.com/openbsd/)
+* [BSDJobs](https://www.bsdjobs.com/)
+* [OpenBSD.amsterdam](https://openbsd.amsterdam/) - virtual machine hosting
+* [OpenBSD.space](https://openbsd.space/) - Torified virtual machine hosting
+
