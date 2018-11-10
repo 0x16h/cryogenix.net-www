@@ -1,5 +1,5 @@
 #### Beginners Guide To x86 Shellcoding on FreeBSD  
-##### by xwyzard
+A guide by Xwyzard on writing x86-32 shellcode on FreeBSD
 
   
 **Introduction**

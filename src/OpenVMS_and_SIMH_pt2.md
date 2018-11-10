@@ -1,5 +1,5 @@
 #### OpenVMS and SIMH - Part 2
-
+Running OpenVMS on the SIMH VAX simulator
 
 Welcome to the second part of  [Getting Started with OpenVMS and SIMH](OpenVMS_and_SIMH_pt1.html). This article assumes that you have already followed  [part 1](OpenVMS_and_SIMH_pt1.html)  or have at least installed  **OpenVMS VAX 7.3**  on a system, with  **dua0** containing the OS,  **dua1**  containing user-directories, and TCP/IP services are functional. If in doubt, have a quick read over what we did in the first part. For this part, we will install and use  **UNZIP**,  **wget**,  **Compaq C** and the  **WASD**  HTTP server.  
   

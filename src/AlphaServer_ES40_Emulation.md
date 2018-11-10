@@ -1,4 +1,5 @@
-## AlphaServer ES40 Emulation
+#### AlphaServer ES40 Emulation
+Emulating an AlphaServer ES40 for running Tru64 UNIX or OpenVMS
 
 This article was originally written for CentOS. Building ES40 on OpenBSD requires some extra work; I'll port it soon and update this page in the near future. -- 31-OCT-2018
 

@@ -1,4 +1,6 @@
 #### OpenBSD as an authoritative DNS nameserver
+Configuring NSD on OpenBSD as an authoritative DNS nameserver
+
 OpenBSD ships with the [NLnet Labs Name Server Daemon](https://nlnetlabs.nl/projects/nsd/about/) - [nsd(8)](http://man.openbsd.org/nsd), a fast and secure (DNSSEC-enabled) implementation of an authoritative DNS nameserver.
 
 First we should generate a [TSIG](https://en.wikipedia.org/wiki/TSIG) (Transaction SIGnature) key. If using hmac-md5:

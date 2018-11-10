@@ -1,12 +1,14 @@
+#### Cryogenix
+A collection of code, articles and papers
 
 ### Code
-* [NCSA Mosaic 2.7](NCSA_Mosaic_OpenBSD.html) (03 Nov 2018)
+* [NCSA Mosaic 2.7 on OpenBSD](NCSA_Mosaic_OpenBSD.html "NCSA Mosaic 2.7 on OpenBSD") (03 Nov 2018)
 
 ### Articles
-* [OpenBSD as an authoritative DNS nameserver /w DNSSEC](openbsd_nameserver.html) (31 Oct 2018)
-* [AlphaServer ES40 Emulation](AlphaServer_ES40_Emulation.html) (02 Feb 2009)
-* [OpenVMS and SIMH pt2 - UNZIP, WGET, Compaq C and WASD](OpenVMS_and_SIMH_pt2.html) (12 Jan 2009)
-* [OpenVMS and SIMH pt1 - 7.3 and TCP/IP installation](OpenVMS_and_SIMH_pt1.html) (10 Jan 2009) 
+* [OpenBSD as an authoritative DNS nameserver /w DNSSEC](openbsd_nameserver.html "OpenBSD as an Authoritative Nameserver") (31 Oct 2018)
+* [AlphaServer ES40 Emulation](AlphaServer_ES40_Emulation.html "AlphaServer ES40 Emulation") (02 Feb 2009)
+* [OpenVMS and SIMH pt2 - UNZIP, WGET, Compaq C and WASD](OpenVMS_and_SIMH_pt2.html "OpenVMS and SIMH part 1") (12 Jan 2009)
+* [OpenVMS and SIMH pt1 - 7.3 and TCP/IP installation](OpenVMS_and_SIMH_pt1.html "OpenVMS and SIMH part 2") (10 Jan 2009) 
 * Security, Privacy and Anonymity on the Internet (9 Dec 2007)
 * A Step-by-Step Guide: Installing Dinah on Linux (21 Nov 2007)
 * World of Warcraft: The Burning Crusade (31 Aug 2007)
@@ -14,7 +16,7 @@
 * Oracle 10g XE on Linux with PHP and Java - Part 1 (9 Mar 2006)
 * Oracle 10g XE on Linux with PHP and Java - Part 2 (10 Mar 2006)
 * AmigaOS on x86 (Amithlon) (21 April 2005)
-* [Beginners Guide to x86_32 Shellcoding on FreeBSD](shellcoding_on_freebsd.html) (c. 2004)
+* [Beginners Guide to x86_32 Shellcoding on FreeBSD](shellcoding_on_freebsd.html "Shellcoding on FreeBSD") (c. 2004)
 * Simple Reversing with OllyDBG (11 May 2004)
 * Manually Unpacking UPX (2 May 2004)
 

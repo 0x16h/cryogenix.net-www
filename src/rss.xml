@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<atom:link href="https://cryogenix.net/rss.xml" rel="self" type="application/rss+xml" />
+<title>Cryogenix</title>
+<description>A collection of code, articles and papers</description>
+<link>https://cryogenix.net/</link>
+<lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
+
+<item>
+<guid>https://cryogenix.net/NCSA_Mosaic_OpenBSD.html</guid>
+<link>https://cryogenix.net/NCSA_Mosaic_OpenBSD.html</link>
+<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<title>NCSA Mosaic 2.7 on OpenBSD</title>
+<description><![CDATA[
+
+NCSA Mosaic 2.7 on OpenBSD
+
+]]></description>
+</item>
+
+<item>
+<guid>https://cryogenix.net/openbsd_nameserver.html</guid>
+<link>https://cryogenix.net/openbsd_nameserver.html</link>
+<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<title>OpenBSD as an authoritative DNS nameserver</title>
+<description><![CDATA[
+
+OpenBSD as an authoritative DNS nameserver
+
+]]></description>
+</item>
+
+<item>
+<guid>https://cryogenix.net/AlphaServer_ES40_Emulation.html</guid>
+<link>https://cryogenix.net/AlphaServer_ES40_Emulation.html</link>
+<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<title>AlphaServer ES40 Emulation</title>
+<description><![CDATA[
+
+AlphaServer ES40 Emulation
+
+]]></description>
+</item>
+
+<item>
+<guid>https://cryogenix.net/OpenVMS_and_SIMH_pt2.html</guid>
+<link>https://cryogenix.net/OpenVMS_and_SIMH_pt2.html</link>
+<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<title>OpenVMS and SIMH - Part 2</title>
+<description><![CDATA[
+
+OpenVMS and SIMH - Part 2
+
+]]></description>
+</item>
+
+<item>
+<guid>https://cryogenix.net/OpenVMS_and_SIMH_pt1.html</guid>
+<link>https://cryogenix.net/OpenVMS_and_SIMH_pt1.html</link>
+<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<title>OpenVMS and SIMH - Part 1</title>
+<description><![CDATA[
+
+OpenVMS and SIMH - Part 1
+
+]]></description>
+</item>
+
+<item>
+<guid>https://cryogenix.net/shellcoding_on_freebsd.html</guid>
+<link>https://cryogenix.net/shellcoding_on_freebsd.html</link>
+<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<title>Beginners Guide To x86 Shellcoding on FreeBSD</title>
+<description><![CDATA[
+
+Beginners Guide To x86 Shellcoding on FreeBSD
+
+]]></description>
+</item>
+</channel></rss>

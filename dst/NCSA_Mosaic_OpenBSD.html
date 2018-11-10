@@ -147,20 +147,27 @@ p {
 }</style>
 </head>
 <body>
-<a href="https://cryogenix.net"><img border=3 width=300 src="cryo.jpg" alt="Cryogenix"/></a>
-<p>Navigation: <a href="/">/</a>  <a href="https://twitter.com/0x16h">Twitter</a></p>
+<body bgcolor="#000000" text="#FFFFFF">
+<img width=300 src="cryo.jpg" alt="Cryogenix"/>
+<p>Navigation: <a href="/">/</a> <a href="/rss.xml">/rss.xml</a> <a href="https://github.com/0x16h/">/github</a>  <a href="https://twitter.com/0x16h">/Twitter</a> /<a href="https://www.patreon.com/0x16h">/Patreon</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
 <h4 id="NCSA%20Mosaic%202.7%20on%20OpenBSD">NCSA Mosaic 2.7 on OpenBSD</h4>
 
+<p>A classic web browser, now available on OpenBSD</p>
+
 <p>Added OpenBSD support and upgraded the archaic libpng code so you too can enjoy this historic web browser. NCSA&#39;s site causes a coredump, so run the binary with another URL as an argument. It&#39;s not great as a browser on the modern web, but it does make a great gopher client!</p>
 
-<pre><code>$ git clone https://github.com/0x16h/ncsa-mosaic
+<p>Now using Cameron Kaiser&#39;s patches and alternative (&#39;modern&#39;) renderer.  This needs a serious code audit before even considering submitting to ports.</p>
+
+<pre><code>$ git clone https://github.com/0x16h/mosaic-CK-openbsd
 $ doas pkg_add motif
-$ cd ncsa-mosaic &amp;&amp; make openbsd
+$ cd mosaic-CK-openbsd &amp;&amp; make openbsd
 $ src/Mosaic gopher://gopher.club
 </code></pre>
 
-<p><img src="mosaic.png" alt="Mosaic Screenshot" /></p>
+<p><img src="fvwm.png" alt="Mosaic Screenshot" />
+<img src="mosaic-ck.png" alt="Mosaic Screenshot" />
+<img src="mosaic-ck-2.png" alt="Mosaic Screenshot 2" /></p>
 <p>Navigation: <a href="/">/</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
 <p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
