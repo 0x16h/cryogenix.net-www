@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="romanzolotarev.com/bin/ssg3">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>Cryogenix</title>
+<style>body {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 10px;
+  background-color: #000000;
+  color: #9ba4b2;
+  background: url(data:image/gif;base64,R0lGODlhBgAGAJEAAP///xYWFgAAAAAAACwAAAAABgAGAAACCpQdhyqpfoKcoQAAOw==);
+}
+
+a {
+  color: #204fd5;
+ font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+  color: #334f83;
+}
+a:hover {
+    text-decoration: underline;
+  color: #204fd5;
+}
+
+body,
+input,
+button {
+  font-size: 20px;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+hr,
+h1,
+h2 {
+  margin-top: 60px;
+}
+
+hr {
+  border: 0;
+}
+
+li {
+  padding: 5px 0;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+pre {
+  font-size: 15px;
+  overflow-x: auto;
+}
+
+pre,
+blockquote {
+  margin-bottom: 40px;
+}
+
+p img,
+table {
+  width: 100%;
+}
+
+p {
+  clear: both;
+}
+
+.avatar {
+  width: 60px;
+  heigth: 60px;
+  border-radius: 60px;
+}
+
+.left {
+  float: left;
+  margin: 8px 24px 24px 0;
+}
+
+.quote {
+  text-indent: -16px;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.button,
+.email {
+  -webkit-appearance: none;
+  color: #000000;
+  padding: 15px;
+}
+
+.email {
+  background-color: #ffffff;
+  border: solid 1px #888888;
+}
+
+.button {
+  background-color: #ffc469;
+  border: solid 1px #ffc469;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+h1 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+pre {
+  overflow-x: auto;
+  color: white;
+}
+
+pre>code {
+	background-color: #3c4047;
+box-sizing: border-box;
+display: block;
+    white-space: pre;
+  overflow-x: auto;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+	    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+	padding-top: 2px;
+    padding-right: 4px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+} 
+ul {
+ background-color: black;
+}
+p {
+ background-color: black;
+ padding: 5px;
+}</style>
+</head>
+<body>
+<body bgcolor="#000000" text="#FFFFFF">
+<img width=300 src="cryo.jpg" alt="Cryogenix"/>
+<p>Navigation: <a href="/">/</a> <a href="/rss.xml">/rss.xml</a> <a href="https://github.com/0x16h/">/github</a>  <a href="https://twitter.com/0x16h">/Twitter</a> <a href="https://www.patreon.com/0x16h">/Patreon</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<h4 id="Reverse%20Engineering%20Tutorial:%20level1%20-%20What&amp;#39;s%20the%20password?">Reverse Engineering Tutorial: level1 - What&#39;s the password?</h4>
+
+<p>Welcome to level1 of the Reverse Engineering Tutorial.  I will be using OpenBSD 6.4/amd64 to demonstrate one way to solve level1 of the 
+Cryogenix wargame (yet TBA).</p>
+
+<p>You may download the binary, or if you&#39;re a bit tinfoilhat-inclined the source is also available.  You&#39;ll also need gdb (lldb will be added at 
+a later date), binutils, and optionally Vim.</p>
+
+<h5 id="Get%20level1">Get level1</h5>
+
+<p>Binary (OpenBSD/amd64):</p>
+
+<pre><code>ftp https://cryogenix.net/RET/level1/level1
+</code></pre>
+
+<p>Source:</p>
+
+<pre><code>ftp https://cryogenix.net/RET/level1/level1.c
+gcc -fno-stack-protector -o level1 level1.c
+</code></pre>
+
+<h5 id="Let&amp;#39;s%20begin...">Let&#39;s begin...</h5>
+
+<pre><code>./level1
+
+Welcome to Cryogenix
+Password: 12345
+
+12345 is incorrect!
+$
+</code></pre>
+
+<p>Our goal is, if it wasn&#39;t immediately obvious, to find the correct password - or otherwise access what requires the correct password to 
+level1.  This could be accomplished through static (disassembly) techniques, but that would be boring!  Let&#39;s load our binary into gdb:</p>
+
+<pre><code>$ gdb level1
+</code></pre>
+
+<p>Set a breakpoint on main() and run the program to see what we&#39;re dealing with</p>
+
+<pre><code>(gdb) b main
+Breakpoint 1 at 0x772
+(gdb) r
+Breakpoint 1 at 0x54486b00772
+Breakpoint 1, 0x0000054486b00772 in main ()
+    from /home/level1/level1
+</code></pre>
+
+<p>Next we instruct gdb to disassemble the current function:</p>
+
+<pre><code>(gdb) disas
+
+Dump of assembler code for function main:
+0x0000054486b0076e &lt;main+0&gt;:    push   %rbp
+76f &lt;main+1&gt;:    mov    %rsp,%rbp
+772 &lt;main+4&gt;:    lea    1050137(%rip),%rdi   # 0x54486c
+779 &lt;main+11&gt;:   callq  0x54486b003a0 &lt;__init+80&gt;
+77e &lt;main+16&gt;:   lea    1050147(%rip),%rdi   # 0x54486c00da8
+785 &lt;main+23&gt;:   mov    $0x0,%eax
+78a &lt;main+28&gt;:   callq  0x54486b00370 &lt;__init+32&gt;
+78f &lt;main+33&gt;:   mov    $0x0,%eax
+794 &lt;main+38&gt;:   callq  0x54486b00700 &lt;checkpass&gt;
+799 &lt;main+43&gt;:   leaveq
+79a &lt;main+44&gt;:   retq
+79b &lt;main+45&gt;:   int3
+End of assembler dump.
+</code></pre>
+
+<p>We&#39;re fortunate here that gdb is aware of a function named &#39;checkpass&#39; - so there&#39;s no point teasing you with the other calls that could be 
+interesting but probably are not; it&#39;s safe to assume they are printing text to stdout ;).  Let&#39;s create a breakpoint on checkpass():</p>
+
+<pre><code>(gdb) b checkpass
+Breakpoint 2 at 0xe4f6ee00704
+(gdb) c
+Continuing.
+
+Welcome to Cryogenix
+
+Breakpoint 2, 0x00000e4f6ee00704 in checkpass ()
+    from /home/level1/level1
+(gdb) disas
+
+Dump of assembler code for function checkpass:
+0x00000e4f6ee00700 &lt;checkpass+0&gt;:       push   %rbp
+0x00000e4f6ee00701 &lt;checkpass+1&gt;:       mov    %rsp,%rbp
+0x00000e4f6ee00704 &lt;checkpass+4&gt;:       sub    $0x10,%rsp
+0x00000e4f6ee00708 &lt;checkpass+8&gt;:       lea    0xfffffffffffffff3(%rbp),%rdi
+0x00000e4f6ee0070c &lt;checkpass+12&gt;:      callq  0xe4f6ee005e4 &lt;gets&gt;
+0x00000e4f6ee00711 &lt;checkpass+17&gt;:      lea    0xfffffffffffffff3(%rbp),%rsi
+0x00000e4f6ee00715 &lt;checkpass+21&gt;:      lea    2103524(%rip),%rdi        # 0xe4f6f002000 &lt;password&gt;
+0x00000e4f6ee0071c &lt;checkpass+28&gt;:      callq  0xe4f6ee003c0 &lt;__init+112&gt;
+0x00000e4f6ee00721 &lt;checkpass+33&gt;:      mov    %eax,0xfffffffffffffffc(%rbp)
+0x00000e4f6ee00724 &lt;checkpass+36&gt;:      cmpl   $0x0,0xfffffffffffffffc(%rbp)
+0x00000e4f6ee00728 &lt;checkpass+40&gt;:      jne    0xe4f6ee0074d &lt;checkpass+77&gt;
+0x00000e4f6ee0072a &lt;checkpass+42&gt;:      lea    0xfffffffffffffff3(%rbp),%rsi
+0x00000e4f6ee0072e &lt;checkpass+46&gt;:      lea    1050155(%rip),%rdi        # 0xe4f6ef00d60 &lt;__fini+1050048&gt;
+0x00000e4f6ee00735 &lt;checkpass+53&gt;:      mov    $0x0,%eax
+0x00000e4f6ee0073a &lt;checkpass+58&gt;:      callq  0xe4f6ee00370 &lt;__init+32&gt;
+0x00000e4f6ee0073f &lt;checkpass+63&gt;:      lea    1050155(%rip),%rdi        # 0xe4f6ef00d71 &lt;__fini+1050065&gt;
+0x00000e4f6ee00746 &lt;checkpass+70&gt;:      callq  0xe4f6ee003a0 &lt;__init+80&gt;
+0x00000e4f6ee0074b &lt;checkpass+75&gt;:      jmp    0xe4f6ee0076c &lt;checkpass+108&gt;
+0x00000e4f6ee0074d &lt;checkpass+77&gt;:      lea    0xfffffffffffffff3(%rbp),%rsi
+0x00000e4f6ee00751 &lt;checkpass+81&gt;:      lea    1050151(%rip),%rdi        # 0xe4f6ef00d7f &lt;__fini+1050079&gt;
+0x00000e4f6ee00758 &lt;checkpass+88&gt;:      mov    $0x0,%eax
+0x00000e4f6ee0075d &lt;checkpass+93&gt;:      callq  0xe4f6ee00370 &lt;__init+32&gt;
+0x00000e4f6ee00762 &lt;checkpass+98&gt;:      mov    $0x1,%edi
+0x00000e4f6ee00767 &lt;checkpass+103&gt;:     callq  0xe4f6ee003f0 &lt;__init+160&gt;
+0x00000e4f6ee0076c &lt;checkpass+108&gt;:     leaveq
+0x00000e4f6ee0076d &lt;checkpass+109&gt;:     retq
+End of assembler dump.
+</code></pre>
+
+<p>If you aren&#39;t familiar with x86_64 assembly, here&#39;s a commentary of what&#39;s happening in the checkpass() function:</p>
+
+<pre><code>700: push   %rbp                # - push/save (to the stack) the old stack pointer stored in %rbp 
+                    # (base pointer register) onto the stack
+
+701: mov    %rsp,%rbp           # - copy the contents of the stack pointer register 
+                    # (%rsp) into the base pointer register (%rbp)
+
+704: sub    $0x10,%rsp          # - subtract 0x10 (16 decimal) from the stack pointer
+
+
+708: lea    0xfffffffffffffff3(%rbp),%rdi   # - calculate and move whatever is at %rbp-13 into %rdi (register dest index)
+
+70c: callq  0xe4f6ee005e4 &lt;gets&gt;        # - call gets() (which begins at address 0xe4f6ee005e4 - a function inside our program!)
+
+711: lea        0xfffffffffffffff3(%rbp),%rsi   # - copy %rbp-13 to %rsi (register source index)
+</code></pre>
+
+<p>By this point, input has been read from stdin and copied to $rax. This can be confirmed if you type (gdb) ni (next instruction) until after 
+you are asked for the password, then: (gdb) x/s $rax - examine string in the rax register.  We can also see what the lea instruction is 
+actually copying by doing (gdb) x/s $rbp-13 and (gdb) x/s $rsi - it&#39;s our entered password!</p>
+
+<pre><code>715: lea    2103524(%rip),%rdi      
+</code></pre>
+
+<p>715: load whatever is at %rip+2103524 into %rdi. %rip (instruction pointer register)
+addresses are relative to the instruction pointer register - i.e. the next instruction,
+so are used for global variables. Whatever is at %rip+2103524 is a global var.
+0xe4f6ee0071c+0x2018E4 (2103524 in hex) = 0xe4f6f002000 (gdb helpfully tells us the var
+name at this address. SPOILER: (gdb) x/s 0xe4f6f002000 or (gdb) x/s $rip+2103524.</p>
+
+<p><em>BIG SPOILER</em> for the impatient:
+    (gdb) x/s $rip+2103524
+    0xe4f6f002000 <a href="gdb">REDACTED</a> set {char[6]}0xe4f6f002000 = &quot;12345&quot;
+    (gdb) x/s $rip+2103524
+    (gdb) c</p>
+
+<pre><code>71c: callq  0xe4f6ee003c0 &lt;__init+112&gt;  
+</code></pre>
+
+<p>71c: - this is somewhat specific to the platform compiled on (OpenBSD); in gdb, type:
+(gdb) x/i 0xe4f6ee003c0 - x/i is shorthand for &#39;examine instruction&#39;. The instruction
+called at that address is a jmp to __retguard - the OpenBSD stack protector.</p>
+
+<pre><code>721: mov    %eax,0xfffffffffffffffc(%rbp)   # copy eax into %rbp-4
+724: cmpl   $0x0,0xfffffffffffffffc(%rbp)   # if $0x0 = %rbp-4 [set zero flag]:
+728: jne    0xe4f6ee0074d           # If not equal, jump to 74d (incorrect password)
+</code></pre>
+
+<p>If you didn&#39;t opt for the <em>SPOILER</em> or <em>BIG SPOILER</em>, we have another opportunity opportunity to win this level,
+though it is a little sloppy - and is a bit of a &#39;cheat&#39;.</p>
+
+<p>We now Know that there is a jne instruction at 0xe4f6ee00728 that decides whether the password we entered is correct or not;
+assembly language is assembled into machine language - which, among other things, contains our assembly instructions
+as opcodes. Opcodes are specific to each CPU architecture.</p>
+
+<p>If you study Intel architecture manuals, you will find that jne (jnz in intel syntax) is a one-byte op-code. If you don&#39;t have
+a reference handy, use gdb to examine the first byte at address 0xe4f6ee00728:</p>
+
+<pre><code>(gdb) x/1bx 0x00000678b7200728
+0x678b7200728 &lt;checkpass+40&gt;:   0x75
+</code></pre>
+
+<p>So our opcode for jne/jnz is 0x75.  To save you looking it up, I can tell you that the opcode for the opposing instruction - je/jz - is 0x74.
+We are going to change the instruction, not in memory this time, but in the actual executable file (I told you it was sloppy). </p>
+
+<p>To find the physical offset of our instruction, it is necessary to view the Elf headers (assuming you are using an OS which uses the Elf format for executables); for this we can use readelf (part of binutils):</p>
+
+<pre><code>$ readelf -l level1
+</code></pre>
+
+<p>We are looking for a LOAD header with the executable (E) flag:</p>
+
+<pre><code>Type  Offset             VirtAddr           PhysAddr           FileSiz            MemSiz              Flags  Align
+LOAD  0x0000000000000000 0x0000000000000000 0x0000000000000000 0x00000000000007ae 0x00000000000007ae  R E    100000
+</code></pre>
+
+<p>Our offset, virtual address and physical address are all 0x0 - so 0x00000678b7200728 (virtual/memory address) is equal to 0x00000728 (physical address). If the Offset was a different value, or if VirtAddr and PhysAddr differed - you would need to do some hexadecimal arithmetic. </p>
+
+<p>Using xxd, we can view 16 bytes starting at 0x00000678b7200720 which will include our instruction at *728:</p>
+
+<pre><code>$ xxd -s 0x720 -l 16 level1
+00000720: ff89 45fc 837d fc00 7523 488d 75f3 488d  ..E..}..u#H.u.H.
+</code></pre>
+
+<p>Or, if you prefer hexdump(1):</p>
+
+<pre><code>$ hexdump -C -s 0x720 -n 16 level1
+00000720  ff 89 45 fc 83 7d fc 00  75 23 48 8d 75 f3 48 8d  |..E..}..u#H.u.H.|
+</code></pre>
+
+<p>There are two 0x75 bytes listed, so count along from 0x720 to 0x728 to confirm which is the opcode we are looking for.</p>
+
+<p>We could do something fancy in a ksh script and xxd, but I think you&#39;ve been through enough for level1 - so we will edit the file using Vim:</p>
+
+<pre><code>$ vim -b level1
+:set syntax=xxd
+:%!xxd
+</code></pre>
+
+<p>Move down to 00000720, find our lucky number 75 and change it to 74.  Next use xxd&#39;s reverse (-r) option and save the file:</p>
+
+<pre><code>:%!xxd -r
+:wq
+</code></pre>
+
+<p>Confirm that the changes were made:</p>
+
+<pre><code>$ xxd -s 0x720 -l 16 level1
+00000720: ff89 45fc 837d fc00 7423 488d 75f3 488d  ..E..}..u#H.t.H.
+</code></pre>
+
+<p>Brilliant! Now to test:</p>
+
+<pre><code>$ ./level1
+
+Welcome to Cryogenix
+Password: yourmum
+
+yourmum is correct!
+
+Secret stuff
+</code></pre>
+
+<p>We&#39;re covered quite a lot in this short tutorial, particularly if you weren&#39;t familiar with the tools we used.  I suggest you read the man pages for them all so you can familiarise yourself fully with them before trying the yet-to-be-released level2!</p>
+
+<p>level1 was written in a way that it could be solved through a number of methods - this tutorial covered a couple of them.  There are intentional vulnerabilities in the code which could be exploited and will be covered in a separate line of tutorials, but the <em>biggest spoiler</em> of them all is that you could have solved this level simply by viewing the strings in our executable file:</p>
+
+<pre><code>$ strings level1 | tail -n 5
+</code></pre>
+
+<p>Oops!</p>
+
+<p>I hope you enjoyed this lesson, and appreciate any feedback or ideas for subsequent levels and tutorials.</p>
+<p>Navigation: <a href="/">/</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
+</body>
+</html>

@@ -5,12 +5,12 @@
 <title>Cryogenix</title>
 <description>A collection of code, articles and papers</description>
 <link>https://cryogenix.net/</link>
-<lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
+<lastBuildDate>Mon, 12 Nov 2018 00:00:00 +0000</lastBuildDate>
 
 <item>
 <guid>https://cryogenix.net/NCSA_Mosaic_OpenBSD.html</guid>
 <link>https://cryogenix.net/NCSA_Mosaic_OpenBSD.html</link>
-<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
 <title>NCSA Mosaic 2.7 on OpenBSD</title>
 <description><![CDATA[
 
@@ -20,9 +20,21 @@ NCSA Mosaic 2.7 on OpenBSD
 </item>
 
 <item>
+<guid>https://cryogenix.net/RET_level1.html</guid>
+<link>https://cryogenix.net/RET_level1.html</link>
+<pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
+<title>Reverse Engineering Tutorial: level1 - What&#39;s the password?</title>
+<description><![CDATA[
+
+Reverse Engineering Tutorial: level1 - What&#39;s the password?
+
+]]></description>
+</item>
+
+<item>
 <guid>https://cryogenix.net/openbsd_nameserver.html</guid>
 <link>https://cryogenix.net/openbsd_nameserver.html</link>
-<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
 <title>OpenBSD as an authoritative DNS nameserver</title>
 <description><![CDATA[
 
@@ -34,7 +46,7 @@ OpenBSD as an authoritative DNS nameserver
 <item>
 <guid>https://cryogenix.net/AlphaServer_ES40_Emulation.html</guid>
 <link>https://cryogenix.net/AlphaServer_ES40_Emulation.html</link>
-<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
 <title>AlphaServer ES40 Emulation</title>
 <description><![CDATA[
 
@@ -46,7 +58,7 @@ AlphaServer ES40 Emulation
 <item>
 <guid>https://cryogenix.net/OpenVMS_and_SIMH_pt2.html</guid>
 <link>https://cryogenix.net/OpenVMS_and_SIMH_pt2.html</link>
-<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
 <title>OpenVMS and SIMH - Part 2</title>
 <description><![CDATA[
 
@@ -58,7 +70,7 @@ OpenVMS and SIMH - Part 2
 <item>
 <guid>https://cryogenix.net/OpenVMS_and_SIMH_pt1.html</guid>
 <link>https://cryogenix.net/OpenVMS_and_SIMH_pt1.html</link>
-<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
 <title>OpenVMS and SIMH - Part 1</title>
 <description><![CDATA[
 
@@ -70,7 +82,7 @@ OpenVMS and SIMH - Part 1
 <item>
 <guid>https://cryogenix.net/shellcoding_on_freebsd.html</guid>
 <link>https://cryogenix.net/shellcoding_on_freebsd.html</link>
-<pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+<pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
 <title>Beginners Guide To x86 Shellcoding on FreeBSD</title>
 <description><![CDATA[
 
