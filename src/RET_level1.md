@@ -106,10 +106,10 @@ interesting but probably are not; it's safe to assume they are printing text to 
 If you aren't familiar with x86_64 assembly, here's a commentary of what's happening in the checkpass() function:
 
     700: push	%rbp				# - push/save (to the stack) the old stack pointer stored in %rbp 
-						# (base pointer register) onto the stack
+    						# (base pointer register) onto the stack
 
     701: mov	%rsp,%rbp			# - copy the contents of the stack pointer register 
-						# (%rsp) into the base pointer register (%rbp)
+    						# (%rsp) into the base pointer register (%rbp)
 
     704: sub	$0x10,%rsp			# - subtract 0x10 (16 decimal) from the stack pointer
 
