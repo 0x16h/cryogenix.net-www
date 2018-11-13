@@ -90,3 +90,14 @@ Proceed to install OpenBSD as normal; at set selection -x* -g* is recommended. T
     login:
 
 Done.
+
+    $ uname -a
+    OpenBSD foo.cryogenix.net 6.4 GENERIC#511 arm64
+    
+    $ sysinfo.pl
+    Hostname: foo - OS: OpenBSD 6.4/arm64 - CPU:  - Processes: 31 
+    Uptime: 2m - Users: 1 - Load Average: 1.19 - 
+    Memory Usage: 26.94MB/1990.47MB (1.35%) - 
+    Disk Usage: 0.62GB/9.73GB (6.42%)
+    
+    cc -dumpmachine: aarch64-unknown-openbsd6.4
