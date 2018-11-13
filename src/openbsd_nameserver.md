@@ -37,6 +37,10 @@ Open **/var/nsd/etc/nsd.conf** and create a simple configuration for our example
     zone:
             name: "foresthall.org.uk"
             zonefile: "master/foresthall.org.uk"
+            notify: 192.0.2.69 sec_key
+            provide-xfr: 192.0.2.69 sec_key
+
+The IP in the last two lines should be that of your slave. If you are configuring the slave, this IP should be that of the master.
 
 The default base location (OpenBSD users rarely deviate from good defaults!) for zonefiles is **/var/nsd/zones** so we create the file **/var/nsd/zones/master/foresthall.org.uk**:
 
@@ -52,6 +56,7 @@ The default base location (OpenBSD users rarely deviate from good defaults!) for
                )
     
             NS      ns1.cryogenix.net.
+            NS      ns2.cryogenix.net.
     @        MX    10 mail.foresthall.org.uk.
     www     IN      A       82.35.249.157
     mail    IN      A       82.35.249.157
@@ -176,4 +181,4 @@ The easiest way to verify everything is working is to check the domain on [inter
 
 Unfortunately, this setup requires maintenance - the DNSSEC signatures will expire in four weeks (thanks [@Habbie](https://twitter.com/Habbie)!), so some hackery with shell scripts and cron jobs is probably the best solution until something more robust is included in OpenBSD.  One such example is [sign-DNSSEC](https://github.com/wekers/Sign-DNSSEC).
 
-TODO: Setup a slave
+To setup a slave, follow this procedure again - but replace the allow-notify and request-xfr IP with that of the master nameserver.  Once both are up and running, use nsd-control(8) with the force_transfer command to test a zone transfer.

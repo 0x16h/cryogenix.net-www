@@ -195,7 +195,11 @@ key:
 zone:
         name: &quot;foresthall.org.uk&quot;
         zonefile: &quot;master/foresthall.org.uk&quot;
+        notify: 192.0.2.69 sec_key
+        provide-xfr: 192.0.2.69 sec_key
 </code></pre>
+
+<p>The IP in the last two lines should be that of your slave. If you are configuring the slave, this IP should be that of the master.</p>
 
 <p>The default base location (OpenBSD users rarely deviate from good defaults!) for zonefiles is <strong>/var/nsd/zones</strong> so we create the file <strong>/var/nsd/zones/master/foresthall.org.uk</strong>:</p>
 
@@ -211,6 +215,7 @@ $TTL 86400                    ; default time to live
            )
 
         NS      ns1.cryogenix.net.
+        NS      ns2.cryogenix.net.
 @        MX    10 mail.foresthall.org.uk.
 www     IN      A       82.35.249.157
 mail    IN      A       82.35.249.157
@@ -352,7 +357,7 @@ DS 28892 7 2 FA1B31305013E427A8DAC5318FBF6FFCDBFDA94309DDF12EBDCA101A 5E07167D f
 
 <p>Unfortunately, this setup requires maintenance - the DNSSEC signatures will expire in four weeks (thanks <a href="https://twitter.com/Habbie">@Habbie</a>!), so some hackery with shell scripts and cron jobs is probably the best solution until something more robust is included in OpenBSD.  One such example is <a href="https://github.com/wekers/Sign-DNSSEC">sign-DNSSEC</a>.</p>
 
-<p>TODO: Setup a slave</p>
+<p>To setup a slave, follow this procedure again - but replace the allow-notify and request-xfr IP with that of the master nameserver.  Once both are up and running, use nsd-control(8) with the force_transfer command to test a zone transfer.</p>
 <p>Navigation: <a href="/">/</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
 <p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
