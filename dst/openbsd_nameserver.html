@@ -357,6 +357,8 @@ DS 28892 7 2 FA1B31305013E427A8DAC5318FBF6FFCDBFDA94309DDF12EBDCA101A 5E07167D f
 
 <p>Unfortunately, this setup requires maintenance - the DNSSEC signatures will expire in four weeks (thanks <a href="https://twitter.com/Habbie">@Habbie</a>!), so some hackery with shell scripts and cron jobs is probably the best solution until something more robust is included in OpenBSD.  One such example is <a href="https://github.com/wekers/Sign-DNSSEC">sign-DNSSEC</a>.</p>
 
+<p>Update: Callum Smith, author of <a href="https://github.com/cullum/dank-selfhosted/">dank-selfhosted</a> has a very clean script which can be run in a cron nightly <a href="https://github.com/cullum/dank-selfhosted/blob/master/roles/nsd/files/resign-zone.sh">here</a></p>
+
 <p>To setup a slave, follow this procedure again - but replace the allow-notify and request-xfr IP with that of the master nameserver.  Once both are up and running, use nsd-control(8) with the force_transfer command to test a zone transfer.</p>
 <p>Navigation: <a href="/">/</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>

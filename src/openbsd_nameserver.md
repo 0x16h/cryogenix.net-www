@@ -181,4 +181,6 @@ The easiest way to verify everything is working is to check the domain on [inter
 
 Unfortunately, this setup requires maintenance - the DNSSEC signatures will expire in four weeks (thanks [@Habbie](https://twitter.com/Habbie)!), so some hackery with shell scripts and cron jobs is probably the best solution until something more robust is included in OpenBSD.  One such example is [sign-DNSSEC](https://github.com/wekers/Sign-DNSSEC).
 
+Update: Callum Smith, author of [dank-selfhosted](https://github.com/cullum/dank-selfhosted/) has a very clean script which can be run in a cron nightly [here](https://github.com/cullum/dank-selfhosted/blob/master/roles/nsd/files/resign-zone.sh)
+
 To setup a slave, follow this procedure again - but replace the allow-notify and request-xfr IP with that of the master nameserver.  Once both are up and running, use nsd-control(8) with the force_transfer command to test a zone transfer.
