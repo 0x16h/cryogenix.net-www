@@ -105,22 +105,31 @@ interesting but probably are not; it's safe to assume they are printing text to 
 
 If you aren't familiar with x86_64 assembly, here's a commentary of what's happening in the checkpass() function:
 
-    700: push	%rbp				
+    700: push	%rbp
 
 700: push/save (to the stack) the old stack pointer stored in %rbp 
 (base pointer register) onto the stack
 
-    701: mov	%rsp,%rbp			# - copy the contents of the stack pointer register 
-    						# (%rsp) into the base pointer register (%rbp)
+    701: mov	%rsp,%rbp
 
-    704: sub	$0x10,%rsp			# - subtract 0x10 (16 decimal) from the stack pointer
+701: copy the contents of the stack pointer register 
+(%rsp) into the base pointer register (%rbp)
 
+    704: sub	$0x10,%rsp
 
-    708: lea	0xfffffffffffffff3(%rbp),%rdi	# - calculate and move whatever is at %rbp-13 into %rdi (register dest index)
+704: subtract 0x10 (16 decimal) from the stack pointer
 
-    70c: callq	0xe4f6ee005e4 <gets>		# - call gets() (which begins at address 0xe4f6ee005e4 - a function inside our program!)
+    708: lea	0xfffffffffffffff3(%rbp),%rdi	
 
-    711: lea        0xfffffffffffffff3(%rbp),%rsi   # - copy %rbp-13 to %rsi (register source index)
+708: calculate and move whatever is at %rbp-13 into %rdi (register dest index)
+
+    70c: callq	0xe4f6ee005e4 <gets>
+
+70c: call gets() (which begins at address 0xe4f6ee005e4 - a function inside our program!)
+
+    711: lea        0xfffffffffffffff3(%rbp),%rsi
+
+711: copy %rbp-13 to %rsi (register source index)
 
 By this point, input has been read from stdin and copied to $rax. This can be confirmed if you type (gdb) ni (next instruction) until after 
 you are asked for the password, then: (gdb) x/s $rax - examine string in the rax register.  We can also see what the lea instruction is 

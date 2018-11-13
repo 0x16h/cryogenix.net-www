@@ -265,24 +265,37 @@ End of assembler dump.
 
 <p>If you aren&#39;t familiar with x86_64 assembly, here&#39;s a commentary of what&#39;s happening in the checkpass() function:</p>
 
-<pre><code>700: push   %rbp                
+<pre><code>700: push   %rbp
 </code></pre>
 
 <p>700: push/save (to the stack) the old stack pointer stored in %rbp 
 (base pointer register) onto the stack</p>
 
-<pre><code>701: mov    %rsp,%rbp           # - copy the contents of the stack pointer register 
-                        # (%rsp) into the base pointer register (%rbp)
-
-704: sub    $0x10,%rsp          # - subtract 0x10 (16 decimal) from the stack pointer
-
-
-708: lea    0xfffffffffffffff3(%rbp),%rdi   # - calculate and move whatever is at %rbp-13 into %rdi (register dest index)
-
-70c: callq  0xe4f6ee005e4 &lt;gets&gt;        # - call gets() (which begins at address 0xe4f6ee005e4 - a function inside our program!)
-
-711: lea        0xfffffffffffffff3(%rbp),%rsi   # - copy %rbp-13 to %rsi (register source index)
+<pre><code>701: mov    %rsp,%rbp
 </code></pre>
+
+<p>701: copy the contents of the stack pointer register 
+(%rsp) into the base pointer register (%rbp)</p>
+
+<pre><code>704: sub    $0x10,%rsp
+</code></pre>
+
+<p>704: subtract 0x10 (16 decimal) from the stack pointer</p>
+
+<pre><code>708: lea    0xfffffffffffffff3(%rbp),%rdi   
+</code></pre>
+
+<p>708: calculate and move whatever is at %rbp-13 into %rdi (register dest index)</p>
+
+<pre><code>70c: callq  0xe4f6ee005e4 &lt;gets&gt;
+</code></pre>
+
+<p>70c: call gets() (which begins at address 0xe4f6ee005e4 - a function inside our program!)</p>
+
+<pre><code>711: lea        0xfffffffffffffff3(%rbp),%rsi
+</code></pre>
+
+<p>711: copy %rbp-13 to %rsi (register source index)</p>
 
 <p>By this point, input has been read from stdin and copied to $rax. This can be confirmed if you type (gdb) ni (next instruction) until after 
 you are asked for the password, then: (gdb) x/s $rax - examine string in the rax register.  We can also see what the lea instruction is 
