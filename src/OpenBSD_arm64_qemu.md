@@ -71,6 +71,7 @@ Thanks to [jsg@](https://marc.info/?l=openbsd-arm&m=151582483025728&w=2) for the
     -netdev tap,id=net0 -device virtio-net-device,netdev=net0 \
     -drive file=root.qcow2,if=none,id=drive0,format=qcow2 \
     -device virtio-blk-device,drive=drive0 \
+    -nographic \
     -serial tcp::4450,server,telnet,wait"
 
 In another terminal (hello, tmux!):
