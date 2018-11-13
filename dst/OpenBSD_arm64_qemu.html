@@ -151,57 +151,108 @@ p {
 <img width=300 src="cryo.jpg" alt="Cryogenix"/>
 <p>Navigation: <a href="/">/</a> <a href="/rss.xml">/rss.xml</a> <a href="https://github.com/0x16h/">/github</a>  <a href="https://twitter.com/0x16h">/Twitter</a> <a href="https://www.patreon.com/0x16h">/Patreon</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
-<h4 id="Cryogenix">Cryogenix</h4>
+<h4 id="OpenBSD/arm64%20on%20QEMU%20with%20networking">OpenBSD/arm64 on QEMU with networking</h4>
 
-<p>A collection of code, articles and papers</p>
+<p>With the increasing popularity of ARM64/AArch64 systems, from the Raspberry Pi 3 and PINE64 to Fujitsu&#39;s move away from SPARC64 supercomputers, there hasn&#39;t been a better time to get started with learning this architecture.</p>
 
-<h3 id="Code">Code</h3>
+<p>I wanted to make a start to an Aarch64 assembly language tutorial but didn&#39;t have access to my RPi3, so I looked into the state of QEMU&#39;s emulation. I didn&#39;t need RPi3-specific hardware - which is just as well as I can&#39;t remember off-hand how the bootcode and start.elf crap would work with QEMU - anyway, I opted for a generic device using Linaro&#39;s EDK2 UEFI firmware.</p>
 
-<ul>
-<li><a href="NCSA_Mosaic_OpenBSD.html" title="NCSA Mosaic 2.7 on OpenBSD">NCSA Mosaic 2.7 on OpenBSD</a> (03 Nov 2018)</li>
-</ul>
+<p>The first pre-built EDK2 binary I downloaded wouldn&#39;t play nicely with the OpenBSD kernel so I grabbed a release mentioned by the <a href="https://wiki.freebsd.org/arm64/QEMU">FreeBSD team</a> - which worked.</p>
 
-<h3 id="Articles">Articles</h3>
+<h4 id="Prerequisites">Prerequisites</h4>
 
 <ul>
-<li><a href="OpenBSD_arm64_qemu.html" title="OpenBSD/arm64 on QEMU with Networking">OpenBSD/arm64 on QEMU with Networking</a> (13 Nov 2018)</li>
-<li><a href="RET_level1.html" title="Reverse Engineering Tutorial: Level1">Reverse Engineering Tutorial: level1 - what&#39;s the password?</a> (12 Nov 2018)</li>
-<li><a href="openbsd_nameserver.html" title="OpenBSD as an Authoritative Nameserver">OpenBSD as an authoritative DNS nameserver /w DNSSEC</a> (31 Oct 2018)</li>
-<li><a href="AlphaServer_ES40_Emulation.html" title="AlphaServer ES40 Emulation">AlphaServer ES40 Emulation</a> (02 Feb 2009)</li>
-<li><a href="OpenVMS_and_SIMH_pt2.html" title="OpenVMS and SIMH part 1">OpenVMS and SIMH pt2 - UNZIP, WGET, Compaq C and WASD</a> (12 Jan 2009)</li>
-<li><a href="OpenVMS_and_SIMH_pt1.html" title="OpenVMS and SIMH part 2">OpenVMS and SIMH pt1 - 7.3 and TCP/IP installation</a> (10 Jan 2009) </li>
-<li>Security, Privacy and Anonymity on the Internet (9 Dec 2007)</li>
-<li>A Step-by-Step Guide: Installing Dinah on Linux (21 Nov 2007)</li>
-<li>World of Warcraft: The Burning Crusade (31 Aug 2007)</li>
-<li>x86 Assembly Language for Beginners (4 June 2007)</li>
-<li>Oracle 10g XE on Linux with PHP and Java - Part 1 (9 Mar 2006)</li>
-<li>Oracle 10g XE on Linux with PHP and Java - Part 2 (10 Mar 2006)</li>
-<li>AmigaOS on x86 (Amithlon) (21 April 2005)</li>
-<li><a href="shellcoding_on_freebsd.html" title="Shellcoding on FreeBSD">Beginners Guide to x86_32 Shellcoding on FreeBSD</a> (c. 2004)</li>
-<li>Simple Reversing with OllyDBG (11 May 2004)</li>
-<li>Manually Unpacking UPX (2 May 2004)</li>
+<li>miniroot64.fs (arm64)</li>
+<li><a href="http://releases.linaro.org/components/kernel/uefi-linaro/16.02/release/qemu64/QEMU_EFI.fd">QEMU_EFI.fd</a> (v16.02) </li>
+<li>QEMU (doas pkg_add qemu)</li>
 </ul>
 
-<h3 id="System%20Inventory">System Inventory</h3>
+<h4 id="Network%20Prep">Network Prep</h4>
 
-<ul>
-<li>Sun SPARC Enterprise T5120 running OpenBSD 6.4/sparc64</li>
-<li>Sun SPARC Enterprise T5120 running Solaris 11.3 / SRU 35.6</li>
-<li>DIGITAL AlphaStation 250 running OpenVMS 7.3/AXP</li>
-<li>HP Integrity rx2620 running OpenVMS 8.4-2/I64</li>
-<li>Fujitsu Primergy Xeon running OpenBSD 6.4/amd64</li>
-<li>Lenovo V520s SFF running OpenBSD 6.4/amd64</li>
-</ul>
+<p>The procedure here is pretty much identical to that outlined in <a href="https://www.openbsd.org/faq/faq16.html">faq16</a>. We create a vether0 and bridge0 interface for our tap interface to NAT through egress.</p>
 
-<h3 id="OpenBSD%20resources">OpenBSD resources</h3>
+<pre><code>$ doas su -
+# echo &#39;inet 192.168.54.1 255.255.255.0 NONE&#39; &gt;/etc/hostname.vether0
+# echo &#39;add vether0&#39; &gt;/etc/hostname.bridge0
+# sh /etc/netstart vether0 
+# sh /etc/netstart bridge0 
+# sysctl net.inet.ip.forwarding=1
+</code></pre>
 
-<ul>
-<li><a href="https://man.openbsd.org/">OpenBSD manual pages</a></li>
-<li><a href="https://www.romanzolotarev.com/openbsd/">Roman Zolotarev&#39;s OpenBSD articles</a></li>
-<li><a href="https://www.bsdjobs.com/">BSDJobs</a></li>
-<li><a href="https://openbsd.amsterdam/">OpenBSD.amsterdam</a> - virtual machine hosting</li>
-<li><a href="https://openbsd.space/">OpenBSD.space</a> - Torified virtual machine hosting</li>
-</ul>
+<p>Add the following rule to /etc/pf.conf (replace egress if necessary with your network_interface:0):</p>
+
+<pre><code>match out on egress from vether0:network to any nat-to (egress)
+</code></pre>
+
+<p>Reload our pf configuration:</p>
+
+<pre><code># pfctl -f /etc/pf.conf
+</code></pre>
+
+<p>Create /etc/dhcpd.conf so your VM can use dhcp:</p>
+
+<pre><code>option domain-name &quot;cryogenix.net&quot;
+option domain-name-servers 1.1.1.1;
+
+subnet 192.168.54.0 netmask 255.255.255.0 {
+    option routers 192.168.54.1;
+    range 192.168.54.100 192.168.54.199;
+}
+</code></pre>
+
+<p>Start dhcpd:</p>
+
+<pre><code># rcctl -f start dhcpd
+</code></pre>
+
+<h4 id="Preparing%20QEMU">Preparing QEMU</h4>
+
+<p>Fetch miniroot64.fs, SHA256, SHA256.sig, and QEMU_EFI.fd:</p>
+
+<pre><code>$ ftp https://cdn.openbsd.org/pub/OpenBSD/6.4/arm64/{SHA256,SHA256.sig,miniroot64.fs}
+$ ftp http://releases.linaro.org/components/kernel/uefi-linaro/16.02/release/qemu64/QEMU_EFI.fd 
+$ signify -Cp /etc/signify/openbsd-64-base.pub -x SHA256.sig miniroot64.fs
+</code></pre>
+
+<p>Create a qcow2 image to use as our disk:</p>
+
+<pre><code>$ qemu-img create -f qcow2 root.qcow2 10G
+</code></pre>
+
+<h4 id="Booting%20miniroot64.fs">Booting miniroot64.fs</h4>
+
+<p>Thanks to <a href="https://marc.info/?l=openbsd-arm&amp;m=151582483025728&amp;w=2">jsg@</a> for the -M and -device arguments to use instead of -M raspi3.</p>
+
+<pre><code>doas sh -c &quot;qemu-system-aarch64 -runas $USER \
+-m 2048 \
+-M virt \
+-cpu cortex-a57 \
+-bios QEMU_EFI.fd \
+-device virtio-rng-device \
+-drive file=miniroot64.fs,format=raw,id=drive1 \
+-netdev tap,id=net0 -device virtio-net-device,netdev=net0 \
+-drive file=root.qcow2,if=none,id=drive0,format=qcow2 \
+-device virtio-blk-device,drive=drive0 \
+-serial tcp::4450,server,telnet,wait&quot;
+</code></pre>
+
+<p>In another terminal (hello, tmux!):</p>
+
+<pre><code>$ telnet localhost 4450
+&gt;&gt; OpenBSD/arm64 BOOTAA64 0.13
+boot&gt;
+</code></pre>
+
+<p>Proceed to install OpenBSD as normal; at set selection -x* -g* is recommended. To boot into your new system, remove the line with miniroot64.fs from the command above - perhaps save it into a file as a shell script.</p>
+
+<pre><code>Tue Nov 13 16:43:48 GMT 2018
+
+OpenBSD/arm64 (foo.cryogenix.net) (console)
+
+login:
+</code></pre>
+
+<p>Done.</p>
 <p>Navigation: <a href="/">/</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
 <p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>

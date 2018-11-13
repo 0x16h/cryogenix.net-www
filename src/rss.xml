@@ -20,6 +20,18 @@ NCSA Mosaic 2.7 on OpenBSD
 </item>
 
 <item>
+<guid>https://cryogenix.net/OpenBSD_arm64_qemu.html</guid>
+<link>https://cryogenix.net/OpenBSD_arm64_qemu.html</link>
+<pubDate></pubDate>
+<title>OpenBSD/arm64 on QEMU with networking</title>
+<description><![CDATA[
+
+OpenBSD/arm64 on QEMU with networking
+
+]]></description>
+</item>
+
+<item>
 <guid>https://cryogenix.net/RET_level1.html</guid>
 <link>https://cryogenix.net/RET_level1.html</link>
 <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
