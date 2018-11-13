@@ -160,7 +160,7 @@ called at that address is a jmp to __retguard - the OpenBSD stack protector.
     724: cmpl	$0x0,0xfffffffffffffffc(%rbp)	# if $0x0 = %rbp-4 [set zero flag]:
     728: jne	0xe4f6ee0074d			# If not equal, jump to 74d (incorrect password)
 
-If you didn't opt for the *SPOILER* or *BIG SPOILER*, we have another opportunity opportunity to win this level,
+If you didn't opt for the *SPOILER* or *BIG SPOILER*, we have another opportunity to win this level,
 though it is a little sloppy - and is a bit of a 'cheat'.
 
 We now Know that there is a jne instruction at 0xe4f6ee00728 that decides whether the password we entered is correct or not;
