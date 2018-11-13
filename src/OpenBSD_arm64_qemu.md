@@ -81,7 +81,7 @@ In another terminal (hello, tmux!):
     >> OpenBSD/arm64 BOOTAA64 0.13
     boot>
 
-Proceed to install OpenBSD as normal; at set selection -x* -g* is recommended. To boot into your new system, remove the line with miniroot64.fs from the command above - perhaps save it into a file as a shell script.
+Proceed to install OpenBSD as normal; at set selection -x* -g* is recommended. To boot into your new system, remove the line with miniroot64.fs from the command above and perhaps save the command as a shell script for your convenience.
 
     Tue Nov 13 16:43:48 GMT 2018
     
