@@ -8,6 +8,7 @@ The first pre-built EDK2 binary I downloaded wouldn't play nicely with the OpenB
 
 #### Prerequisites
 
+- OpenBSD/amd64 host
 - miniroot64.fs (arm64)
 - [QEMU_EFI.fd](http://releases.linaro.org/components/kernel/uefi-linaro/16.02/release/qemu64/QEMU_EFI.fd) (v16.02) 
 - QEMU (doas pkg_add qemu)
