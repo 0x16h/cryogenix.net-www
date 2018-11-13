@@ -145,7 +145,7 @@ name at this address. SPOILER: (gdb) x/s 0xe4f6f002000 or (gdb) x/s $rip+2103524
 
 *BIG SPOILER* for the impatient:
     (gdb) x/s $rip+2103524
-    0xe4f6f002000 [REDACTED] 
+    0xe4f6f002000 *REDACTED*
     (gdb) set {char[6]}0xe4f6f002000 = "12345"
     (gdb) x/s $rip+2103524
     (gdb) c

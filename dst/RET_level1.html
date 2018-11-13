@@ -312,7 +312,8 @@ name at this address. SPOILER: (gdb) x/s 0xe4f6f002000 or (gdb) x/s $rip+2103524
 
 <p><em>BIG SPOILER</em> for the impatient:
     (gdb) x/s $rip+2103524
-    0xe4f6f002000 <a href="gdb">REDACTED</a> set {char[6]}0xe4f6f002000 = &quot;12345&quot;
+    0xe4f6f002000 <em>REDACTED</em>
+    (gdb) set {char[6]}0xe4f6f002000 = &quot;12345&quot;
     (gdb) x/s $rip+2103524
     (gdb) c</p>
 
