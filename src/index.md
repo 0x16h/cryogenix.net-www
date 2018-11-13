@@ -5,7 +5,7 @@ A collection of code, articles and papers
 * [NCSA Mosaic 2.7 on OpenBSD](NCSA_Mosaic_OpenBSD.html "NCSA Mosaic 2.7 on OpenBSD") (03 Nov 2018)
 
 ### Articles
-* [OpenBSD/arm64 on QEMU with Networking](OpenBSD_arm64_qemu.html "OpenBSD/arm64 on QEMU with Networking") (13 Nov 2018)
+* [OpenBSD/arm64 on QEMU with Networking](OpenBSD_arm64_qemu.html "OpenBSD arm64 on QEMU with Networking") (13 Nov 2018)
 * [Reverse Engineering Tutorial: level1 - what's the password?](RET_level1.html "Reverse Engineering Tutorial: Level1") (12 Nov 2018)
 * [OpenBSD as an authoritative DNS nameserver /w DNSSEC](openbsd_nameserver.html "OpenBSD as an Authoritative Nameserver") (31 Oct 2018)
 * [AlphaServer ES40 Emulation](AlphaServer_ES40_Emulation.html "AlphaServer ES40 Emulation") (02 Feb 2009)
