@@ -101,3 +101,5 @@ Done.
     Disk Usage: 0.62GB/9.73GB (6.42%)
     
     cc -dumpmachine: aarch64-unknown-openbsd6.4
+
+As always, thank you for reading and all feedback is welcome. 
