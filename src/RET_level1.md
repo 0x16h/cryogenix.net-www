@@ -234,4 +234,4 @@ level1 was written in a way that it could be solved through a number of methods 
 
 Oops!
 
-I hope you enjoyed this lesson, and appreciate any feedback or ideas for subsequent levels and tutorials.
+I hope you enjoyed this lesson, and appreciate any feedback or ideas for subsequent levels and tutorials. Apologies for any technical errors, AT&T syntax is not my native language.
