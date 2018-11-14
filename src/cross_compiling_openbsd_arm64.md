@@ -1,6 +1,6 @@
 #### Cross-compiling for OpenBSD/arm64
 
-Following on from [OpenBSD/arm64 on QEMU](https://cryogenix/OpenBSD_arm64_qemu.html), it's not always practical to compile userland software or a new kernel on some systems, particularly small SoCs with limited space and memory - or indeed QEMU, in fear of melting your CPU. 
+Following on from [OpenBSD/arm64 on QEMU](https://cryogenix.net/OpenBSD_arm64_qemu.html), it's not always practical to compile userland software or a new kernel on some systems, particularly small SoCs with limited space and memory - or indeed QEMU, in fear of melting your CPU. 
 
 Cross-building is unsupported on OpenBSD - if you've ever dabbled in OS development or LinuxFromScratch, you can probably guess why; it can be unpredictable.
 Moreover, the OpenBSD platform lifecycle focuses on making OpenBSD self-hosting and only cross-compiles to the target platform for initial bootstrapping.
