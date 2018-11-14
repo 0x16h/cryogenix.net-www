@@ -34,12 +34,12 @@ Generate and export a cross-building environment in the current shell. These env
 
 As root, we create the directories for our toolchain then build the toolchain itself.  Aarch64 is strictly an llvm/lld platform on OpenBSD (thanks, brynet!) - but for some reason when I tried to build the toolchain it complained about ld.bfd being missing from somewhere in ${destdir}... quick solution: touch the file and run make again as below!
  
-  doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-dirs
-  doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-tools
+    doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-dirs
+    doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-tools
 
 Build and install Aarch64 userland to our destination:
 
-  doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-distrib
+    doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-distrib
 
 Create some convient links
 
