@@ -23,6 +23,9 @@ A collection of code, articles and papers
 * Simple Reversing with OllyDBG (11 May 2004)
 * Manually Unpacking UPX (2 May 2004)
 
+### Friends <3
+* [@kivikakk](https://twitter.com/kivikakk)
+
 ### System Inventory
 * Sun SPARC Enterprise T5120 running OpenBSD 6.4/sparc64
 * Sun SPARC Enterprise T5120 running Solaris 11.3 / SRU 35.6
