@@ -21,7 +21,7 @@ As the process is unsupported anyway, I'm not using /usr/src. We can't even buil
 Set some environment variables for our build tree:
 
     target=arm64
-    topdir=${HOME}/Git/Raspi3/cross-compiler/openbsd
+    topdir=${HOME}/arm64
     srcdir=${topdir}/src
     destdir=${topdir}/dest.${target}
     objdir=${topdir}/obj.${target}
