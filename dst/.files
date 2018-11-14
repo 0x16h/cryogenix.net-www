@@ -1,2 +1,3 @@
-./openbsd_nameserver.md
+./index.md
 ./rss.xml
+./cross_compiling_openbsd_arm64.md

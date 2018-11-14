@@ -151,58 +151,96 @@ p {
 <img width=300 src="cryo.jpg" alt="Cryogenix"/>
 <p>Navigation: <a href="/">/</a> <a href="/rss.xml">/rss.xml</a> <a href="https://github.com/0x16h/">/github</a>  <a href="https://twitter.com/0x16h">/Twitter</a> <a href="https://www.patreon.com/0x16h">/Patreon</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
-<h4 id="Cryogenix">Cryogenix</h4>
+<h4 id="Cross-compiling%20for%20OpenBSD/arm64">Cross-compiling for OpenBSD/arm64</h4>
 
-<p>A collection of code, articles and papers</p>
+<p>Following on from <a href="https://cryogenix/OpenBSD_arm64_qemu.html">OpenBSD/arm64 on QEMU</a>, it&#39;s not always practical to compile userland software or a new kernel on some systems, particularly small SoCs with limited space and memory - or indeed QEMU, in fear of melting your CPU. </p>
 
-<h3 id="Code">Code</h3>
+<p>Cross-building is unsupported on OpenBSD - if you&#39;ve ever dabbled in OS development or LinuxFromScratch, you can probably guess why; it can be unpredictable.
+Moreover, the OpenBSD platform lifecycle focuses on making OpenBSD self-hosting and only cross-compiles to the target platform for initial bootstrapping.</p>
 
-<ul>
-<li><a href="NCSA_Mosaic_OpenBSD.html" title="NCSA Mosaic 2.7 on OpenBSD">NCSA Mosaic 2.7 on OpenBSD</a> (03 Nov 2018)</li>
-</ul>
+<p>There, you have been duly warned; now let&#39;s get down to building our AArch64 toolchain!</p>
 
-<h3 id="Articles">Articles</h3>
-
-<ul>
-<li><a href="cross_compiling_openbsd_arm64.html" title="Cross compiling for OpenBSD arm64">Cross-compiling for OpenBSD/arm64</a> (14 Nov 2018) </li>
-<li><a href="OpenBSD_arm64_qemu.html" title="OpenBSD arm64 on QEMU with Networking">OpenBSD/arm64 on QEMU with Networking</a> (13 Nov 2018)</li>
-<li><a href="RET_level1.html" title="Reverse Engineering Tutorial: Level1">Reverse Engineering Tutorial: level1 - what&#39;s the password?</a> (12 Nov 2018)</li>
-<li><a href="openbsd_nameserver.html" title="OpenBSD as an Authoritative Nameserver">OpenBSD as an authoritative DNS nameserver /w DNSSEC</a> (31 Oct 2018)</li>
-<li><a href="AlphaServer_ES40_Emulation.html" title="AlphaServer ES40 Emulation">AlphaServer ES40 Emulation</a> (02 Feb 2009)</li>
-<li><a href="OpenVMS_and_SIMH_pt2.html" title="OpenVMS and SIMH part 1">OpenVMS and SIMH pt2 - UNZIP, WGET, Compaq C and WASD</a> (12 Jan 2009)</li>
-<li><a href="OpenVMS_and_SIMH_pt1.html" title="OpenVMS and SIMH part 2">OpenVMS and SIMH pt1 - 7.3 and TCP/IP installation</a> (10 Jan 2009) </li>
-<li>Security, Privacy and Anonymity on the Internet (9 Dec 2007)</li>
-<li>A Step-by-Step Guide: Installing Dinah on Linux (21 Nov 2007)</li>
-<li>World of Warcraft: The Burning Crusade (31 Aug 2007)</li>
-<li>x86 Assembly Language for Beginners (4 June 2007)</li>
-<li>Oracle 10g XE on Linux with PHP and Java - Part 1 (9 Mar 2006)</li>
-<li>Oracle 10g XE on Linux with PHP and Java - Part 2 (10 Mar 2006)</li>
-<li>AmigaOS on x86 (Amithlon) (21 April 2005)</li>
-<li><a href="shellcoding_on_freebsd.html" title="Shellcoding on FreeBSD">Beginners Guide to x86_32 Shellcoding on FreeBSD</a> (c. 2004)</li>
-<li>Simple Reversing with OllyDBG (11 May 2004)</li>
-<li>Manually Unpacking UPX (2 May 2004)</li>
-</ul>
-
-<h3 id="System%20Inventory">System Inventory</h3>
+<p>I must admit, I have never looked at /usr/src/Makefile.cross before - so instead of jumping in I had a look to see if there was any existing resources on the process.</p>
 
 <ul>
-<li>Sun SPARC Enterprise T5120 running OpenBSD 6.4/sparc64</li>
-<li>Sun SPARC Enterprise T5120 running Solaris 11.3 / SRU 35.6</li>
-<li>DIGITAL AlphaStation 250 running OpenVMS 7.3/AXP</li>
-<li>HP Integrity rx2620 running OpenVMS 8.4-2/I64</li>
-<li>Fujitsu Primergy Xeon running OpenBSD 6.4/amd64</li>
-<li>Lenovo V520s SFF running OpenBSD 6.4/amd64</li>
+<li><a href="https://gist.github.com/uebayasi/6328591">openbsd-cross-building-tips</a> by <a href="https://github.com/uebayasi">Masao Uebayashi</a></li>
+<li><a href="http://openbsd-archive.7691.n7.nabble.com/error-in-cross-compiling-for-armv7-td300810.html">arm@ list: error in cross-compiling for armv7</a></li>
 </ul>
 
-<h3 id="OpenBSD%20resources">OpenBSD resources</h3>
+<p>As the process is unsupported anyway, I&#39;m not using /usr/src. We can&#39;t even build a release without hacking to death the Makefiles and wrappers so that may be in a future article.  Grab the source somewhere in your home dir:</p>
 
-<ul>
-<li><a href="https://man.openbsd.org/">OpenBSD manual pages</a></li>
-<li><a href="https://www.romanzolotarev.com/openbsd/">Roman Zolotarev&#39;s OpenBSD articles</a></li>
-<li><a href="https://www.bsdjobs.com/">BSDJobs</a></li>
-<li><a href="https://openbsd.amsterdam/">OpenBSD.amsterdam</a> - virtual machine hosting</li>
-<li><a href="https://openbsd.space/">OpenBSD.space</a> - Torified virtual machine hosting</li>
-</ul>
+<pre><code>mkdir arm64
+cd arm64
+cvs -qd anoncvs@anoncvs.fr.openbsd.org:/cvs checkout -rOPENBSD_6_4 -P src
+</code></pre>
+
+<p>Set some environment variables for our build tree:</p>
+
+<pre><code>target=arm64
+topdir=${HOME}/Git/Raspi3/cross-compiler/openbsd
+srcdir=${topdir}/src
+destdir=${topdir}/dest.${target}
+objdir=${topdir}/obj.${target}
+toolsdir=${topdir}/tools.${target}
+cd ${srcdir}
+</code></pre>
+
+<p>Generate and export a cross-building environment in the current shell. These env vars contain paths for the target toolchain, build directories and compiler flags: </p>
+
+<pre><code>eval export $( make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-env )
+</code></pre>
+
+<p>As root, we create the directories for our toolchain then build the toolchain itself.  Aarch64 is strictly an llvm/lld platform on OpenBSD (thanks, brynet!) - but for some reason when I tried to build the toolchain it complained about ld.bfd being missing from somewhere in ${destdir}... quick solution: touch the file and run make again as below!</p>
+
+<p>doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-dirs
+  doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-tools</p>
+
+<p>Build and install Aarch64 userland to our destination:</p>
+
+<p>doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-distrib</p>
+
+<p>Create some convient links</p>
+
+<pre><code>ln -sf ${destdir}/usr/obj ${objdir}
+ln -sf ${destdir}/usr/${target}-unknown-openbsd6.4 ${toolsdir}
+</code></pre>
+
+<p>chown everything back to your user and group (modify as required):</p>
+
+<pre><code>doas chown -R ${USER}:${USER} ${objdir}/*
+</code></pre>
+
+<p>Finally, test our environment out by compiling a C file with cc (clang):</p>
+
+<pre><code>$ cd ..
+$ cat &lt;&lt;EOF &gt;&gt;hello.c
+#include &lt;stdio.h&gt;
+
+int
+main(void) {
+    printf(&quot;Hello Aarch64\n&quot;);
+}
+EOF
+
+$ ${CC} -o hello hello.c
+$ file hello
+hello: ELF 64-bit LSB shared object, AArch64, version 1
+
+$ ${destdir}/usr/aarch64-unknown-openbsd6.4/bin/readelf -h hello
+
+ELF Header:
+Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+Class:                             ELF64
+Data:                              2&#39;s complement, little endian
+Version:                           1 (current)
+OS/ABI:                            UNIX - System V
+ABI Version:                       0
+Type:                              DYN (Shared object file)
+Machine:                           AArch64
+&lt;--CUT--&gt;
+</code></pre>
+
+<p>All working as expected!</p>
 <p>Navigation: <a href="/">/</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
 <p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
