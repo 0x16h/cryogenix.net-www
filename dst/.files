@@ -1,4 +1,2 @@
 ./rss.xml
-./hai
-./hello
-./hello-arm
+./cross_compiling_openbsd_arm64.md
