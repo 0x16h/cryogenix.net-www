@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="romanzolotarev.com/bin/ssg3">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>Cryogenix</title>
+<style>body {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 10px;
+  background-color: #000000;
+  color: #9ba4b2;
+  background: url(data:image/gif;base64,R0lGODlhBgAGAJEAAP///xYWFgAAAAAAACwAAAAABgAGAAACCpQdhyqpfoKcoQAAOw==);
+}
+
+a {
+  color: #204fd5;
+ font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+  color: #334f83;
+}
+a:hover {
+    text-decoration: underline;
+  color: #204fd5;
+}
+
+body,
+input,
+button {
+  font-size: 20px;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+hr,
+h1,
+h2 {
+  margin-top: 60px;
+}
+
+hr {
+  border: 0;
+}
+
+li {
+  padding: 5px 0;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+pre {
+  font-size: 15px;
+  overflow-x: auto;
+}
+
+pre,
+blockquote {
+  margin-bottom: 40px;
+}
+
+p img,
+table {
+  width: 100%;
+}
+
+p {
+  clear: both;
+}
+
+.avatar {
+  width: 60px;
+  heigth: 60px;
+  border-radius: 60px;
+}
+
+.left {
+  float: left;
+  margin: 8px 24px 24px 0;
+}
+
+.quote {
+  text-indent: -16px;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.button,
+.email {
+  -webkit-appearance: none;
+  color: #000000;
+  padding: 15px;
+}
+
+.email {
+  background-color: #ffffff;
+  border: solid 1px #888888;
+}
+
+.button {
+  background-color: #ffc469;
+  border: solid 1px #ffc469;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+h1 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+pre {
+  overflow-x: auto;
+  color: white;
+}
+
+pre>code {
+	background-color: #3c4047;
+box-sizing: border-box;
+display: block;
+    white-space: pre;
+  overflow-x: auto;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+	    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+	padding-top: 2px;
+    padding-right: 4px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+} 
+ul {
+ background-color: black;
+}
+p {
+ background-color: black;
+ padding: 5px;
+}</style>
+</head>
+<body>
+<body bgcolor="#000000" text="#FFFFFF">
+<img width=300 src="cryo.jpg" alt="Cryogenix"/>
+<p>Navigation: <a href="/">/</a> <a href="/rss.xml">/rss.xml</a> <a href="https://github.com/0x16h/">/github</a>  <a href="https://twitter.com/0x16h">/Twitter</a> <a href="https://www.patreon.com/0x16h">/Patreon</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<h4 id="Assembly%20language%20on%20OpenBSD%20amd64+arm64">Assembly language on OpenBSD amd64+arm64</h4>
+
+<p>This is a short introduction to assembly language programming on OpenBSD/amd64+arm64.  Because of security features in the kernel, I have had to rethink a series of tutorials covering Aarch64 assembly language on OpenBSD, and therefore this will serve as a placeholder-cum-reminder.</p>
+
+<p>OpenBSD, like many UNIX and unix-like operating systems, uses the Executable and Linkable Format (ELF) for its binary libraries and executables.  Although the structure of this format is beyond the scope of this short introduction, it is necessary for me to explain part of one of the headers.</p>
+
+<p>Within the program header there are sections known as PT_NOTE that OpenBSD and other systems use to distinguish their ELF executables - OpenBSD looks for this section to check if it should attempt to execute the program or not.</p>
+
+<p>The section uses a structure similar to the following:</p>
+
+<pre><code>PT_NOTE {
+    long    namesz;   /* size of name */
+    long    descsz;   /* size of desc */
+    long    type;     /* ABI type? */
+    char    name;     /* ABI name */
+    long    desc;     /* description */
+}
+</code></pre>
+
+<p>For our assembled programs to link correctly with GNU/LLVM as+ld, we must create this section; there&#39;s probably a cute way of doing this with ld and crt0 but I haven&#39;t looked into it.</p>
+
+<h5 id="Our%20first%20program:%20in%20C!">Our first program: in C!</h5>
+
+<p>It&#39;s often a good idea to prototype your assembly programs in a high level language such as C - it can then double up as both a set of notes and a working program that you can debug and compile into assembly language to compare with your own asm code. Create sysexit.c:</p>
+
+<pre><code>#include &lt;unistd.h&gt;
+#include &lt;sys/syscall.h&gt;
+
+int
+main(void)
+{
+    syscall(SYS_exit, 123);
+return 0;
+}
+</code></pre>
+
+<p>OK, return 0 here is a little redundant as we have already called SYS_exit() to exit our program.</p>
+
+<p>Compile with clang:</p>
+
+<pre><code>clang -o sysexit sysexit.c
+</code></pre>
+
+<p>Or with GNU:</p>
+
+<pre><code>gcc -o sysexit sysexit.c
+</code></pre>
+
+<p>If you run the program, it should do nothing - just silently exit and return you to the shell prompt.  Exciting! Next we will rewrite this program in assembly language.</p>
+
+<h5 id="Our%20first%20program:%20in%20x86-64%20Asm!">Our first program: in x86-64 Asm!</h5>
+
+<p>x86-64 General Purpose Registers:</p>
+
+<pre><code>RAX    Accumulator
+RBX    Base
+RCX    Counter
+RDX    Data (can extent Accumulator)
+RSI    Source Index for string ops
+RDI    Destination Index for string ops
+RSP    Stack Pointer
+RBP    Base Pointer
+R8-15  General purpose 
+</code></pre>
+
+<p>System calls such as exit/SYS_exit are defined in <sys/syscall.h> - assemblers, unlike C compilers, don&#39;t know about these C/C++ include files so we need to extract defines and macros from them to implement in assembly.</p>
+
+<p>If you look at /usr/include/sys/syscall.h you will see SYS_exit is defined near the top of the file:</p>
+
+<pre><code>/* syscall: &quot;exit&quot; ret: &quot;void&quot; args: &quot;int&quot; */
+#define SYS_exit    1
+</code></pre>
+
+<p>Our exit syscall returns void and takes one int as an argument. SYS<em>exit itself is is defined as &#39;1&#39;.  So when we make a syscall and pass SYS</em>exit, we are actually passing an integer that represents the function.</p>
+
+<p>Syscall numbers are loaded into the rax register, and any parameters are put int rdi, rsi, rdx, etc. Any return value is left in rax.</p>
+
+<p>Equipped with this knowledge and the previous notes about the ELF program header, we can write our first assembly program, sysexit.s:</p>
+
+<pre><code>.section &quot;.note.openbsd.ident&quot;, &quot;a&quot;
+    .p2align 2      /* padding */
+    .long 0x8       /* namesz */
+    .long 0x4       /* descsz */
+    .long 0x1       /* type */ 
+    .ascii &quot;OpenBSD\0&quot;  /* name */
+    .long 0x0       /* desc */
+    .p2align 2      
+
+.section .text  /* .text section begins */
+.globl _start   /* make _start symbol global/known to ld */
+_start:
+movq $1,%rax    /* copy 1 (SYS_exit) into rax register */
+movq $123,$rdi  /* 1st parameter: 123
+syscall     /* call syscall (int 0x80 on 32-bit) */
+</code></pre>
+
+<p>Assemble and link with GNU tools:</p>
+
+<pre><code>$ as sysexit.s -o sysexit.o
+$ ld -e _start -static sysexit.o -o sysexit
+</code></pre>
+
+<p>-e _start instructs the linker to use _start as an entry symbol/point
+-static is required for compatibility with OpenBSD - I&#39;m not sure why, but without it the program will abort.  Some kernel security feature?</p>
+
+<h5 id="Our%20first%20program:%20in%20ARMv8%20AArch64%20assembly">Our first program: in ARMv8 AArch64 assembly</h5>
+
+<p>AArch64 is the 64-bit state of ARMv8 processors; these processors can run a 32-bit kernel with 32-bit userland, or a 64-bit kernel with both 32 and 64-bit userland.  The architecture changes a little when in the 64-bit state.</p>
+
+<p>Registers:</p>
+
+<pre><code>X0 - X7 = Argument / results registers
+X8      = indirect result location
+X9 - X15    = temporary registers
+X16 - X17   = temporary intra-proc call
+X18     = platform register
+X19 - X29   = Callee-saved register (must preserve)
+X30     = link register
+</code></pre>
+
+<p>sysexit-arm.s:</p>
+
+<pre><code>.section &quot;.note.openbsd.ident&quot;, &quot;a&quot;
+.p2align 2
+.long    0x8
+.long    0x4
+.long    0x1
+.ascii    &quot;OpenBSD\0&quot;
+.long    0x0
+.p2align 2
+
+.text
+.globl main
+main:
+    mov x0, #123    /* copy 123 to x0 - reverse of AT&amp;T syntax */
+    mov x8, #1  /* copy 1 into x8
+    svc #0      /* supervisor instruction - formerly swi */
+</code></pre>
+
+<p>Assemble and link:</p>
+
+<pre><code>gas sysexit-arm.s -o sysexit-arm.o
+ld -s sysexit-arm.o -o sysexit-arm // -z notext -static
+</code></pre>
+
+<p>Or with clang:</p>
+
+<pre><code>clang sysexit-arm.s -o sysexit-arm
+</code></pre>
+<p>Navigation: <a href="/">/</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
+</body>
+</html>

@@ -20,6 +20,18 @@ NCSA Mosaic 2.7 on OpenBSD
 </item>
 
 <item>
+<guid>https://cryogenix.net/OpenBSD_assembly.html</guid>
+<link>https://cryogenix.net/OpenBSD_assembly.html</link>
+<pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
+<title>Assembly language on OpenBSD amd64+arm64</title>
+<description><![CDATA[
+
+Assembly language on OpenBSD amd64+arm64
+
+]]></description>
+</item>
+
+<item>
 <guid>https://cryogenix.net/cross_compiling_openbsd_arm64.html</guid>
 <link>https://cryogenix.net/cross_compiling_openbsd_arm64.html</link>
 <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>

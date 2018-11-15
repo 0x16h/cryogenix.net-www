@@ -5,6 +5,7 @@ A collection of code, articles and papers
 * [NCSA Mosaic 2.7 on OpenBSD](NCSA_Mosaic_OpenBSD.html "NCSA Mosaic 2.7 on OpenBSD") (03 Nov 2018)
 
 ### Articles
+* [Assembly language on OpenBSD/amd64+arm64](OpenBSD_assembly.html "Assembly language on OpenBSD amd64 and arm64") (15 Nov 2018)
 * [Cross-compiling for OpenBSD/arm64](cross_compiling_openbsd_arm64.html "Cross compiling for OpenBSD arm64") (14 Nov 2018) 
 * [OpenBSD/arm64 on QEMU with Networking](OpenBSD_arm64_qemu.html "OpenBSD arm64 on QEMU with Networking") (13 Nov 2018)
 * [Reverse Engineering Tutorial: level1 - what's the password?](RET_level1.html "Reverse Engineering Tutorial: Level1") (12 Nov 2018)

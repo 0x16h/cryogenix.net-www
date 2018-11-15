@@ -1,2 +1,3 @@
+./index.md
 ./rss.xml
-./OpenBSD_arm64_qemu.md
+./OpenBSD_assembly.md
