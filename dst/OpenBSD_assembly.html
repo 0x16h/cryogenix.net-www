@@ -216,7 +216,7 @@ RBP    Base Pointer
 R8-15  General purpose 
 </code></pre>
 
-<p>System calls such as exit/SYS_exit are defined in <sys/syscall.h> - assemblers, unlike C compilers, don&#39;t know about these C/C++ include files so we need to extract defines and macros from them to implement in assembly.</p>
+<p>System calls such as exit/SYS_exit are defined in <strong>sys/syscall.h</strong> - assemblers, unlike C compilers, don&#39;t know about these C/C++ include files so we need to extract defines and macros from them to implement in assembly.</p>
 
 <p>If you look at /usr/include/sys/syscall.h you will see SYS_exit is defined near the top of the file:</p>
 
@@ -235,16 +235,16 @@ R8-15  General purpose
     .long 0x8       /* namesz */
     .long 0x4       /* descsz */
     .long 0x1       /* type */ 
-    .ascii &quot;OpenBSD\0&quot;  /* name */
+    .ascii &quot;OpenBSD\0&quot;      /* name */
     .long 0x0       /* desc */
     .p2align 2      
 
-.section .text  /* .text section begins */
-.globl _start   /* make _start symbol global/known to ld */
+.section .text      /* .text section begins */
+.globl _start       /* make _start symbol global/known to ld */
 _start:
-movq $1,%rax    /* copy 1 (SYS_exit) into rax register */
-movq $123,$rdi  /* 1st parameter: 123
-syscall     /* call syscall (int 0x80 on 32-bit) */
+movq $1,%rax        /* copy 1 (SYS_exit) into rax register */
+movq $123,$rdi      /* 1st parameter: 123
+syscall         /* call syscall (int 0x80 on 32-bit) */
 </code></pre>
 
 <p>Assemble and link with GNU tools:</p>
@@ -288,13 +288,13 @@ ld -s -e _start -static -o sysexit-nasm sysexit-nasm.o
 
 <p>Registers:</p>
 
-<pre><code>X0 - X7 = Argument / results registers
-X8      = indirect result location
-X9 - X15    = temporary registers
-X16 - X17   = temporary intra-proc call
-X18     = platform register
-X19 - X29   = Callee-saved register (must preserve)
-X30     = link register
+<pre><code>X0 - X7      = Argument / results registers
+X8           = indirect result location
+X9 - X15         = temporary registers
+X16 - X17        = temporary intra-proc call
+X18          = platform register
+X19 - X29        = Callee-saved register (must preserve)
+X30          = link register
 </code></pre>
 
 <p>sysexit-arm.s:</p>

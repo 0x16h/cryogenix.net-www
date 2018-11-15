@@ -58,7 +58,7 @@ x86-64 General Purpose Registers:
     RBP    Base Pointer
     R8-15  General purpose 
 
-System calls such as exit/SYS\_exit are defined in <sys/syscall.h> - assemblers, unlike C compilers, don't know about these C/C++ include files so we need to extract defines and macros from them to implement in assembly.
+System calls such as exit/SYS\_exit are defined in **sys/syscall.h** - assemblers, unlike C compilers, don't know about these C/C++ include files so we need to extract defines and macros from them to implement in assembly.
 
 If you look at /usr/include/sys/syscall.h you will see SYS_exit is defined near the top of the file:
 
@@ -76,16 +76,16 @@ Equipped with this knowledge and the previous notes about the ELF program header
     	.long 0x8		/* namesz */
         .long 0x4		/* descsz */
         .long 0x1		/* type */ 
-        .ascii "OpenBSD\0"	/* name */
+        .ascii "OpenBSD\0"		/* name */
         .long 0x0		/* desc */
         .p2align 2		
     
-    .section .text	/* .text section begins */
-    .globl _start	/* make _start symbol global/known to ld */
+    .section .text		/* .text section begins */
+    .globl _start		/* make _start symbol global/known to ld */
     _start:
-   	movq $1,%rax	/* copy 1 (SYS_exit) into rax register */
-	movq $123,$rdi	/* 1st parameter: 123
-	syscall 	/* call syscall (int 0x80 on 32-bit) */
+   	movq $1,%rax		/* copy 1 (SYS_exit) into rax register */
+	movq $123,$rdi		/* 1st parameter: 123
+	syscall 		/* call syscall (int 0x80 on 32-bit) */
 
 Assemble and link with GNU tools:
 
@@ -124,13 +124,13 @@ AArch64 is the 64-bit state of ARMv8 processors; these processors can run a 32-b
 
 Registers:
 
-    X0 - X7	= Argument / results registers
-    X8		= indirect result location
-    X9 - X15	= temporary registers
-    X16 - X17	= temporary intra-proc call
-    X18		= platform register
-    X19 - X29	= Callee-saved register (must preserve)
-    X30		= link register
+    X0 - X7	     = Argument / results registers
+    X8		     = indirect result location
+    X9 - X15	     = temporary registers
+    X16 - X17	     = temporary intra-proc call
+    X18		     = platform register
+    X19 - X29	     = Callee-saved register (must preserve)
+    X30		     = link register
 
 sysexit-arm.s:
 
