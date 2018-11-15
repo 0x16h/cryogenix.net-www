@@ -112,6 +112,11 @@ Assemble and link with GNU tools:
         push 0x01	; parameter 1
         syscall		; call syscall
         
+Assemble and link:
+
+    nasm -f elf64 sysexit-nasm.s -o sysexit-nasm.o
+    ld -s -e _start -static -o sysexit-nasm sysexit-nasm.o
+    
 
 ##### Our first program: in ARMv8 AArch64 assembly
 

@@ -276,6 +276,12 @@ _start:
     syscall     ; call syscall
 </code></pre>
 
+<p>Assemble and link:</p>
+
+<pre><code>nasm -f elf64 sysexit-nasm.s -o sysexit-nasm.o
+ld -s -e _start -static -o sysexit-nasm sysexit-nasm.o
+</code></pre>
+
 <h5 id="Our%20first%20program:%20in%20ARMv8%20AArch64%20assembly">Our first program: in ARMv8 AArch64 assembly</h5>
 
 <p>AArch64 is the 64-bit state of ARMv8 processors; these processors can run a 32-bit kernel with 32-bit userland, or a 64-bit kernel with both 32 and 64-bit userland.  The architecture changes a little when in the 64-bit state.</p>
