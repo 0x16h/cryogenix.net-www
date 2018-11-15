@@ -201,7 +201,7 @@ return 0;
 
 <p>If you run the program, it should do nothing - just silently exit and return you to the shell prompt.  Exciting! Next we will rewrite this program in assembly language.</p>
 
-<h5 id="Our%20first%20program:%20in%20x86-64%20Asm!">Our first program: in x86-64 Asm!</h5>
+<h5 id="Our%20first%20program:%20in%20x86-64%20Asm%20(AT&amp;amp;T/GAS%20syntax)">Our first program: in x86-64 Asm (AT&amp;T/GAS syntax)</h5>
 
 <p>x86-64 General Purpose Registers:</p>
 
@@ -257,6 +257,24 @@ $ ld -e _start -static sysexit.o -o sysexit
 <li>-e _start instructs the linker to use _start as an entry symbol/point</li>
 <li>-static is required for compatibility with OpenBSD - I&#39;m not sure why, but without it the program will abort.  Some kernel security feature?</li>
 </ul>
+
+<h5 id="Our%20first%20program:%20in%20x86-64%20asm%20(NASM%20syntax)">Our first program: in x86-64 asm (NASM syntax)</h5>
+
+<pre><code>section .note.openbsd.ident progbits alloc noexec nowrite
+    dd 0x00000008 ; namesz
+    dd 0x00000004 ; descsz
+    dd 0x00000001 ; type
+    dd &quot;OpenBSD&quot;, 0x00, 0x00 ; name
+    dd 0x00000000
+
+section .text
+    global _start
+
+_start:
+    mov eax,0x01    ; SYS_exit
+    push 0x01   ; parameter 1
+    syscall     ; call syscall
+</code></pre>
 
 <h5 id="Our%20first%20program:%20in%20ARMv8%20AArch64%20assembly">Our first program: in ARMv8 AArch64 assembly</h5>
 

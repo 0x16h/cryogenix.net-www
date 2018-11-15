@@ -44,7 +44,7 @@ Or with GNU:
 
 If you run the program, it should do nothing - just silently exit and return you to the shell prompt.  Exciting! Next we will rewrite this program in assembly language.
  
-##### Our first program: in x86-64 Asm!
+##### Our first program: in x86-64 Asm (AT&T/GAS syntax)
 
 x86-64 General Purpose Registers:
 
@@ -95,7 +95,23 @@ Assemble and link with GNU tools:
 - -e _start instructs the linker to use _start as an entry symbol/point
 - -static is required for compatibility with OpenBSD - I'm not sure why, but without it the program will abort.  Some kernel security feature?
 
+##### Our first program: in x86-64 asm (NASM syntax) 
 
+    section .note.openbsd.ident progbits alloc noexec nowrite
+        dd 0x00000008 ; namesz
+        dd 0x00000004 ; descsz
+        dd 0x00000001 ; type
+        dd "OpenBSD", 0x00, 0x00 ; name
+        dd 0x00000000
+
+    section .text
+        global _start
+
+    _start:
+        mov eax,0x01	; SYS_exit
+        push 0x01	; parameter 1
+        syscall		; call syscall
+        
 
 ##### Our first program: in ARMv8 AArch64 assembly
 
