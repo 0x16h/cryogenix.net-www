@@ -224,7 +224,7 @@ R8-15  General purpose
 #define SYS_exit    1
 </code></pre>
 
-<p>Our exit syscall returns void and takes one int as an argument. SYS<em>exit itself is is defined as &#39;1&#39;.  So when we make a syscall and pass SYS</em>exit, we are actually passing an integer that represents the function.</p>
+<p>Our exit syscall returns void and takes one int as an argument. SYS_exit itself is is defined as &#39;1&#39;.  So when we make a syscall and pass SYS_exit, we are actually passing an integer that represents the function.</p>
 
 <p>Syscall numbers are loaded into the rax register, and any parameters are put int rdi, rsi, rdx, etc. Any return value is left in rax.</p>
 
@@ -253,8 +253,10 @@ syscall     /* call syscall (int 0x80 on 32-bit) */
 $ ld -e _start -static sysexit.o -o sysexit
 </code></pre>
 
-<p>-e _start instructs the linker to use _start as an entry symbol/point
--static is required for compatibility with OpenBSD - I&#39;m not sure why, but without it the program will abort.  Some kernel security feature?</p>
+<ul>
+<li>-e _start instructs the linker to use _start as an entry symbol/point</li>
+<li>-static is required for compatibility with OpenBSD - I&#39;m not sure why, but without it the program will abort.  Some kernel security feature?</li>
+</ul>
 
 <h5 id="Our%20first%20program:%20in%20ARMv8%20AArch64%20assembly">Our first program: in ARMv8 AArch64 assembly</h5>
 

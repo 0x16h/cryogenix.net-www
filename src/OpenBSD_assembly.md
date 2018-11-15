@@ -32,7 +32,7 @@ It's often a good idea to prototype your assembly programs in a high level langu
 	return 0;
     }
 
-OK, return 0 here is a little redundant as we have already called SYS_exit() to exit our program.
+OK, return 0 here is a little redundant as we have already called SYS\_exit() to exit our program.
 
 Compile with clang:
 
@@ -58,14 +58,14 @@ x86-64 General Purpose Registers:
     RBP    Base Pointer
     R8-15  General purpose 
 
-System calls such as exit/SYS_exit are defined in <sys/syscall.h> - assemblers, unlike C compilers, don't know about these C/C++ include files so we need to extract defines and macros from them to implement in assembly.
+System calls such as exit/SYS\_exit are defined in <sys/syscall.h> - assemblers, unlike C compilers, don't know about these C/C++ include files so we need to extract defines and macros from them to implement in assembly.
 
 If you look at /usr/include/sys/syscall.h you will see SYS_exit is defined near the top of the file:
 
     /* syscall: "exit" ret: "void" args: "int" */
     #define SYS_exit	1
 
-Our exit syscall returns void and takes one int as an argument. SYS_exit itself is is defined as '1'.  So when we make a syscall and pass SYS_exit, we are actually passing an integer that represents the function.
+Our exit syscall returns void and takes one int as an argument. SYS\_exit itself is is defined as '1'.  So when we make a syscall and pass SYS\_exit, we are actually passing an integer that represents the function.
 
 Syscall numbers are loaded into the rax register, and any parameters are put int rdi, rsi, rdx, etc. Any return value is left in rax.
 
@@ -92,8 +92,8 @@ Assemble and link with GNU tools:
     $ as sysexit.s -o sysexit.o
     $ ld -e _start -static sysexit.o -o sysexit
 
--e _start instructs the linker to use _start as an entry symbol/point
--static is required for compatibility with OpenBSD - I'm not sure why, but without it the program will abort.  Some kernel security feature?
+- -e _start instructs the linker to use _start as an entry symbol/point
+- -static is required for compatibility with OpenBSD - I'm not sure why, but without it the program will abort.  Some kernel security feature?
 
 
 
