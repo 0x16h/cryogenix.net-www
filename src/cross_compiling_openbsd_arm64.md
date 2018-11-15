@@ -6,19 +6,20 @@ There are two scenarios here - the first, if you are looking for a standard cros
 
 #### Scenario 1: Linaro ARM/AArch64 toolchain
 
-Available in ports, this is the go-to GCC toolchain for cross-compilation to ARM targets.
+Available in ports, this is the go-to GCC toolchain for cross-compilation to ARM targets.  aarch65-none-elf-gcc-linaro is relatively new and there doesn't exist a port for gdb nor newlib as yet.
 
 This will pull in binutils and gcc, which will be installed to /usr/local/aarch64-none-elf-*:
 
     doas pkg_add aarch64-none-elf-gcc-linaro
 
-The 32-bit ARM toolchain is also available, which includes GDB and newlib for the ARM target.
+The 32-bit ARM toolchain is also available, which includes GDB and newlib for the ARM target. 32-bit ARM binaries will run on Aarch64, which is why you see devices such as the Raspi3 having 32-bit or mixed-arch operating systems (64-bit kernel, 32-bit userland for example).
 
     doas pkg_add arm-none-eabi-gcc-linaro 
     doas pkg_add arm-none-eabi-gdb
     doas pkg_add arm-none-eabi-newlib
 
-This will give us a traditional cross-compilation environment with gdb built to use your host, in my case x86_64-unknown-openbsd6.4 and a target of arm-none-eabi.
+This will give us a traditional cross-compilation environment with gdb built to use your host, in my case x86_64-unknown-openbsd6.4 and a target of arm-none-eabi. Newlib is an implementation of the standard C library which was intended to be a free library for embedded devices and is popular with OS development hobbyists at stages where they have not written their own implementations.  This will allow us to write and compile C code that uses the std C library.
+
 
 #### Scenario 2: OpenBSD aarch64 development
 
