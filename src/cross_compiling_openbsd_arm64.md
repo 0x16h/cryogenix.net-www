@@ -2,6 +2,26 @@
 
 Following on from [OpenBSD/arm64 on QEMU](https://cryogenix.net/OpenBSD_arm64_qemu.html), it's not always practical to compile userland software or a new kernel on some systems, particularly small SoCs with limited space and memory - or indeed QEMU, in fear of melting your CPU. 
 
+There are two scenarios here - the first, if you are looking for a standard cross-compiler for Aarch64, and the second if you want an OpenBSD-specific environment.
+
+#### Scenario 1: Linaro ARM/AArch64 toolchain
+
+Available in ports, this is the go-to GCC toolchain for cross-compilation to ARM targets.
+
+This will pull in binutils and gcc, which will be installed to /usr/local/aarch64-none-elf-*:
+
+    doas pkg_add aarch64-none-elf-gcc-linaro
+
+The 32-bit ARM toolchain is also available, which includes GDB and newlib for the ARM target.
+
+    doas pkg_add arm-none-eabi-gcc-linaro 
+    doas pkg_add arm-none-eabi-gdb
+    doas pkg_add arm-none-eabi-newlib
+
+This will give us a traditional cross-compilation environment with gdb built to use your host, in my case x86_64-unknown-openbsd6.4 and a target of arm-none-eabi.
+
+#### Scenario 2: OpenBSD aarch64 development
+
 Cross-building is unsupported on OpenBSD - if you've ever dabbled in OS development or LinuxFromScratch, you can probably guess why; it can be unpredictable.
 Moreover, the OpenBSD platform lifecycle focuses on making OpenBSD self-hosting and only cross-compiles to the target platform for initial bootstrapping.
 
