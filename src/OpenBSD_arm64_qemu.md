@@ -81,7 +81,7 @@ In another terminal (hello, tmux!):
     >> OpenBSD/arm64 BOOTAA64 0.13
     boot>
 
-Proceed to install OpenBSD as normal; at set selection -x* -g* is recommended. To boot into your new system, remove the line with miniroot64.fs from the command above and perhaps save the command as a shell script for your convenience.
+Proceed to install OpenBSD as normal; at set selection -x* -g* is recommended. To boot into your new system, remove the line with miniroot64.fs from the command above and perhaps saving the full command as a shell script for your convenience. We don't need the serial console anymore if you elected to start sshd at boot, so the -serial line could either be removed or changed to '-serial FILE:serial.log'.
 
     Tue Nov 13 16:43:48 GMT 2018
     

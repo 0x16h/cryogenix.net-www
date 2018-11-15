@@ -1,2 +1,2 @@
 ./rss.xml
-./cross_compiling_openbsd_arm64.md
+./OpenBSD_arm64_qemu.md
