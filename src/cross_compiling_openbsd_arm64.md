@@ -6,7 +6,7 @@ There are two scenarios here - the first, if you are looking for a standard cros
 
 #### Scenario 1: Linaro ARM/AArch64 toolchain
 
-Available in ports, this is the go-to GCC toolchain for cross-compilation to ARM targets.  aarch65-none-elf-gcc-linaro is relatively new and there doesn't exist a port for gdb nor newlib as yet.
+Available in ports, this is the go-to GCC toolchain for cross-compilation to ARM targets.  aarch64-none-elf-gcc-linaro is relatively new and there doesn't exist a port for gdb nor newlib as yet.
 
 This will pull in binutils and gcc, which will be installed to /usr/local/aarch64-none-elf-*:
 
