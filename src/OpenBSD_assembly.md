@@ -117,8 +117,8 @@ Or if you want to use C variables, you could do:
     int
     main(void) {
         	register int arg __asm__("rdi") = 123;
-		register int scall __asm__("rax") = 1;
-		__asm__("syscall");
+        	register int scall __asm__("rax") = 1;
+        	__asm__("syscall");
     }
         
 Compile as you normally would:

@@ -282,8 +282,8 @@ main(void)
 <pre><code>int
 main(void) {
         register int arg __asm__(&quot;rdi&quot;) = 123;
-    register int scall __asm__(&quot;rax&quot;) = 1;
-    __asm__(&quot;syscall&quot;);
+        register int scall __asm__(&quot;rax&quot;) = 1;
+        __asm__(&quot;syscall&quot;);
 }
 </code></pre>
 
