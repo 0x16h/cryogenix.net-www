@@ -84,7 +84,7 @@ Equipped with this knowledge and the previous notes about the ELF program header
     .globl _start		/* make _start symbol global/known to ld */
     _start:
    	movq $1,%rax		/* copy 1 (SYS_exit) into rax register */
-	movq $123,$rdi		/* 1st parameter: 123
+	movq $123,%rdi		/* 1st parameter: 123
 	syscall 		/* call syscall (int 0x80 on 32-bit) */
 
 Assemble and link with GNU tools:
