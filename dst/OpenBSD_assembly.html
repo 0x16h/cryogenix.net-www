@@ -216,7 +216,7 @@ RBP    Base Pointer
 R8-15  General purpose 
 </code></pre>
 
-<p>System calls such as exit/SYS_exit are defined in <strong>sys/syscall.h</strong> - assemblers, unlike C compilers, don&#39;t know about these C/C++ include files so we need to extract defines and macros from them to implement in assembly.</p>
+<p>System calls such as exit/SYS_exit are defined in <strong>sys/syscall.h</strong> - assemblers, unlike C compilers, can&#39;t use these C/C++ include files so we need to extract defines and macros from them to implement in assembly. That said, some fancy assemblers such as FASM and NASM may provide macros for common types and functions... but we&#39;re good purists so won&#39;t mention those. </p>
 
 <p>If you look at /usr/include/sys/syscall.h you will see SYS_exit is defined near the top of the file:</p>
 
