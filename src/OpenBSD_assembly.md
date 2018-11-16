@@ -34,7 +34,7 @@ It's often a good idea to prototype your assembly programs in a high level langu
 
 OK, return 0 here is a little redundant as we have already called SYS\_exit() to exit our program.
 
-Compile with clang:
+Compile with LLVM:
 
     clang -o sysexit sysexit.c
 
