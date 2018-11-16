@@ -258,6 +258,12 @@ $ ld -e _start -static sysexit.o -o sysexit
 <li>-static is required for compatibility with OpenBSD - I&#39;m not sure why, but without it the program will abort.  Some kernel security feature?</li>
 </ul>
 
+<p>Execute our program and print the exit code:</p>
+
+<pre><code>$ ./sysexit
+$ echo $?
+</code></pre>
+
 <h5 id="Our%20first%20program:%20in%20inline%20x86-64%20assembly">Our first program: in inline x86-64 assembly</h5>
 
 <p>Nowadays it&#39;s often desirable to use inline assembly language within C programs; this allows precision control of registers and optimised routines to be made while retaining the beautiful ANSI C language for the bulk of the code.  Here&#39;s how we implement our program using inline asm, inline.c:</p>
@@ -265,14 +271,28 @@ $ ld -e _start -static sysexit.o -o sysexit
 <pre><code>int
 main(void)
 {
-    __asm__(&quot;mov $1, %rax \n\t&quot;
+    __asm__(&quot;mov $123, %rdi \n\t&quot;
+            &quot;mov $1, %rax \n\t&quot;
             &quot;syscall&quot;);
+}
+</code></pre>
+
+<p>Or if you want to use C variables, you could do:</p>
+
+<pre><code>int
+main(void) {
+    register int arg __asm__(&quot;rdi&quot;) = 123;
+register int scall __asm__(&quot;rax&quot;) = 1;
+__asm__(&quot;syscall&quot;);
 }
 </code></pre>
 
 <p>Compile as you normally would:</p>
 
-<pre><code>cc -o inline inline.c
+<pre><code>$ cc -o inline inline.c
+$ ./inline
+$ echo $?
+123
 </code></pre>
 
 <p>Done! </p>
