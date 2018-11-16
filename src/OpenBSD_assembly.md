@@ -95,6 +95,23 @@ Assemble and link with GNU tools:
 - -e _start instructs the linker to use _start as an entry symbol/point
 - -static is required for compatibility with OpenBSD - I'm not sure why, but without it the program will abort.  Some kernel security feature?
 
+##### Our first program: in inline x86-64 assembly
+
+Nowadays it's often desirable to use inline assembly language within C programs; this allows precision control of registers and optimised routines to be made while retaining the beautiful ANSI C language for the bulk of the code.  Here's how we implement our program using inline asm, inline.c:
+
+    int
+    main(void)
+    {
+        __asm__("mov $1, %rax \n\t"
+                "syscall");
+    }
+    
+Compile as you normally would:
+
+    cc -o inline inline.c
+    
+Done! 
+
 ##### Our first program: in x86-64 asm (NASM syntax) 
 
     section .note.openbsd.ident progbits alloc noexec nowrite
