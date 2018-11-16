@@ -155,7 +155,7 @@ p {
 
 <p>This is a short introduction to assembly language programming on OpenBSD/amd64+arm64.  Because of security features in the kernel, I have had to rethink a series of tutorials covering Aarch64 assembly language on OpenBSD, and therefore this will serve as a placeholder-cum-reminder.</p>
 
-<p>OpenBSD, like many UNIX and unix-like operating systems, uses the Executable and Linkable Format (ELF) for its binary libraries and executables.  Although the structure of this format is beyond the scope of this short introduction, it is necessary for me to explain part of one of the headers.</p>
+<p>OpenBSD, like many UNIX and unix-like operating systems, now uses the Executable and Linkable Format (ELF) for its binary libraries and executables.  Although the structure of this format is beyond the scope of this short introduction, it is necessary for me to explain part of one of the headers.</p>
 
 <p>Within the program header there are sections known as PT_NOTE that OpenBSD and other systems use to distinguish their ELF executables - OpenBSD looks for this section to check if it should attempt to execute the program or not.</p>
 
