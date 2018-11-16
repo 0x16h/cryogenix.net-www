@@ -1,2 +1,12 @@
-./rss.xml
+./index.md
+./AlphaServer_ES40_Emulation.md
+./OpenVMS_and_SIMH_pt1.md
+./OpenVMS_and_SIMH_pt2.md
+./shellcoding_on_freebsd.md
+./OpenBSD_nameserver.md
+./openbsd_nameserver.md
+./NCSA_Mosaic_OpenBSD.md
+./RET_level1.md
+./OpenBSD_arm64_qemu.md
+./cross_compiling_openbsd_arm64.md
 ./OpenBSD_assembly.md
