@@ -60,6 +60,8 @@ If you used stunnel(1) to TLSify Gophernicus, one way you can connect with gophe
 - when connecting to stunnel, libressl returns error 21 (unable to verify first cert) - however the same cert returns no error on port 443 (httpd(8)).
 - socat(1) will die when the connection is closed or reaches EOF, which is on every gopher request. Normally we would add the 'fork' option to the end of the openssl-connect command but for some reason it causes gopher(1) to become a runaway process and eat up CPU time.
 
+If you need a starting point with Gopher, SDF-EU's wiki has a good article [here](https://sdfeu.org/w/tutorials:gopher).
+
 Finally, if you don't like gopher(1) - there's always [NCSA Mosaic](https://cryogenix.net/NCSA_Mosaic_OpenBSD.html)!
 
 ![Gopher on Mosaic Screenshot](gop.png)
