@@ -20,6 +20,18 @@ NCSA Mosaic 2.7 on OpenBSD
 </item>
 
 <item>
+<guid>https://cryogenix.net/gophernicus.html</guid>
+<link>https://cryogenix.net/gophernicus.html</link>
+<pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+<title>Down the Gopher hole with OpenBSD, Gophernicus, and TLS</title>
+<description><![CDATA[
+
+Down the Gopher hole with OpenBSD, Gophernicus, and TLS
+
+]]></description>
+</item>
+
+<item>
 <guid>https://cryogenix.net/OpenBSD_assembly.html</guid>
 <link>https://cryogenix.net/OpenBSD_assembly.html</link>
 <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
