@@ -220,9 +220,12 @@ $ socat TCP4-LISTEN:10070 openssl-connect:go.cryogenix.net:343,cafile=/etc/ssl/c
 $ gopher gopher://localhost:10070
 </code></pre>
 
-<p>*** Caveats ***
-- when connecting to stunnel, libressl returns error 21 (unable to verify first cert) - however the same cert returns no error on port 443 (httpd(8)).
-- socat(1) will die when the connection is closed or reaches EOF, which is on every gopher request. Normally we would add the &#39;fork&#39; option to the end of the openssl-connect command but for some reason it causes gopher(1) to become a runaway process and eat up CPU time.</p>
+<h5 id="Caveats">Caveats</h5>
+
+<ul>
+<li>when connecting to stunnel, libressl returns error 21 (unable to verify first cert) - however the same cert returns no error on port 443 (httpd(8)).</li>
+<li>socat(1) will die when the connection is closed or reaches EOF, which is on every gopher request. Normally we would add the &#39;fork&#39; option to the end of the openssl-connect command but for some reason it causes gopher(1) to become a runaway process and eat up CPU time.</li>
+</ul>
 <p>Navigation: <a href="/">${HOME}</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
 <p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>

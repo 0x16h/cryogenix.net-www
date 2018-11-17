@@ -57,7 +57,8 @@ If you used stunnel(1) to TLSify Gophernicus, one way you can connect with gophe
     $ socat TCP4-LISTEN:10070 openssl-connect:go.cryogenix.net:343,cafile=/etc/ssl/cert.pem,method=TLS1.2,verify=0,reuseaddr &
     $ gopher gopher://localhost:10070
 
-*** Caveats ***
+##### Caveats #####
+
 - when connecting to stunnel, libressl returns error 21 (unable to verify first cert) - however the same cert returns no error on port 443 (httpd(8)).
 - socat(1) will die when the connection is closed or reaches EOF, which is on every gopher request. Normally we would add the 'fork' option to the end of the openssl-connect command but for some reason it causes gopher(1) to become a runaway process and eat up CPU time.
 
