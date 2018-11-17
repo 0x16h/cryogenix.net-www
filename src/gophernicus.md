@@ -6,7 +6,7 @@ Like cloud computing, blockchains, machine learning and a tonne of other a la mo
 
 Before the HTTP web we relied on Prestel/Minitel style systems, BBS systems, and arguably the most accessible of all - Gopher! Gopher was similar to the locally accessed AmigaGuide format, in that it allowed users to search and retrieve documents interactively, with links and cross-references. Its efficiency and distraction-free nature make it attractive to those who are tired of the invasive, clickbait, ad-filled, javascript-laden web2/3.x. But enough complaining and evangelism - here's how to get your own Gopher Hole!
 
-Gophernicus is a modern gopher daemon which aims to be secure (although it still uses inetd -_-); it's even in OpenBSD ports so at least we can rely on it to be reasonably audited. Ideally, I would use a vmd(8) VM or chroot with a TCP proxy but there's no point cluttering up this article with that yet. Let's install that and also an ncurses-based gopher client to test things out later:
+Gophernicus is a modern gopher daemon which aims to be secure (although it still uses inetd -_-); it's even in OpenBSD ports so at least we can rely on it to be reasonably audited. Let's install that and also an ncurses-based gopher client to test things out later:
 
     $ doas pkg_add gophernicus gopher
 
