@@ -26,8 +26,6 @@ See **/usr/local/share/doc/gophernicus/README** for a full listing of command-li
 If you are using TLS, add a [gophernicus] service to /etc/stunnel/stunnel.conf. For the cert and key, I just added an alternative name for my domain in /etc/acme-client.conf, moved the old cert and ran **acme-client -vFAD cryogenix.net** to update my Let's Encrypt cert:
 
     [gophernicus]
-    libwrap = yes
-    service = in.gophernicus-tls
     cert = /etc/ssl/cryogenix.net.crt
     key = /etc/ssl/private/cryogenix.net.key
     accept = 343
