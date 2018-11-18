@@ -16,7 +16,7 @@ The section uses a structure similar to the following:
     	long	desc;	  /* description */
     }
 
-For our assembled programs to link correctly with GNU/LLVM as+ld, we must create this section; there's probably a cute way of doing this with ld and crt0 but I haven't looked into it.
+For our assembled programs to link and execute correctly, we must create this section; If you are an ld(1) wizard, you can also use PHDRS to accomplish this. 
 
 ##### Our first program: in C!
 
