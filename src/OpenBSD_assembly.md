@@ -12,7 +12,7 @@ The section uses a structure similar to the following:
     	long	namesz;   /* size of name */
     	long	descsz;   /* size of desc */
     	long	type;     /* ABI type? */
-    	char	name;	  /* ABI name */
+    	char	name;	  /* ABI/vendor name */
     	long	desc;	  /* description */
     }
 
