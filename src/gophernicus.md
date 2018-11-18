@@ -64,4 +64,6 @@ If you need a starting point with Gopher, SDF-EU's wiki has a good article [here
 
 Finally, if you don't like gopher(1) - there's always lynx(1) or [NCSA Mosaic](https://cryogenix.net/NCSA_Mosaic_OpenBSD.html)!
 
-![Gopher on Mosaic Screenshot](gop.png)
+![Gopher client viewing cryogenix](gop2.jpg)
+![Gopher client viewing cryogenix](gop3.jpg)
+![Gopher on Mosaic Screenshot](gop.jpg)
