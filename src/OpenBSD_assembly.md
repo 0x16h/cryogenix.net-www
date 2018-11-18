@@ -193,8 +193,8 @@ sysexit-arm.s:
 
 Assemble and link:
 
-    gas sysexit-arm.s -o sysexit-arm.o
-    ld sysexit-arm.o -o sysexit-arm --dynamic-linker /usr/libexec/ld.so 
+    $ gas sysexit-arm.s -o sysexit-arm.o
+    $ ld sysexit-arm.o -o sysexit-arm --dynamic-linker /usr/libexec/ld.so 
 
     $ ./sysexit-arm
     $ echo $?

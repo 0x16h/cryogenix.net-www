@@ -363,8 +363,8 @@ _start:
 
 <p>Assemble and link:</p>
 
-<pre><code>gas sysexit-arm.s -o sysexit-arm.o
-ld sysexit-arm.o -o sysexit-arm --dynamic-linker /usr/libexec/ld.so 
+<pre><code>$ gas sysexit-arm.s -o sysexit-arm.o
+$ ld sysexit-arm.o -o sysexit-arm --dynamic-linker /usr/libexec/ld.so 
 
 $ ./sysexit-arm
 $ echo $?
