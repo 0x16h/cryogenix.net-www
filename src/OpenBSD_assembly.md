@@ -84,16 +84,20 @@ Equipped with this knowledge and the previous notes about the ELF program header
     .globl _start		/* make _start symbol global/known to ld */
     _start:
    	movq $1,%rax		/* copy 1 (SYS_exit) into rax register */
-	movq $123,%rdi		/* 1st parameter: 123
+	movq $123,%rdi		/* 1st parameter: 123 */
 	syscall 		/* call syscall (int 0x80 on 32-bit) */
 
 Assemble and link with GNU tools:
 
     $ as sysexit.s -o sysexit.o
+    $ ld sysexit.o -o sysexit --dynamic-linker /usr/libexec/ld.so
+
+For a static executable:
+
     $ ld -e _start -static sysexit.o -o sysexit
 
 - -e _start instructs the linker to use _start as an entry symbol/point
-- -static is required for compatibility with OpenBSD - I'm not sure why, but without it the program will abort.  Some kernel security feature?
+- -static is required otherwise the resulting shared executable will look for /lib/ld64.so.1 (which doesn't exist) - thanks /u/Kernigh!
 
 Execute our program and print the exit code:
 
@@ -151,7 +155,8 @@ Done!
 Assemble and link:
 
     nasm -f elf64 sysexit-nasm.s -o sysexit-nasm.o
-    ld -s -e _start -static -o sysexit-nasm sysexit-nasm.o
+    /* ld -e _start -static -o sysexit-nasm sysexit-nasm.o */
+    ld -o sysexit-nasm sysexit-nasm.o --dynamic-linker /usr/libexec/ld.so 
     
 
 ##### Our first program: in ARMv8 AArch64 assembly
@@ -180,8 +185,8 @@ sysexit-arm.s:
     .p2align 2
     
     .text
-    .globl main
-    main:
+    .globl _start 
+    _start:
         mov x0, #123	/* copy 123 to x0 - reverse of AT&T syntax */
         mov x8, #1	/* copy 1 into x8
         svc #0 		/* supervisor instruction - formerly swi */
@@ -189,10 +194,9 @@ sysexit-arm.s:
 Assemble and link:
 
     gas sysexit-arm.s -o sysexit-arm.o
-    ld -s sysexit-arm.o -o sysexit-arm // -z notext -static
+    ld sysexit-arm.o -o sysexit-arm --dynamic-linker /usr/libexec/ld.so 
 
-Or with clang:
+    $ ./sysexit-arm
+    $ echo $?
 
-    clang sysexit-arm.s -o sysexit-arm
-
-
+And we're done!

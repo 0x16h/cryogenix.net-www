@@ -243,19 +243,24 @@ R8-15  General purpose
 .globl _start       /* make _start symbol global/known to ld */
 _start:
 movq $1,%rax        /* copy 1 (SYS_exit) into rax register */
-movq $123,%rdi      /* 1st parameter: 123
+movq $123,%rdi      /* 1st parameter: 123 */
 syscall         /* call syscall (int 0x80 on 32-bit) */
 </code></pre>
 
 <p>Assemble and link with GNU tools:</p>
 
 <pre><code>$ as sysexit.s -o sysexit.o
-$ ld -e _start -static sysexit.o -o sysexit
+$ ld sysexit.o -o sysexit --dynamic-linker /usr/libexec/ld.so
+</code></pre>
+
+<p>For a static executable:</p>
+
+<pre><code>$ ld -e _start -static sysexit.o -o sysexit
 </code></pre>
 
 <ul>
 <li>-e _start instructs the linker to use _start as an entry symbol/point</li>
-<li>-static is required for compatibility with OpenBSD - I&#39;m not sure why, but without it the program will abort.  Some kernel security feature?</li>
+<li>-static is required otherwise the resulting shared executable will look for /lib/ld64.so.1 (which doesn&#39;t exist) - thanks /u/Kernigh!</li>
 </ul>
 
 <p>Execute our program and print the exit code:</p>
@@ -318,7 +323,8 @@ _start:
 <p>Assemble and link:</p>
 
 <pre><code>nasm -f elf64 sysexit-nasm.s -o sysexit-nasm.o
-ld -s -e _start -static -o sysexit-nasm sysexit-nasm.o
+/* ld -e _start -static -o sysexit-nasm sysexit-nasm.o */
+ld -o sysexit-nasm sysexit-nasm.o --dynamic-linker /usr/libexec/ld.so 
 </code></pre>
 
 <h5 id="Our%20first%20program:%20in%20ARMv8%20AArch64%20assembly">Our first program: in ARMv8 AArch64 assembly</h5>
@@ -348,8 +354,8 @@ X30          = link register
 .p2align 2
 
 .text
-.globl main
-main:
+.globl _start 
+_start:
     mov x0, #123    /* copy 123 to x0 - reverse of AT&amp;T syntax */
     mov x8, #1  /* copy 1 into x8
     svc #0      /* supervisor instruction - formerly swi */
@@ -358,13 +364,13 @@ main:
 <p>Assemble and link:</p>
 
 <pre><code>gas sysexit-arm.s -o sysexit-arm.o
-ld -s sysexit-arm.o -o sysexit-arm // -z notext -static
+ld sysexit-arm.o -o sysexit-arm --dynamic-linker /usr/libexec/ld.so 
+
+$ ./sysexit-arm
+$ echo $?
 </code></pre>
 
-<p>Or with clang:</p>
-
-<pre><code>clang sysexit-arm.s -o sysexit-arm
-</code></pre>
+<p>And we&#39;re done!</p>
 <p>Navigation: <a href="/">${HOME}</a></p>
 <p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
 <p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
