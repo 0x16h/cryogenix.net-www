@@ -6,7 +6,7 @@ Like cloud computing, blockchains, machine learning and a tonne of other a la mo
 
 Before the HTTP web we relied on Prestel/Minitel style systems, BBS systems, and arguably the most accessible of all - Gopher! Gopher was similar to the locally accessed AmigaGuide format, in that it allowed users to search and retrieve documents interactively, with links and cross-references. Its efficiency and distraction-free nature make it attractive to those who are tired of the invasive, clickbait, ad-filled, javascript-laden web2/3.x. But enough complaining and evangelism - here's how to get your own Gopher Hole!
 
-Gophernicus is a modern gopher daemon which aims to be secure (although it still uses inetd -_-); it's even in OpenBSD ports so at least we can rely on it to be reasonably audited. Let's install that and also an ncurses-based gopher client to test things out later:
+Gophernicus is a modern gopher daemon which aims to be secure (although it still uses inetd -_-); it's even in OpenBSD ports so at least we can rely on it to be reasonably audited. Let's install that and also an ncurses-based gopher client (or lynx(1)) to test things out later:
 
     $ doas pkg_add gophernicus gopher
 
@@ -62,6 +62,6 @@ If you used stunnel(1) to TLSify Gophernicus, one way you can connect with gophe
 
 If you need a starting point with Gopher, SDF-EU's wiki has a good article [here](https://sdfeu.org/w/tutorials:gopher).
 
-Finally, if you don't like gopher(1) - there's always [NCSA Mosaic](https://cryogenix.net/NCSA_Mosaic_OpenBSD.html)!
+Finally, if you don't like gopher(1) - there's always lynx(1) or [NCSA Mosaic](https://cryogenix.net/NCSA_Mosaic_OpenBSD.html)!
 
 ![Gopher on Mosaic Screenshot](gop.png)

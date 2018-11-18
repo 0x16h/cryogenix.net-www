@@ -159,7 +159,7 @@ p {
 
 <p>Before the HTTP web we relied on Prestel/Minitel style systems, BBS systems, and arguably the most accessible of all - Gopher! Gopher was similar to the locally accessed AmigaGuide format, in that it allowed users to search and retrieve documents interactively, with links and cross-references. Its efficiency and distraction-free nature make it attractive to those who are tired of the invasive, clickbait, ad-filled, javascript-laden web2/3.x. But enough complaining and evangelism - here&#39;s how to get your own Gopher Hole!</p>
 
-<p>Gophernicus is a modern gopher daemon which aims to be secure (although it still uses inetd -_-); it&#39;s even in OpenBSD ports so at least we can rely on it to be reasonably audited. Let&#39;s install that and also an ncurses-based gopher client to test things out later:</p>
+<p>Gophernicus is a modern gopher daemon which aims to be secure (although it still uses inetd -_-); it&#39;s even in OpenBSD ports so at least we can rely on it to be reasonably audited. Let&#39;s install that and also an ncurses-based gopher client (or lynx(1)) to test things out later:</p>
 
 <pre><code>$ doas pkg_add gophernicus gopher
 </code></pre>
@@ -227,7 +227,7 @@ $ gopher gopher://localhost:10070
 
 <p>If you need a starting point with Gopher, SDF-EU&#39;s wiki has a good article <a href="https://sdfeu.org/w/tutorials:gopher">here</a>.</p>
 
-<p>Finally, if you don&#39;t like gopher(1) - there&#39;s always <a href="https://cryogenix.net/NCSA_Mosaic_OpenBSD.html">NCSA Mosaic</a>!</p>
+<p>Finally, if you don&#39;t like gopher(1) - there&#39;s always lynx(1) or <a href="https://cryogenix.net/NCSA_Mosaic_OpenBSD.html">NCSA Mosaic</a>!</p>
 
 <p><img src="gop.png" alt="Gopher on Mosaic Screenshot" /></p>
 <p>Navigation: <a href="/">${HOME}</a></p>
