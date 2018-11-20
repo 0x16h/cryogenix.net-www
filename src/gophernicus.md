@@ -1,6 +1,6 @@
 #### Down the Gopher hole with OpenBSD, Gophernicus, and TLS
 
-**UPDATE: I've added TLS support to Gophernicus so you don't need to use stunnel anymore.** 
+**UPDATE: I've added TLS support to Gophernicus so you don't need to use stunnel anymore. The code is ugly and unpolished though so I wouldn't recommend for production use.** 
 
 - [https://github.com/0x16h/gophernicus](https://github.com/0x16h/gophernicus)
 - [INSTALL.openbsd](https://github.com/0x16h/gophernicus/blob/master/INSTALL.openbsd)
