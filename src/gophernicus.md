@@ -1,5 +1,9 @@
 #### Down the Gopher hole with OpenBSD, Gophernicus, and TLS
 
+**UPDATE: I've added TLS support to Gophernicus so you don't need to use stunnel anymore.** 
+**[https://github.com/0x16h/gophernicus](https://github.com/0x16h/gophernicus)**
+**[INSTALL.openbsd](https://github.com/0x16h/gophernicus/blob/master/INSTALL.openbsd)**
+
 In the early 2000s I thought I had seen the worst of the web - Java applets, Macromedia (>Adobe) Flash, animated GIFs, javascript snow that kept you warm in the winter by burning out your CPU, and so on.  For a time we learned from these mistakes, and started putting the burden on the server-side - then with improvements in javascript engines we started abusing it again with JSON/AJAX and it all went down hill from there.
 
 Like cloud computing, blockchains, machine learning and a tonne of other a la mode technologies around today - most users and service providers don't need websites that consume 1GB of memory processing JS and downloading 50MB of compressed data just to read Alice's one-page travel blog or Bob's notes on porting NetBSD to his blood-pressure monitor.
