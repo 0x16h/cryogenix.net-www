@@ -56,8 +56,22 @@ If you had no errors, you should now be able to use gopher(1) to connect to your
 
     $ gopher gopher://go.cryogenix.net
 
-If you used stunnel(1) to TLSify Gophernicus, one way you can connect with gopher(1) over TLS on port 343 is by using socat(1):
+If you used stunnel(1) to TLSify Gophernicus, one way you can connect with gopher(1) over TLS on port 343 is by using stunnel(1) on the client or socat(1):
 
+    $ pkg_add stunnel
+
+Add the following to /etc/stunnel/stunnel.conf:
+
+    [gophers]
+    client = yes
+    accept = 127.0.0.1:10343
+    connect = <hostname>:343
+    CApath = /etc/ssl/cert.pem
+
+Then start stunnel with rcctl and connect gopher to 127.0.0.1:10343.
+
+Alternatively, with socat:
+ 
     $ doas pkg_add socat
     $ socat TCP4-LISTEN:10070 openssl-connect:go.cryogenix.net:343,cafile=/etc/ssl/cert.pem,method=TLS1.2,verify=0,reuseaddr &
     $ gopher gopher://localhost:10070
