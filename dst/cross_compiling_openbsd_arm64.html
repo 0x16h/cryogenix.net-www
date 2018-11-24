@@ -207,14 +207,10 @@ toolsdir=${topdir}/tools.${target}
 cd ${srcdir}
 </code></pre>
 
-<p>Generate and export a cross-building environment in the current shell. These env vars contain paths for the target toolchain, build directories and compiler flags: </p>
+<p>As root, we create the directories for our toolchain, set the environment, then build the toolchain itself.  Aarch64 is strictly an llvm/lld platform on OpenBSD (thanks, brynet!) - but for some reason when I tried to build the toolchain it complained about ld.bfd being missing from somewhere in ${destdir}... quick solution: touch the file and run make again as below!</p>
 
-<pre><code>eval export $( make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-env )
-</code></pre>
-
-<p>As root, we create the directories for our toolchain then build the toolchain itself.  Aarch64 is strictly an llvm/lld platform on OpenBSD (thanks, brynet!) - but for some reason when I tried to build the toolchain it complained about ld.bfd being missing from somewhere in ${destdir}... quick solution: touch the file and run make again as below!</p>
-
-<pre><code>doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-dirs
+<pre><code>doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-env
+doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-dirs
 doas make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-tools
 </code></pre>
 
@@ -236,7 +232,8 @@ ln -sf ${destdir}/usr/${target}-unknown-openbsd6.4 ${toolsdir}
 
 <p>Finally, test our environment out by compiling a C file with cc (clang):</p>
 
-<pre><code>$ cd ..
+<pre><code>$ eval export $( make -f Makefile.cross TARGET=${target} CROSSDIR=${destdir} cross-env )
+$ cd ..
 $ cat &lt;&lt;EOF &gt;&gt;hello.c
 #include &lt;stdio.h&gt;
 
