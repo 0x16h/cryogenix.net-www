@@ -9,6 +9,9 @@ Resources:
 
 This was originally for a YouTube video which you can watch at [https://www.youtube.com/watch?v=ANQsj8KCzRc](https://www.youtube.com/watch?v=ANQsj8KCzRc).
 
+[![Youtube Video](https://img.youtube.com/vi/ANQsj8KCzRc/0.jpg)](https://www.youtube.com/watch?v=ANQsj8KCzRc)
+
+
 Code:
 
 **sniffer.c**
