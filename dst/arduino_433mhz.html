@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="romanzolotarev.com/bin/ssg3">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>Cryogenix</title>
+<style>body {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 10px;
+  background-color: #000000;
+  color: #9ba4b2;
+  background: url(data:image/gif;base64,R0lGODlhBgAGAJEAAP///xYWFgAAAAAAACwAAAAABgAGAAACCpQdhyqpfoKcoQAAOw==);
+}
+
+a {
+  color: #204fd5;
+ font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+  color: #334f83;
+}
+a:hover {
+    text-decoration: underline;
+  color: #204fd5;
+}
+
+body,
+input,
+button {
+  font-size: 20px;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+hr,
+h1,
+h2 {
+  margin-top: 60px;
+}
+
+hr {
+  border: 0;
+}
+
+li {
+  padding: 5px 0;
+font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+pre {
+  font-size: 15px;
+  overflow-x: auto;
+}
+
+pre,
+blockquote {
+  margin-bottom: 40px;
+}
+
+p img,
+table {
+  width: 100%;
+}
+
+p {
+  clear: both;
+}
+
+.avatar {
+  width: 60px;
+  heigth: 60px;
+  border-radius: 60px;
+}
+
+.left {
+  float: left;
+  margin: 8px 24px 24px 0;
+}
+
+.quote {
+  text-indent: -16px;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.button,
+.email {
+  -webkit-appearance: none;
+  color: #000000;
+  padding: 15px;
+}
+
+.email {
+  background-color: #ffffff;
+  border: solid 1px #888888;
+}
+
+.button {
+  background-color: #ffc469;
+  border: solid 1px #ffc469;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+h1 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+pre {
+  overflow-x: auto;
+  color: white;
+}
+
+pre>code {
+	background-color: #3c4047;
+box-sizing: border-box;
+display: block;
+    white-space: pre;
+  overflow-x: auto;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+	    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+	padding-top: 2px;
+    padding-right: 4px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+} 
+ul {
+ background-color: black;
+}
+p {
+ background-color: black;
+ padding: 5px;
+}</style>
+</head>
+<body>
+<body bgcolor="#000000" text="#FFFFFF">
+<img width=300 src="cryo.jpg" alt="Cryogenix"/>
+<p>Navigation: <a href="/">${HOME}</a> <a href="/rss.xml">/rss.xml</a> <a href="https://github.com/0x16h/">/github</a>  <a href="https://twitter.com/0x16h">/Twitter</a> <a href="https://www.patreon.com/0x16h">/Patreon</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<h4 id="433%20Mhz%20vehicle%20unlocking%20with%20Arduino%20Duo">433 Mhz vehicle unlocking with Arduino Duo</h4>
+
+<p>Having only one key fob for the van is anxiety-inducing in case it fails, so I decided to build a replacement with an Arduino/ATMega and a 433Mhz transceiver module.</p>
+
+<p>Resources:</p>
+
+<ul>
+<li><a href="https://github.com/ninjablocks/433Utils">433Utils library by ninjablocks</a></li>
+<li><a href="https://github.com/sui77/rc-switch">Alternative rc-switch library</a></li>
+</ul>
+
+<p>This was originally for a YouTube video which you can watch at <a href="https://www.youtube.com/watch?v=ANQsj8KCzRc">https://www.youtube.com/watch?v=ANQsj8KCzRc</a>.</p>
+
+<p>Code:</p>
+
+<p><strong>sniffer.c</strong></p>
+
+<pre><code>#include
+
+RCSwitch mySwitch = RCSwitch();
+
+void setup() {
+    Serial.begin(9600);
+    mySwitch.enableReceive(0); // Receiver on inerrupt 0 =&gt; that is pin #2
+}
+
+void loop() {
+
+    if (mySwitch.available()) {
+        int value = mySwitch.getReceivedValue();
+            if (value == 0) {
+                Serial.print(&quot;Unknown encoding&quot;);
+            } else {
+                Serial.print(&quot;Received &quot;);
+                Serial.print( mySwitch.getReceivedValue() );
+                Serial.print(&quot; / &quot;);
+                Serial.print( mySwitch.getReceivedBitlength() );
+                Serial.print(&quot;bit &quot;);
+                Serial.print(&quot;Protocol: &quot;);
+                Serial.println( mySwitch.getReceivedProtocol() );
+            }
+        mySwitch.resetAvailable();
+
+    }
+}
+</code></pre>
+
+<p><strong>transmitter.c</strong></p>
+
+<pre><code>#include &lt;RCSwitch.h&gt;
+
+#define CODE_one 10692289
+#define CODE_two 10692290
+#define CODE_three 10692296
+
+const int buttonPin = 4;
+const int ledPin =  13;
+int buttonPushCounter = 0;
+int buttonState = 0;
+int lastButtonState = 0;
+
+RCSwitch mySwitch = RCSwitch();
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+    pinMode(buttonPin, INPUT);
+    pinMode(7, OUTPUT);
+    Serial.begin(9600);
+    mySwitch.enableTransmit(7);
+}
+
+void loop() {
+        buttonState = digitalRead(buttonPin);  
+        if (buttonState != lastButtonState) {
+          if (buttonState == HIGH) {
+            buttonPushCounter++;
+          }
+          lastButtonState = buttonState;
+           if (buttonPushCounter % 2 == 0) {
+            digitalWrite(ledPin, LOW);
+            mySwitch.send(CODE_one, 24);
+            buttonPushCounter = 0;
+          } else {
+            digitalWrite(ledPin, HIGH);
+            mySwitch.send(CODE_two, 24);
+          }  
+        }
+     }
+</code></pre>
+<p>Navigation: <a href="/">${HOME}</a></p>
+<p>Bitcoin: 1Do5wpfnHjDDm6zULEBstwHnqp9iPb8kBG</p>
+<p>&copy; 2003-2018 Cryogenix | Powered by <a href="https://openbsd.org">OpenBSD</a> | Built with <a href="https://www.romanzolotarev.com/ssg.html">ssg3</a></p>
+</body>
+</html>
