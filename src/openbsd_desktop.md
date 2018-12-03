@@ -2,6 +2,8 @@
 
 Everyone loves an OpenBSD Desktop article, don't they? So there seems very little point in me reiterating what is a relatively simple process nowadays.  That said, after the install process there are a couple of things which, for me, make OpenBSD the perfect workstation operating system...
 
+![OpenBSD+ratpoison+urxvt+tmux](desktop.png)
+
 __TLDR: SCROLL DOWN__
 
 OpenBSD has installed, and you've logged into the lovely xenodm(1) system and are presented with a classic-looking GUI - cwm(1).  I like cwm, in fact I would favour it if I was a big mouse user because it is such a simple, light and efficient solution to a 'problem' that has resulted in countless attempts to perfect a user-interface that ticks all the boxes... WIMP (Windows, Icons, Menus, Pointers) - as it was called in my pre-school* computing class.
