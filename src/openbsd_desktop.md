@@ -1,4 +1,4 @@
-#### OpenBSD Desktop
+#### OpenBSD Desktop for Minimalists
 
 Everyone loves an OpenBSD Desktop article, don't they? So there seems very little point in me reiterating what is a relatively simple process nowadays.  That said, after the install process there are a couple of things which, for me, make OpenBSD the perfect workstation operating system...
 
