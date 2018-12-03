@@ -6,8 +6,6 @@ Everyone loves an OpenBSD Desktop article, don't they? So there seems very littl
 
 __TLDR: SCROLL DOWN__
 
-OpenBSD has installed, and you've logged into the lovely xenodm(1) system and are presented with a classic-looking GUI - cwm(1).  I like cwm, in fact I would favour it if I was a big mouse user because it is such a simple, light and efficient solution to a 'problem' that has resulted in countless attempts to perfect a user-interface that ticks all the boxes... WIMP (Windows, Icons, Menus, Pointers) - as it was called in my pre-school* computing class.
-
 In recent years, OpenBSD has become more popular as a desktop/workstation OS, which is quite surprising to many who consider it to be an arcane incarnation of BSD that's used only by tinfoil hatters, the BGP bourgeosie, and minimalist mashochists. Improved hardware support, the clean and ~perfect code style, a consistent environment, and the ease of configuration may be some reasons for people moving to the distro.
 
 Personally, I used OpenBSD for years on bare-metal and VM servers as well as building a liveCD distro for occasional use before adopting it full-time.  Out of the box, it is faster and easier to configure than FreeBSD and even most linux distros.  I do still love FreeBSD, but it lacks *je ne sais quoi* that OpenBSD has at a base level which enables fast configuration and usability whatever you're using it on.
