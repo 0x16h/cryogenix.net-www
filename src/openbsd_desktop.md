@@ -37,7 +37,7 @@ You would be surprised at how many packages in base can do the things you need..
 * Iridium is a secure build of Google's Chromium source, removing a lot of the spyware and crap left behind.  It also has some proactively secure features, such as password amnesia.
 * mupdf is a simple PDF viewer - but more featureful than xpdf.
 * mpv is a media player based on mplayer
-* ratpoison is my window-manager of choice. Written in C and tiling. No mouse required (hence the name).
+* ratpoison is my window-manager of choice. Written in C with tiling. No mouse required (hence the name).
 
 I used to start X from the console, but following a woopsie involving Xorg being setuid, OpenBSD revoked that privilege and now users should use xenodm(1) to start X and their window manager. Let's create our ratpoison session in ~/.xsession:
 
@@ -79,4 +79,18 @@ As much as I like the retro/SunOS look of rxvt with a white background, I like t
 
 visualBell flashes the screen since we have the audible bell disabled. Perhaps not a great idea if you have certain forms of epilepsy; Keep pressing backspace for more info.
 
+Ctrl-Alt-Backspace to restart X and return to Xenodm, then login again.
 
+You should now be presented with a lovely urxvt terminal with a black background. Here are some keyboard shortcuts to help you get started:
+
+* ALT+F1-F6 - Change to desktop/workstation 1-6
+* WIN x - start urxvt
+* WIN i - start iridium browser
+* WIN t - start Tor browser
+* WIN q - start qbittorrent
+* WIN ! - execute command
+* WIN SHIFT+K - kill current window
+
+As for tmux(1), CTRL-b :split-window -h and :split-window are your friends.
+
+Have fun! 
