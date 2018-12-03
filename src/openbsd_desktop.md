@@ -42,7 +42,7 @@ Install some packages from xterm in cwm:
 You would be surprised at how many packages in base can do the things you need... ftp(1) for example is not just an ftp client, but can be used like 'fetch' to download files over FTP, HTTP, and HTTPS.
  But there are a few packages I consider 'essential' listed above, some of which you may not know:
 
-* Iridium is a secure build of Google's Chromium source, removing a lot of the spyware and crap left behind.  It also has some proactively secure features, such as password amnesia.
+* Iridium is a secure build of Google's Chromium source, removing a lot of the spyware and crap left behind.  It also has some proactively secure features, such as password amnesia. Add the [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) extension for decent keyboard-controlled browsing (ProTip: alt-F to start).
 * mupdf is a simple PDF viewer - but more featureful than xpdf. There is also poppler-utils if you want pdftohtml or pdftotext (and of course poppler itself which is a fork of xpdf).
 * mpv is a media player based on mplayer
 * ratpoison is my window-manager of choice. Written in C with tiling. No mouse required (hence the name).
