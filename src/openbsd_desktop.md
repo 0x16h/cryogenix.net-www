@@ -73,12 +73,13 @@ A basic ~/.ratpoisonrc:
 * Use the Windows/Meta/Left-Super key instead of C-t
 * Bind keys to applications
 * Create 6 virtual desktops/workstations
-* Start urxvt when ratpoison starts
+* Start xterm when ratpoison starts
 
 As much as I like the retro SunOS look of xterm with a white background, I like to tweak the look slightly in ~/.Xresources:
 
     *visualBell: True 
-    xterm*faceName: Inconsolata:size=14
+    xterm.loginShell: true 
+    xterm*faceName: Inconsolata:size=16
     xterm*dynamicColors: true
     xterm*utf8: 2
     xterm*eightBitInput: true
@@ -90,7 +91,7 @@ As much as I like the retro SunOS look of xterm with a white background, I like 
 
 Press Ctrl-Alt-Backspace to restart X and return to Xenodm, then login again.
 
-You should now be presented with a lovely urxvt terminal with a black background. Here are some keyboard shortcuts to help you get started:
+You should now be presented with a lovely rxvt terminal with a black background. Here are some keyboard shortcuts to help you get started:
 
 * ALT+F1-F6 - Change to desktop/workstation 1-6
 * WIN x - start urxvt
