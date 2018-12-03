@@ -210,8 +210,8 @@ $ doas reboot
 <pre><code>xset b off
 xrdb -merge ~/.Xresources
 eval $(ssh-agent)
-xidle -timeout 600 -program &quot;/usr/X11R6/bin/xlock&quot;
-/usr/local/bin/ratpoison
+idle -delay 5 -sw -timeout 300 -program &quot;/usr/X11R6/bin/xlock -mode star&quot; &amp; 
+exec /usr/local/bin/ratpoison
 </code></pre>
 
 <ul>
