@@ -29,7 +29,7 @@ Install some packages from xterm in cwm:
     	git \
     	gnupg \
     	iridium \
-    	links \
+    	w3m \
     	mpv \
     	mupdf \
     	ratpoison \
