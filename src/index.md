@@ -5,6 +5,7 @@ A collection of code, articles and papers
 * [NCSA Mosaic 2.7 on OpenBSD](NCSA_Mosaic_OpenBSD.html "NCSA Mosaic 2.7 on OpenBSD") (03 Nov 2018)
 
 ### Articles
+* [OpenBSD Desktop](openbsd_desktop.html "OpenBSD Desktop") (03 Dec 2018)
 * [Down the Gopher hole with OpenBSD, Gophernicus, and TLS](gophernicus.html "Down the Gopher hole with OpenBSD, Gophernicus, and TLS") (17 Nov 2018)
 * [Assembly language on OpenBSD/amd64+arm64](OpenBSD_assembly.html "Assembly language on OpenBSD amd64 and arm64") (15 Nov 2018)
 * [Cross-compiling for OpenBSD/arm64](cross_compiling_openbsd_arm64.html "Cross compiling for OpenBSD arm64") (14 Nov 2018) 
