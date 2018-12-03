@@ -20,7 +20,7 @@ First, if you haven't done so already, add your user to doas.conf(5), make some 
     permit nopass keepenv yourusername
     $ doas sed -i 's/rw/rw,softdep,noatime/g' /etc/fstab
     $ doas sed -i 's/768M/2048M/g' /etc/login.conf 
-    $ reboot
+    $ doas reboot
 
 Install some packages from xterm in cwm:
 
