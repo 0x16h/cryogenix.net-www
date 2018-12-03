@@ -167,6 +167,15 @@ p {
 
 <p>I use a clean, minimalist system which maximises productivity without having a bloated userland; here&#39;s how to reproduce a basic version of it.</p>
 
+<p>First, if you haven&#39;t done so already, add your user to doas.conf(5), make some performance tweaks to our filesystems in /etc/fstab(5) and grant us more memory (assuming you have at least 4GB) in login.conf(5) (from xterm in cwm):</p>
+
+<pre><code>$ su root -c &#39;vi /etc/doas.conf&#39;
+permit nopass keepenv yourusername
+$ doas sed -i &#39;s/rw/rw,softdep,noatime/g&#39; /etc/fstab
+$ doas sed -i &#39;s/768M/2048M/g&#39; /etc/login.conf 
+$ reboot
+</code></pre>
+
 <p>Install some packages from xterm in cwm:</p>
 
 <pre><code>pkg_add ImageMagick \
@@ -223,8 +232,8 @@ exec urxvt +sb -fn &quot;xft:Inconsolata:pixelsize=16&quot;
 </code></pre>
 
 <ul>
-<li>Stop telling us about the help</li>
-<li>Use the Windows/Meta/Super key instead of C-t</li>
+<li>Stop telling us about the help shortcut</li>
+<li>Use the Windows/Meta/Left-Super key instead of C-t</li>
 <li>Bind keys to applications</li>
 <li>Create 6 virtual desktops/workstations</li>
 <li>Start urxvt when ratpoison starts</li>
@@ -240,9 +249,9 @@ URxvt.background: #000000
 *visualBell: True
 </code></pre>
 
-<p>visualBell flashes the screen since we have the audible bell disabled. Perhaps not a great idea if you have certain forms of epilepsy; Keep pressing backspace for more info.</p>
+<p>*visualBell flashes the screen since we have the audible bell disabled. Perhaps not a great idea if you have certain forms of epilepsy; Keep pressing backspace for more info.</p>
 
-<p>Ctrl-Alt-Backspace to restart X and return to Xenodm, then login again.</p>
+<p>Press Ctrl-Alt-Backspace to restart X and return to Xenodm, then login again.</p>
 
 <p>You should now be presented with a lovely urxvt terminal with a black background. Here are some keyboard shortcuts to help you get started:</p>
 
@@ -254,9 +263,10 @@ URxvt.background: #000000
 <li>WIN q - start qbittorrent</li>
 <li>WIN ! - execute command</li>
 <li>WIN SHIFT+K - kill current window</li>
+<li>WIN ? - show all keyboard shortcuts</li>
 </ul>
 
-<p>As for tmux(1), CTRL-b :split-window -h and :split-window are your friends.</p>
+<p>As for tmux(1) which is included in base and a window manager (albeit for shells) in its own right, CTRL-b :split-window -h, :split-window, and the arrow keys are your friends.</p>
 
 <p>Have fun! </p>
 <p>Navigation: <a href="/">${HOME}</a></p>

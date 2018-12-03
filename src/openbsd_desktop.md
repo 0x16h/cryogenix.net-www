@@ -14,6 +14,14 @@ __TLDR: Start here__
 
 I use a clean, minimalist system which maximises productivity without having a bloated userland; here's how to reproduce a basic version of it.
 
+First, if you haven't done so already, add your user to doas.conf(5), make some performance tweaks to our filesystems in /etc/fstab(5) and grant us more memory (assuming you have at least 4GB) in login.conf(5) (from xterm in cwm):
+
+    $ su root -c 'vi /etc/doas.conf'
+    permit nopass keepenv yourusername
+    $ doas sed -i 's/rw/rw,softdep,noatime/g' /etc/fstab
+    $ doas sed -i 's/768M/2048M/g' /etc/login.conf 
+    $ reboot
+
 Install some packages from xterm in cwm:
 
     pkg_add ImageMagick \
@@ -62,8 +70,8 @@ A basic ~/.ratpoisonrc:
     exec /usr/local/bin/rpws init 6 -k
     exec urxvt +sb -fn "xft:Inconsolata:pixelsize=16"
 
-* Stop telling us about the help
-* Use the Windows/Meta/Super key instead of C-t
+* Stop telling us about the help shortcut
+* Use the Windows/Meta/Left-Super key instead of C-t
 * Bind keys to applications
 * Create 6 virtual desktops/workstations
 * Start urxvt when ratpoison starts
@@ -77,9 +85,9 @@ As much as I like the retro/SunOS look of rxvt with a white background, I like t
     URxvt.background: #000000
     *visualBell: True
 
-visualBell flashes the screen since we have the audible bell disabled. Perhaps not a great idea if you have certain forms of epilepsy; Keep pressing backspace for more info.
+*visualBell flashes the screen since we have the audible bell disabled. Perhaps not a great idea if you have certain forms of epilepsy; Keep pressing backspace for more info.
 
-Ctrl-Alt-Backspace to restart X and return to Xenodm, then login again.
+Press Ctrl-Alt-Backspace to restart X and return to Xenodm, then login again.
 
 You should now be presented with a lovely urxvt terminal with a black background. Here are some keyboard shortcuts to help you get started:
 
@@ -90,7 +98,8 @@ You should now be presented with a lovely urxvt terminal with a black background
 * WIN q - start qbittorrent
 * WIN ! - execute command
 * WIN SHIFT+K - kill current window
+* WIN ? - show all keyboard shortcuts
 
-As for tmux(1), CTRL-b :split-window -h and :split-window are your friends.
+As for tmux(1) which is included in base and a window manager (albeit for shells) in its own right, CTRL-b :split-window -h, :split-window, and the arrow keys are your friends.
 
 Have fun! 
