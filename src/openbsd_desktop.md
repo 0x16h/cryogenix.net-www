@@ -33,6 +33,7 @@ Install some packages from xterm in cwm:
     	iridium \
     	w3m \
     	mpv \
+    	inconsolata-font \
     	mupdf \
     	ratpoison \
     	rsync \
@@ -67,10 +68,10 @@ A basic ~/.ratpoisonrc:
     escape Super_L
     bind i exec iridium
     bind t exec tor-browser
-    bind r exec urxvt +sb -e rtorrent
-    bind x exec urxvt +sb -fn "xft:Inconsolata:pixelsize=16"
+    bind r exec urxvt -e rtorrent
+    bind x exec urxvt -fn "xft:Inconsolata:pixelsize=16"
     exec /usr/local/bin/rpws init 6 -k
-    exec urxvt +sb -fn "xft:Inconsolata:pixelsize=16"
+    exec urxvt -fn "xft:Inconsolata:pixelsize=16"
 
 * Stop telling us about the help shortcut
 * Use the Windows/Meta/Left-Super key instead of C-t

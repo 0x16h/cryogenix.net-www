@@ -187,6 +187,7 @@ $ doas reboot
     iridium \
     w3m \
     mpv \
+    inconsolata-font \
     mupdf \
     ratpoison \
     rsync \
@@ -227,10 +228,10 @@ eval $(ssh-agent)
 escape Super_L
 bind i exec iridium
 bind t exec tor-browser
-bind r exec urxvt +sb -e rtorrent
-bind x exec urxvt +sb -fn &quot;xft:Inconsolata:pixelsize=16&quot;
+bind r exec urxvt -e rtorrent
+bind x exec urxvt -fn &quot;xft:Inconsolata:pixelsize=16&quot;
 exec /usr/local/bin/rpws init 6 -k
-exec urxvt +sb -fn &quot;xft:Inconsolata:pixelsize=16&quot;
+exec urxvt -fn &quot;xft:Inconsolata:pixelsize=16&quot;
 </code></pre>
 
 <ul>
