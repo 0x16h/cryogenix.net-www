@@ -53,6 +53,7 @@ I used to start X from the console, but following a woopsie involving Xorg being
     xset b off
     xrdb -merge ~/.Xresources
     eval $(ssh-agent)
+    xidle -timeout 600 -program "/usr/X11R6/bin/xlock"
     /usr/local/bin/ratpoison
 
 * The first command stops that awful beeping. As sensitive creatures who sit up late hacking away at something, it's too much.
