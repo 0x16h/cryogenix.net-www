@@ -65,7 +65,7 @@ A basic ~/.ratpoisonrc:
     escape Super_L
     bind i exec iridium
     bind t exec tor-browser
-    bind q exec qbittorrent
+    bind r exec urxvt +sb -e rtorrent
     bind x exec urxvt +sb -fn "xft:Inconsolata:pixelsize=16"
     exec /usr/local/bin/rpws init 6 -k
     exec urxvt +sb -fn "xft:Inconsolata:pixelsize=16"
@@ -95,7 +95,7 @@ You should now be presented with a lovely urxvt terminal with a black background
 * WIN x - start urxvt
 * WIN i - start iridium browser
 * WIN t - start Tor browser
-* WIN q - start qbittorrent
+* WIN r - start rtorrent 
 * WIN ! - execute command
 * WIN SHIFT+K - kill current window
 * WIN ? - show all keyboard shortcuts

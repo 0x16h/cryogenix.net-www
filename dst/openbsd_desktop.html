@@ -225,7 +225,7 @@ eval $(ssh-agent)
 escape Super_L
 bind i exec iridium
 bind t exec tor-browser
-bind q exec qbittorrent
+bind r exec urxvt +sb -e rtorrent
 bind x exec urxvt +sb -fn &quot;xft:Inconsolata:pixelsize=16&quot;
 exec /usr/local/bin/rpws init 6 -k
 exec urxvt +sb -fn &quot;xft:Inconsolata:pixelsize=16&quot;
@@ -260,7 +260,7 @@ URxvt.background: #000000
 <li>WIN x - start urxvt</li>
 <li>WIN i - start iridium browser</li>
 <li>WIN t - start Tor browser</li>
-<li>WIN q - start qbittorrent</li>
+<li>WIN r - start rtorrent </li>
 <li>WIN ! - execute command</li>
 <li>WIN SHIFT+K - kill current window</li>
 <li>WIN ? - show all keyboard shortcuts</li>
