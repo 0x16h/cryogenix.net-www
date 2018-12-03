@@ -163,7 +163,7 @@ p {
 
 <p>Personally, I used OpenBSD for years on bare-metal and VM servers as well as building a liveCD distro for occasional use before adopting it full-time.  Out of the box, it is faster and easier to configure than FreeBSD and even most linux distros.  I do still love FreeBSD, but it lacks <em>je ne sais quoi</em> that OpenBSD has at a base level which enables fast configuration and usability whatever you&#39;re using it on.</p>
 
-<p>I use a clean, minimalist system which maximises productivity without having a bloated userland; here&#39;s how to reproduce a basic version of it. I am stuck in my ways and haven&#39;t migrated to cwm(1) yet; also, in the initial version of this article I confused cwm with fvwm because I have fvwm as my wm on another box.  Additionally, as someone pointed out - I use rxvt-unicode instead of xterm.  xterm is in base, so use it.  I don&#39;t because it never used to play nice with UTF-8 but as of <a href="https://undeadly.org/cgi?action=article&amp;sid=20160308204011">2016</a> - xterm in OpenBSD uses unicode by default. I&#39;ve also started using a solarized build of st - but that isn&#39;t covered here.</p>
+<p>I use a clean, minimalist system which maximises productivity without having a bloated userland; here&#39;s how to reproduce a basic version of it. I am stuck in my ways and haven&#39;t migrated to cwm(1) yet; also, in the initial version of this article I confused cwm with fvwm because I have fvwm as my wm on another box. I&#39;ve also started using a solarized build of st - but that isn&#39;t covered here.</p>
 
 <p><strong>TLDR: Start here</strong></p>
 
@@ -176,7 +176,7 @@ $ doas sed -i &#39;s/768M/2048M/g&#39; /etc/login.conf
 $ doas reboot
 </code></pre>
 
-<p>Install some packages from xterm in cwm:</p>
+<p>Install some packages:</p>
 
 <pre><code>pkg_add ImageMagick \
     bzip2 \
@@ -189,7 +189,6 @@ $ doas reboot
     mupdf \
     ratpoison \
     rsync \
-    rxvt-unicode \
     tor-browser \
     rtorrent \
     unzip
@@ -225,10 +224,10 @@ exec /usr/local/bin/ratpoison
 escape Super_L
 bind i exec iridium
 bind t exec tor-browser
-bind r exec urxvt -e rtorrent
-bind x exec urxvt -fn &quot;xft:Inconsolata:pixelsize=16&quot;
+bind r exec xterm -e rtorrent
+bind x exec xterm -fa &quot;xft:Inconsolata:pixelsize=16&quot;
 exec /usr/local/bin/rpws init 6 -k
-exec urxvt -fn &quot;xft:Inconsolata:pixelsize=16&quot;
+exec xterm -fa &quot;xft:Inconsolata:pixelsize=16&quot;
 </code></pre>
 
 <ul>
@@ -239,14 +238,16 @@ exec urxvt -fn &quot;xft:Inconsolata:pixelsize=16&quot;
 <li>Start urxvt when ratpoison starts</li>
 </ul>
 
-<p>As much as I like the retro/SunOS look of rxvt with a white background, I like to tweak the look slightly in ~/.Xdefaults:</p>
+<p>As much as I like the retro SunOS look of xterm with a white background, I like to tweak the look slightly in ~/.Xresources:</p>
 
-<pre><code>URxvt.loginShell: true
-URxvt.scrollBar: false
-URxvt.cursorBlink: true
-URxvt.foreground: #FFFFFF
-URxvt.background: #000000
-*visualBell: True
+<pre><code>*visualBell: True 
+xterm*faceName: Inconsolata:size=14
+xterm*dynamicColors: true
+xterm*utf8: 2
+xterm*eightBitInput: true
+xterm*scrollBar: false
+xterm*foreground: rgb:a8/a8/a8
+xterm*background: rgb:00/00/00
 </code></pre>
 
 <p>*visualBell flashes the screen since we have the audible bell disabled. Perhaps not a great idea if you have certain forms of epilepsy; Keep pressing backspace for more info.</p>
