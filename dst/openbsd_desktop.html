@@ -209,7 +209,6 @@ $ doas reboot
 
 <pre><code>xset b off
 xrdb -merge ~/.Xresources
-eval $(ssh-agent)
 xidle -delay 5 -sw -timeout 300 -program &quot;/usr/X11R6/bin/xlock -mode qix&quot; &amp; 
 exec /usr/local/bin/ratpoison
 </code></pre>
@@ -217,7 +216,6 @@ exec /usr/local/bin/ratpoison
 <ul>
 <li>The first command stops that awful beeping. As sensitive creatures who sit up late hacking away at something, it&#39;s too much.</li>
 <li>The second merges .Xresources with our current X resources.</li>
-<li>The third starts ssh-agent, quite useful if you want to add or use ssh keys.</li>
 <li>Finally, we start a timer for xlock then execute our window manager - ratpoison!</li>
 </ul>
 

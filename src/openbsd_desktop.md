@@ -52,13 +52,11 @@ I used to start X from the console, but following a woopsie involving Xorg being
 
     xset b off
     xrdb -merge ~/.Xresources
-    eval $(ssh-agent)
     xidle -delay 5 -sw -timeout 300 -program "/usr/X11R6/bin/xlock -mode qix" & 
     exec /usr/local/bin/ratpoison
 
 * The first command stops that awful beeping. As sensitive creatures who sit up late hacking away at something, it's too much.
 * The second merges .Xresources with our current X resources.
-* The third starts ssh-agent, quite useful if you want to add or use ssh keys.
 * Finally, we start a timer for xlock then execute our window manager - ratpoison!
 
 A basic ~/.ratpoisonrc:
