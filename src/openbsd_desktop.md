@@ -12,7 +12,7 @@ Personally, I used OpenBSD for years on bare-metal and VM servers as well as bui
 
 __TLDR: Start here__
 
-I use a clean, minimalist system which maximises productivity without having a bloated userland; here's how to reproduce a basic version of it. I am stuck in my ways and haven't migrated to cwm(1) yet; in the initial version of this article I confused cwm with fvwm!!
+I use a clean, minimalist system which maximises productivity without having a bloated userland; here's how to reproduce a basic version of it. I am stuck in my ways and haven't migrated to cwm(1) yet; also, in the initial version of this article I confused cwm with fvwm because I have fvwm as my wm on another box.
 
 First, if you haven't done so already, add your user to doas.conf(5), make some performance tweaks to our filesystems in /etc/fstab(5) and grant us more memory (assuming you have at least 4GB) in login.conf(5) (from xterm in cwm):
 
