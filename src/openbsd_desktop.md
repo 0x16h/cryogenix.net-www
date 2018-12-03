@@ -10,9 +10,9 @@ In recent years, OpenBSD has become more popular as a desktop/workstation OS, wh
 
 Personally, I used OpenBSD for years on bare-metal and VM servers as well as building a liveCD distro for occasional use before adopting it full-time.  Out of the box, it is faster and easier to configure than FreeBSD and even most linux distros.  I do still love FreeBSD, but it lacks *je ne sais quoi* that OpenBSD has at a base level which enables fast configuration and usability whatever you're using it on.
 
-__TLDR: Start here__
+I use a clean, minimalist system which maximises productivity without having a bloated userland; here's how to reproduce a basic version of it. I am stuck in my ways and haven't migrated to cwm(1) yet; also, in the initial version of this article I confused cwm with fvwm because I have fvwm as my wm on another box.  Additionally, as someone pointed out - I use rxvt-unicode instead of xterm.  xterm is in base, so use it.  I don't because it never used to play nice with UTF-8 but as of [2016](https://undeadly.org/cgi?action=article&sid=20160308204011) - xterm in OpenBSD uses unicode by default.
 
-I use a clean, minimalist system which maximises productivity without having a bloated userland; here's how to reproduce a basic version of it. I am stuck in my ways and haven't migrated to cwm(1) yet; also, in the initial version of this article I confused cwm with fvwm because I have fvwm as my wm on another box.
+__TLDR: Start here__
 
 First, if you haven't done so already, add your user to doas.conf(5), make some performance tweaks to our filesystems in /etc/fstab(5) and grant us more memory (assuming you have at least 4GB) in login.conf(5) (from xterm in cwm):
 
