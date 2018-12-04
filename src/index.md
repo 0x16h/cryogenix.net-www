@@ -1,9 +1,6 @@
 #### Cryogenix
 A collection of code, articles and papers
 
-### Code
-* [NCSA Mosaic 2.7 on OpenBSD](NCSA_Mosaic_OpenBSD.html "NCSA Mosaic 2.7 on OpenBSD") (03 Nov 2018)
-
 ### Articles
 * [OpenBSD Desktop](openbsd_desktop.html "OpenBSD Desktop") (03 Dec 2018)
 * [Down the Gopher hole with OpenBSD, Gophernicus, and TLS](gophernicus.html "Down the Gopher hole with OpenBSD, Gophernicus, and TLS") (17 Nov 2018)
@@ -11,6 +8,7 @@ A collection of code, articles and papers
 * [Cross-compiling for OpenBSD/arm64](cross_compiling_openbsd_arm64.html "Cross compiling for OpenBSD arm64") (14 Nov 2018) 
 * [OpenBSD/arm64 on QEMU with Networking](OpenBSD_arm64_qemu.html "OpenBSD arm64 on QEMU with Networking") (13 Nov 2018)
 * [Reverse Engineering Tutorial: level1 - what's the password?](RET_level1.html "Reverse Engineering Tutorial: Level1") (12 Nov 2018)
+* [NCSA Mosaic 2.7 on OpenBSD](NCSA_Mosaic_OpenBSD.html "NCSA Mosaic 2.7 on OpenBSD") (03 Nov 2018)
 * [OpenBSD as an authoritative DNS nameserver /w DNSSEC](openbsd_nameserver.html "OpenBSD as an Authoritative Nameserver") (31 Oct 2018)
 * [433Mhz vehicle unlocking with Arduino Duo](arduino_433mhz.html "433Mhz vehicle unlocking with Arduino Duo") (1 Aug 2013)
 * [AlphaServer ES40 Emulation](AlphaServer_ES40_Emulation.html "AlphaServer ES40 Emulation") (02 Feb 2009)
