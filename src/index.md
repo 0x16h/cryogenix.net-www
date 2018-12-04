@@ -1,5 +1,5 @@
 #### Cryogenix
-A collection of code, articles and papers
+A collection of code, articles and papers. Come idle on irc.cyberarmy.net:6697 #cryogenix
 
 ### Articles
 * [OpenBSD Desktop](openbsd_desktop.html "OpenBSD Desktop") (03 Dec 2018)
@@ -28,18 +28,11 @@ A collection of code, articles and papers
 ### Friends <3
 * [@kivikakk](https://twitter.com/kivikakk)
 
-### System Inventory
-* Sun SPARC Enterprise T5120 running OpenBSD 6.4/sparc64
-* Sun SPARC Enterprise T5120 running Solaris 11.3 / SRU 35.6
-* DIGITAL AlphaStation 250 running OpenVMS 7.3/AXP
-* HP Integrity rx2620 running OpenVMS 8.4-2/I64
-* Fujitsu Primergy Xeon running OpenBSD 6.4/amd64
-* Lenovo V520s SFF running OpenBSD 6.4/amd64
-
 ### OpenBSD resources
 * [OpenBSD manual pages](https://man.openbsd.org/)
 * [Roman Zolotarev's OpenBSD articles](https://www.romanzolotarev.com/openbsd/)
 * [BSDJobs](https://www.bsdjobs.com/)
 * [OpenBSD.amsterdam](https://openbsd.amsterdam/) - virtual machine hosting
 * [OpenBSD.space](https://openbsd.space/) - Torified virtual machine hosting
-
+* [r/OpenBSD](https://reddit.com/r/openbsd)
+* [lobsters](https://lobste.rs)
