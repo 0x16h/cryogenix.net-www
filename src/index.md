@@ -1,5 +1,5 @@
 #### Cryogenix
-A collection of code, articles and papers. Come idle on irc.cyberarmy.net:6697 #cryogenix
+A collection of code, articles and papers
 
 ### Articles
 * [OpenBSD Desktop](openbsd_desktop.html "OpenBSD Desktop") (03 Dec 2018)
